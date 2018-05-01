@@ -40,17 +40,28 @@ public class LoginWindowController implements Initializable {
     private Connection con;
     private PreparedStatement pst;
     private ResultSet rs;
+    public int cid;
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        con = dba.DBConnection.dbConnection();
+        if (cid == 1) {
+            con = dba.DBConnection.Shoreline();
+        }
+        else if (cid == 0) {
+            System.out.println("Something went wrong");
+        }
+        
     }    
 
     @FXML
     private void handleLogin(ActionEvent event) {
-        System.out.println(txt_id.getText());
-        System.out.println(getID());
+        if (cid == 1) {
+            con = dba.DBConnection.Shoreline();
+        }
+        else if (cid == 2) {
+            con = dba.DBConnection.ECompany();
+        }
         if (txt_id.getText().equals(getID()) && txt_pw.getText().equals(getPW())){
             System.out.println("Succes!");
         }
@@ -91,6 +102,10 @@ public class LoginWindowController implements Initializable {
             Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return pw;
+    }
+    
+    public void setCID(int cid){
+        this.cid = cid;;
     }
 
     @FXML

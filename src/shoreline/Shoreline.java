@@ -19,7 +19,7 @@ public class Shoreline extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("LoginWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("SelectCompany.fxml"));
         
         Scene scene = new Scene(root);
         
