@@ -5,6 +5,7 @@
  */
 package shoreline;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,7 +16,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -64,6 +69,18 @@ public class LoginWindowController implements Initializable {
         }
         if (txt_id.getText().equals(getID()) && txt_pw.getText().equals(getPW())){
             System.out.println("Succes!");
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+        Parent Root = null;
+            try {
+                Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
+            } catch (IOException ex) {
+                Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        Scene scene = new Scene (Root);
+        stage.setScene(scene);
+        stage.setTitle("ShoreLine - Data Converter");
+        stage.show();
         }
         else {
             Alert alert = new Alert(Alert.AlertType.NONE,"Invalid ID or Password",ButtonType.OK);
