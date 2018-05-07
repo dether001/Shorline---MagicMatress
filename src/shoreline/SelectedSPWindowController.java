@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -23,16 +24,20 @@ import javafx.stage.Stage;
  *
  * @author atilk
  */
-public class LoggedInWindowController implements Initializable {
+public class SelectedSPWindowController implements Initializable {
 
+    @FXML
+    private Label SelectedItem;
+    @FXML
+    private Button SaveBtn;
+    @FXML
+    private Button BackBtn;
     @FXML
     private Button LogOutBtn;
     @FXML
-    private Button ViewSpBtn;
+    private Label LoggedInAsLabel;
     @FXML
-    private Button AddSpBtn;
-    @FXML
-    private Button ViewLogBtn;
+    private Label CurrentDateLabel;
 
     /**
      * Initializes the controller class.
@@ -40,20 +45,29 @@ public class LoggedInWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
-    
-    //Event Handlers.
+    }    
     @FXML
     private void handleCancel(ActionEvent event) throws IOException 
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("SelectCompany.fxml"));
+        Parent Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
     
-    }    
+    }
+    @FXML
+    private void handleLogOut(ActionEvent event) throws IOException 
+    {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Parent Root = FXMLLoader.load(getClass().getResource("LoginWindow.fxml"));
+        Scene scene = new Scene (Root);
+        stage.setScene(scene);
+        stage.setTitle("ShoreLine - Data Converter");
+        stage.show();
     
+    }
 }

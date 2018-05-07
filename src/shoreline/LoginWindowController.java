@@ -59,8 +59,9 @@ public class LoginWindowController implements Initializable {
         
     }    
 
+    //Event Handlers
     @FXML
-    private void handleLogin(ActionEvent event) {
+    private void handleLogin(ActionEvent event) throws IOException {
         if (cid == 1) {
             con = dba.DBConnection.Shoreline();
         }
@@ -71,12 +72,7 @@ public class LoginWindowController implements Initializable {
             System.out.println("Succes!");
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = null;
-            try {
-                Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
-            } catch (IOException ex) {
-                Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        Parent Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
@@ -89,6 +85,18 @@ public class LoginWindowController implements Initializable {
         }
     }
     
+    @FXML
+    private void handleCancel(ActionEvent event) throws IOException 
+    {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Parent Root = FXMLLoader.load(getClass().getResource("SelectCompany.fxml"));
+        Scene scene = new Scene (Root);
+        stage.setScene(scene);
+        stage.setTitle("ShoreLine - Data Converter");
+        stage.show();
+    
+    }
     private String getID(){
             String id = "";
         try {
@@ -124,10 +132,4 @@ public class LoginWindowController implements Initializable {
     public void setCID(int cid){
         this.cid = cid;;
     }
-
-    @FXML
-    private void handleCancel(ActionEvent event) {
-
-    }
-    
 }
