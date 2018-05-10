@@ -72,6 +72,7 @@ public class LoginWindowController implements Initializable {
             System.out.println("Succes!");
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
+            loginCLog();
         Parent Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
@@ -79,6 +80,7 @@ public class LoginWindowController implements Initializable {
         stage.show();
         }
         else {
+            loginFLog();
             Alert alert = new Alert(Alert.AlertType.NONE,"Invalid ID or Password",ButtonType.OK);
             alert.setTitle("Invalid login info");
             alert.showAndWait();
@@ -131,5 +133,25 @@ public class LoginWindowController implements Initializable {
     
     public void setCID(int cid){
         this.cid = cid;;
+    }
+    
+    private void loginCLog () {
+        try {
+            pst = con.prepareStatement("insert into actionlog VALUES (?, 'logged in', CURRENT_TIMESTAMP )");
+            pst.setString(1, txt_id.getText());
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void loginFLog () {
+        try {
+            pst = con.prepareStatement("insert into actionlog VALUES (?, 'failed to log in', CURRENT_TIMESTAMP )");
+            pst.setString(1, txt_id.getText());
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
