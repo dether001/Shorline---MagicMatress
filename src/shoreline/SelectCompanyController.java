@@ -7,6 +7,7 @@ package shoreline;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Timestamp;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,6 +37,7 @@ public class SelectCompanyController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        System.out.println(new java.sql.Timestamp(new java.util.Date().getTime()));
     }    
 
     @FXML

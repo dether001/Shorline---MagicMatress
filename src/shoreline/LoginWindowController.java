@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,6 +51,7 @@ public class LoginWindowController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
         if (cid == 1) {
             con = dba.DBConnection.Shoreline();
         }
@@ -70,6 +72,7 @@ public class LoginWindowController implements Initializable {
         }
         if (txt_id.getText().equals(getID()) && txt_pw.getText().equals(getPW())){
             System.out.println("Succes!");
+            loginCLog();
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
         Parent Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
@@ -79,6 +82,7 @@ public class LoginWindowController implements Initializable {
         stage.show();
         }
         else {
+            loginFLog();
             Alert alert = new Alert(Alert.AlertType.NONE,"Invalid ID or Password",ButtonType.OK);
             alert.setTitle("Invalid login info");
             alert.showAndWait();
@@ -131,5 +135,25 @@ public class LoginWindowController implements Initializable {
     
     public void setCID(int cid){
         this.cid = cid;;
+    }
+    
+    private void loginFLog () {
+        try {
+            pst = con.prepareStatement("insert into actionlog VALUES (?, 'failed to log in', CURRENT_TIMESTAMP )");;
+            pst.setString(1, txt_id.getText());
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void loginCLog () {
+        try {
+            pst = con.prepareStatement("insert into actionlog VALUES (?, 'logged in', CURRENT_TIMESTAMP )");
+            pst.setString(1, txt_id.getText());
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
