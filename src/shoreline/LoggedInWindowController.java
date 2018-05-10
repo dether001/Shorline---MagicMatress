@@ -33,6 +33,8 @@ public class LoggedInWindowController implements Initializable {
     private Button AddSpBtn;
     @FXML
     private Button ViewLogBtn;
+    @FXML
+    private Button convert;
 
     /**
      * Initializes the controller class.
@@ -54,6 +56,28 @@ public class LoggedInWindowController implements Initializable {
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
     
-    }    
+    }
+    @FXML
+    private void handleNewSP (ActionEvent event) throws IOException 
+    {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Parent Root = FXMLLoader.load(getClass().getResource("AddSPWindow.fxml"));
+        Scene scene = new Scene (Root);
+        stage.setScene(scene);
+        stage.setTitle("ShoreLine - Data Converter");
+        stage.show();
     
+    }
+    @FXML
+    private void handleConvert (ActionEvent event) throws IOException
+    {
+        Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+        Parent Root = FXMLLoader.load(getClass().getResource("ConvertWindow.fxml"));
+        Scene scene = new Scene (Root);
+        stage.setScene(scene);
+        stage.setTitle("ShoreLine - Data Converter");
+        stage.show();
+    }
 }

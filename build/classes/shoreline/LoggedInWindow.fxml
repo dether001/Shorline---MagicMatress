@@ -10,7 +10,7 @@
    <children>
       <Button fx:id="LogOutBtn" layoutX="480.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="Buttons_Small" text="Log-Out" />
       <Button fx:id="ViewSpBtn" layoutX="414.0" layoutY="311.0" mnemonicParsing="false" styleClass="Buttons_Small" text="View Spreadsheet" />
-      <Button fx:id="AddSpBtn" layoutX="14.0" layoutY="311.0" mnemonicParsing="false" styleClass="Buttons_Small" text="Add New Spreadsheet" />
+      <Button fx:id="AddSpBtn" layoutX="14.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleNewSP" styleClass="Buttons_Small" text="Add New Spreadsheet" />
       <Button fx:id="ViewLogBtn" layoutX="14.0" layoutY="353.0" mnemonicParsing="false" styleClass="Buttons_Small" text="View Log" />
       <Label layoutX="14.0" layoutY="14.0" styleClass="Labels" text="Saved Spreadsheets:" />
       <TableView layoutX="180.0" layoutY="44.0" prefHeight="251.0" prefWidth="240.0">
@@ -19,5 +19,6 @@
           <TableColumn prefWidth="185.0" text="Spreadsheet" />
         </columns>
       </TableView>
+      <Button fx:id="convert" layoutX="215.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleConvert" styleClass="Buttons_Big" text="Convert a File" />
    </children>
 </AnchorPane>
