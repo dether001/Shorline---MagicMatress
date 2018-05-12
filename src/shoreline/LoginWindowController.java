@@ -75,6 +75,7 @@ public class LoginWindowController implements Initializable {
             loginCLog();
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
+            loginCLog();
         Parent Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
@@ -137,9 +138,11 @@ public class LoginWindowController implements Initializable {
         this.cid = cid;;
     }
     
+
     private void loginFLog () {
         try {
             pst = con.prepareStatement("insert into actionlog VALUES (?, 'failed to log in', CURRENT_TIMESTAMP )");;
+
             pst.setString(1, txt_id.getText());
             pst.executeUpdate();
         } catch (SQLException ex) {
@@ -147,9 +150,11 @@ public class LoginWindowController implements Initializable {
         }
     }
     
+
     private void loginCLog () {
         try {
             pst = con.prepareStatement("insert into actionlog VALUES (?, 'logged in', CURRENT_TIMESTAMP )");
+
             pst.setString(1, txt_id.getText());
             pst.executeUpdate();
         } catch (SQLException ex) {
