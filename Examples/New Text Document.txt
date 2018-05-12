@@ -1,0 +1,13 @@
+assetSerial
+type
+externalWorkorderID
+systemstatus
+userstatus
+createdBy
+name
+priority
+status
+latestFinishDate
+earliestStartDate
+latestStartDate
+estimatedTime
