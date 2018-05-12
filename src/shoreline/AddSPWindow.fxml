@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="shoreline.AddSPWindowController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.AddSPWindowController">
    <children>
-      <Button fx:id="ChooseFile" layoutX="236.0" layoutY="84.0" mnemonicParsing="false" onAction="#chooseFileClicked" styleClass="Buttons_Small" text="Choose File" />
+      <Button fx:id="ChooseFile" layoutX="237.0" layoutY="93.0" mnemonicParsing="false" onAction="#chooseFileClicked" styleClass="Buttons_Small" text="Choose File" />
       <TextField fx:id="PathField" layoutX="226.0" layoutY="48.0" text="Path" />
+      <ComboBox layoutX="225.0" layoutY="140.0" prefWidth="150.0" promptText="Choose Pattern" />
+      <Button fx:id="newPatternBtn" layoutX="233.0" layoutY="184.0" mnemonicParsing="false" onAction="#handleNewPattern" styleClass="Buttons_Small" text="New Pattern" />
+      <Button fx:id="saveToDB" layoutX="217.0" layoutY="353.0" mnemonicParsing="false" styleClass="Buttons_Small" text="Save to Database" />
+      <Button fx:id="cancelBtn" layoutX="491.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="Buttons_Small" text="Cancel" />
    </children>
 </AnchorPane>

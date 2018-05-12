@@ -26,48 +26,31 @@ import javafx.stage.Stage;
  *
  * @author atilk
  */
-public class AddSPWindowController implements Initializable {
+public class NewPatternWindowController implements Initializable {
 
-    @FXML
-    private Button ChooseFile;
-    @FXML
-    private TextField PathField;
+
     public String path;
     @FXML
-    private Button cancelBtn;
-
-    /**
-     * Initializes the controller class.
-     */
+    private Button chooseFile;
+    @FXML
+    private TextField PathField;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
     @FXML
     private void handleCancel(ActionEvent event) throws IOException 
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
+        Parent Root = FXMLLoader.load(getClass().getResource(".fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
     
     }
-    @FXML
-    private void handleNewPattern (ActionEvent event) throws IOException
-    {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("NewPatternWindow.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
-        stage.setTitle("ShoreLine - Data Converter");
-        stage.show();
-    }
-    
     @FXML
     private void chooseFileClicked(ActionEvent event)
     {
@@ -86,5 +69,4 @@ public class AddSPWindowController implements Initializable {
         this.path = selectedFile.getAbsolutePath();
         PathField.setText(path); 
     }
-    
 }
