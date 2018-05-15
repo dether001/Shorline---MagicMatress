@@ -102,6 +102,13 @@ public class LoginWindowController implements Initializable {
         stage.show();
     
     }
+    
+    @FXML
+    public void onEnter(ActionEvent event) throws IOException
+    {
+           handleLogin(event); 
+    }
+    
     private String getID(){
             String id = "";
         try {

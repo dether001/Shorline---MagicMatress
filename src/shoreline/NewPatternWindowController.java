@@ -105,7 +105,7 @@ public class NewPatternWindowController implements Initializable {
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource(".fxml"));
+        Parent Root = FXMLLoader.load(getClass().getResource("AddSPWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
