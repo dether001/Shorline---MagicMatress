@@ -40,6 +40,17 @@ public class PlanningBE {
     public void setLatestStartDate(String latestStartDate) {
         this.latestStartDate = latestStartDate;
     }
+    
+    private String estimatedTime;
+
+    public String getEstimatedTime() {
+        return estimatedTime;
+    }
+
+    public void setEstimatedTime(String estimatedTime) {
+        this.estimatedTime = estimatedTime;
+    }
+
 
     
 }

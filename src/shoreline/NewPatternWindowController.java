@@ -41,6 +41,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import shoreline.BE.JSonObject;
+import shoreline.BE.PlanningBE;
 import shoreline.BLL.ShoreLineBLL;
 import shoreline.DAL.ExcellAL;
 
@@ -52,7 +53,7 @@ import shoreline.DAL.ExcellAL;
 public class NewPatternWindowController implements Initializable {
 
 
-    public String path;
+    public String path = "./Import_data.xlsx";
     @FXML
     private Button chooseFile;
     @FXML
@@ -89,23 +90,25 @@ public class NewPatternWindowController implements Initializable {
     private Button buttonConvert;
     
     private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();
+    private ObservableList <PlanningBE> listPlanning =  FXCollections.observableArrayList();
     
     private ObservableList <String> listOfJasons = FXCollections.observableArrayList();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-            makeComboBox();
+            makeComboBox(path);
         } catch (Exception ex) {
             Logger.getLogger(NewPatternWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }    
     @FXML
     private void handleCancel(ActionEvent event) throws IOException 
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("AddSPWindow.fxml"));
+        Parent Root = FXMLLoader.load(getClass().getResource(".fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
@@ -113,7 +116,7 @@ public class NewPatternWindowController implements Initializable {
     
     }
     @FXML
-    private void chooseFileClicked(ActionEvent event)
+    private void chooseFileClicked(ActionEvent event) throws Exception
     {
         Stage stage = new Stage(); 
         FileChooser fc = new FileChooser();
@@ -129,6 +132,8 @@ public class NewPatternWindowController implements Initializable {
         File selectedFile = fc.showOpenDialog(stage);
         this.path = selectedFile.getAbsolutePath();
         PathField.setText(path); 
+        makeComboBox(path);
+        
     }
 
     @FXML
@@ -143,7 +148,6 @@ public class NewPatternWindowController implements Initializable {
         list.add(boxCreatedBy.getSelectionModel().getSelectedIndex());
         list.add(boxName.getSelectionModel().getSelectedIndex());
         list.add(boxPriority.getSelectionModel().getSelectedIndex());
-        list.add(boxPriority.getSelectionModel().getSelectedIndex());
         list.add(boxStatus.getSelectionModel().getSelectedIndex());
         list.add(boxLastestFinishDate.getSelectionModel().getSelectedIndex());
         list.add(boxEarliestStartDate.getSelectionModel().getSelectedIndex());
@@ -156,8 +160,9 @@ public class NewPatternWindowController implements Initializable {
     
     
     
-    private void makeComboBox() throws Exception{
-        Workbook workbook = WorkbookFactory.create(new File(setOutputFile()));
+    private void makeComboBox(String path) throws Exception{
+        clearComboBox();
+        Workbook workbook = WorkbookFactory.create(new File(path));
         Sheet sheet = workbook.getSheetAt(0);
         DataFormatter dataFormatter = new DataFormatter();
              
@@ -182,17 +187,27 @@ public class NewPatternWindowController implements Initializable {
            
     
     }
-    
-     public String setOutputFile() throws Exception{
-       
-       String xlsxFilePath = "./.xlsx";
-        return "./Import_data.xlsx";
+    private void clearComboBox(){
+                boxAssestSerialNum.getItems().clear();
+                boxType.getItems().clear();
+                boxExternalWorkOrder.getItems().clear();
+                BoxSystemStatus.getItems().clear();
+                boxUserStatus.getItems().clear();
+                boxCreatedBy.getItems().clear();
+                boxName.getItems().clear();
+                boxPriority.getItems().clear();
+                boxStatus.getItems().clear();
+                boxLastestFinishDate.getItems().clear();
+                boxEarliestStartDate.getItems().clear();
+                boxLatestStartDate.getItems().clear();
+                boxEstimatedTime.getItems().clear();
     }
+    
     
     public void Read(List list) throws IOException, InvalidFormatException, Exception{
         
         
-        Workbook workbook = WorkbookFactory.create(new File(setOutputFile())); //finds file
+        Workbook workbook = WorkbookFactory.create(new File(path)); //finds file
         Sheet sheet = workbook.getSheetAt(0);  // gets sheet
         DataFormatter dataFormatter = new DataFormatter();  // formats data
         
@@ -203,6 +218,7 @@ public class NewPatternWindowController implements Initializable {
         
         for (Row row: sheet) {
             JSonObject jo = new JSonObject();
+            PlanningBE planning = new PlanningBE();
             
             if (rowCounter !=0){
              for(Cell cell: row) {
@@ -242,41 +258,71 @@ public class NewPatternWindowController implements Initializable {
                     if( cellCounter == (int) list.get(7)){
                     jo.setPriority(cellValue);
                     }
+                    
                     if( cellCounter == (int) list.get(8)){
                     jo.setStatus(cellValue);
                     }
+                    
+                    
+                    // Planning BE
+                    if( cellCounter == (int) list.get(9)){
+                   
+                    planning.setLastestFinishDate(cellValue);
+                   
+                    }
+                    if( cellCounter == (int) list.get(10)){
+                     
+                    planning.setEarliestStartDate(cellValue);
+                   
+                    }
+                    if( cellCounter == (int) list.get(11)){
+                    
+                    planning.setLatestStartDate(cellValue);
+                   
+                    }
+                    if( cellCounter == (int) list.get(12)){
+                    
+                    planning.setEstimatedTime(cellValue);
+                    
+                    }
+                    
+                    jo.setPlanning(planning);
+                    
+                    
                 }
                 cellCounter++;
                 
             }
+            listPlanning.add(planning);
             listData.add(jo);
             cellCounter=0;
             }
             rowCounter++;
         }
-        
-        try (FileWriter file = new FileWriter("testfile.jsons")) {
+        try (FileWriter file = new FileWriter("testfile.json")) {
             
             for (JSonObject jSonObject : listData) {
 
                Gson gson = new GsonBuilder().setPrettyPrinting().create();
                String json = gson.toJson(jSonObject);
-
-
-
+               
+                    
+                
                file.write(json);
                file.flush();
+               
 
 
                 System.out.println( json);
                 listOfJasons.add(json);
                 
-
-
             } 
         }
         
     }
+
+
+    
     
     
     

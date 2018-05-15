@@ -5,7 +5,12 @@
  */
 package shoreline.BE;
 
+import static java.nio.file.Files.list;
+import static java.rmi.Naming.list;
+import java.util.ArrayList;
+import static java.util.Collections.list;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -23,6 +28,9 @@ public class JSonObject {
     private String name;
     private String priority;
     private String status;
+    private PlanningBE planning;
+    
+    
 
     public String getStatus() {
         return status;
@@ -114,6 +122,21 @@ public class JSonObject {
     public void setAssetSerialNumber(String assetSerialNumber) {
         this.assetSerialNumber = assetSerialNumber;
     }
+    
+    
+        
+
+    public PlanningBE getPlanning() {
+        return planning;
+    }
+
+    public void setPlanning(PlanningBE planning) {
+        this.planning = planning;
+    }
+
+    
+    
+    
     
     
 

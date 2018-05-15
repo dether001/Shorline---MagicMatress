@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.NewPatternWindowController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.NewPatternWindowController">
    <children>
       <ComboBox fx:id="boxAssestSerialNum" layoutX="14.0" layoutY="79.0" prefWidth="200.0" />
       <ComboBox fx:id="boxType" layoutX="14.0" layoutY="132.0" prefWidth="200.0" />
@@ -22,9 +22,9 @@
       <ComboBox fx:id="boxLatestStartDate" layoutX="250.0" layoutY="182.0" prefWidth="200.0" />
       <ComboBox fx:id="boxEstimatedTime" layoutX="250.0" layoutY="234.0" prefWidth="200.0" />
       <Label layoutX="14.0" layoutY="25.0" styleClass="Labels" text="Fill the collumns with the corresponding Data" />
-      <Button fx:id="cancelBtn" layoutX="702.0" layoutY="553.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="Buttons_Small" text="Cancel" />
-      <Button fx:id="chooseFile" layoutX="545.0" layoutY="376.0" mnemonicParsing="false" onAction="#chooseFileClicked" styleClass="Buttons_Small" text="Choose File" />
-      <TextField fx:id="PathField" layoutX="535.0" layoutY="347.0" text="Path" />
+      <Button fx:id="cancelBtn" layoutX="695.0" layoutY="553.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="Buttons_Small" text="Cancel" />
+      <Button fx:id="chooseFile" layoutX="593.0" layoutY="126.0" mnemonicParsing="false" onAction="#chooseFileClicked" styleClass="Buttons_Small" text="Choose File" />
+      <TextField fx:id="PathField" layoutX="583.0" layoutY="97.0" text="Path" />
       <Label layoutX="14.0" layoutY="58.0" styleClass="Labels" text="Asset Serial" />
       <Label layoutX="14.0" layoutY="111.0" styleClass="Labels" text="Type" />
       <Label layoutX="14.0" layoutY="163.0" styleClass="Labels" text="External Work Order" />
@@ -38,10 +38,7 @@
       <Label layoutX="250.0" layoutY="109.0" styleClass="Labels" text="Earliest Start Date" />
       <Label layoutX="250.0" layoutY="161.0" styleClass="Labels" text="Latest Start Date" />
       <Label layoutX="250.0" layoutY="213.0" styleClass="Labels" text="Estimated Time" />
-      <Label layoutX="548.0" layoutY="304.0" styleClass="Labels" text="Choose a File" />
-      <Button fx:id="buttonConvert" layoutX="412.0" layoutY="553.0" mnemonicParsing="false" onAction="#buttonConvertAction" styleClass="Buttons_Small" text="Convert" />
-      <TextField fx:id="newPatternTxt" layoutX="535.0" layoutY="501.0" text="Name of New Pattern" />
-      <TextField fx:id="nameOfActionTxt" layoutX="535.0" layoutY="448.0" text="Name of Action" />
-      <Button fx:id="btnSaveConvert" layoutX="524.0" layoutY="553.0" mnemonicParsing="false" styleClass="Buttons_Small" text="Save and Convert" />
+      <Label layoutX="596.0" layoutY="25.0" styleClass="Labels" text="Choose a File" />
+      <Button fx:id="buttonConvert" layoutX="529.0" layoutY="553.0" mnemonicParsing="false" onAction="#buttonConvertAction" styleClass="Buttons_Small" text="Convert" />
    </children>
 </AnchorPane>
