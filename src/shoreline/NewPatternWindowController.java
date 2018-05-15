@@ -53,7 +53,7 @@ import shoreline.DAL.ExcellAL;
 public class NewPatternWindowController implements Initializable {
 
 
-    public String path = "./Import_data.xlsx";
+    public String path;
     @FXML
     private Button chooseFile;
     @FXML
