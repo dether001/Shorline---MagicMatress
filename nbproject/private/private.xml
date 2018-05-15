@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/AddSPWindowController.java</file>
-            <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/LoggedInWindowController.java</file>
-            <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/LoginWindowController.java</file>
-            <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/SelectCompanyController.java</file>
-            <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/ConvertWindowController.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Shorline---MagicMatress-master/src/shoreline/NewPatternWindowController.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Shorline---MagicMatress-master/src/shoreline/BE/PlanningBE.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Shorline---MagicMatress-master/src/shoreline/BE/JSonObject.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Shorline---MagicMatress-master/src/shoreline/ConvertWindowController.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Shorline---MagicMatress-master/src/shoreline/DAL/ExcellAL.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Shorline---MagicMatress-master/src/shoreline/BLL/ShoreLineBLL.java</file>
         </group>
     </open-files>
 </project-private>

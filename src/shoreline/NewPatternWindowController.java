@@ -5,10 +5,22 @@
  */
 package shoreline;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,9 +29,20 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import shoreline.BE.JSonObject;
+import shoreline.BLL.ShoreLineBLL;
+import shoreline.DAL.ExcellAL;
 
 /**
  * FXML Controller class
@@ -34,10 +57,48 @@ public class NewPatternWindowController implements Initializable {
     private Button chooseFile;
     @FXML
     private TextField PathField;
+    @FXML
+    private ComboBox<String> boxAssestSerialNum;
+    @FXML
+    private ComboBox<String> boxType;
+    @FXML
+    private ComboBox<String> boxExternalWorkOrder;
+    @FXML
+    private ComboBox<String> BoxSystemStatus;
+    @FXML
+    private ComboBox<String> boxUserStatus;
+    @FXML
+    private ComboBox<String> boxCreatedBy;
+    @FXML
+    private ComboBox<String> boxName;
+    @FXML
+    private ComboBox<String> boxPriority;
+    @FXML
+    private ComboBox<String> boxStatus;
+    @FXML
+    private ComboBox<String> boxLastestFinishDate;
+    @FXML
+    private ComboBox<String> boxEarliestStartDate;
+    @FXML
+    private ComboBox<String> boxLatestStartDate;
+    @FXML
+    private ComboBox<String> boxEstimatedTime;
+    @FXML
+    private Button cancelBtn;   
+    @FXML
+    private Button buttonConvert;
+    
+    private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();
+    
+    private ObservableList <String> listOfJasons = FXCollections.observableArrayList();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try {
+            makeComboBox();
+        } catch (Exception ex) {
+            Logger.getLogger(NewPatternWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
     @FXML
     private void handleCancel(ActionEvent event) throws IOException 
@@ -69,4 +130,156 @@ public class NewPatternWindowController implements Initializable {
         this.path = selectedFile.getAbsolutePath();
         PathField.setText(path); 
     }
+
+    @FXML
+    private void buttonConvertAction(ActionEvent event) throws InvalidFormatException, Exception {
+        
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(boxAssestSerialNum.getSelectionModel().getSelectedIndex());
+        list.add(boxType.getSelectionModel().getSelectedIndex());
+        list.add(boxExternalWorkOrder.getSelectionModel().getSelectedIndex());
+        list.add(BoxSystemStatus.getSelectionModel().getSelectedIndex());
+        list.add(boxUserStatus.getSelectionModel().getSelectedIndex());
+        list.add(boxCreatedBy.getSelectionModel().getSelectedIndex());
+        list.add(boxName.getSelectionModel().getSelectedIndex());
+        list.add(boxPriority.getSelectionModel().getSelectedIndex());
+        list.add(boxPriority.getSelectionModel().getSelectedIndex());
+        list.add(boxStatus.getSelectionModel().getSelectedIndex());
+        list.add(boxLastestFinishDate.getSelectionModel().getSelectedIndex());
+        list.add(boxEarliestStartDate.getSelectionModel().getSelectedIndex());
+        list.add(boxLatestStartDate.getSelectionModel().getSelectedIndex());
+        list.add(boxEstimatedTime.getSelectionModel().getSelectedIndex());
+        
+        Read(list);
+        
+    }
+    
+    
+    
+    private void makeComboBox() throws Exception{
+        Workbook workbook = WorkbookFactory.create(new File(setOutputFile()));
+        Sheet sheet = workbook.getSheetAt(0);
+        DataFormatter dataFormatter = new DataFormatter();
+             
+            for (Cell cell : sheet.getRow(0)) {
+                String cellValue = dataFormatter.formatCellValue(cell);
+        
+                boxAssestSerialNum.getItems().add(cellValue);
+                boxType.getItems().add(cellValue);
+                boxExternalWorkOrder.getItems().add(cellValue);
+                BoxSystemStatus.getItems().add(cellValue);
+                boxUserStatus.getItems().add(cellValue);
+                boxCreatedBy.getItems().add(cellValue);
+                boxName.getItems().add(cellValue);
+                boxPriority.getItems().add(cellValue);
+                boxStatus.getItems().add(cellValue);
+                boxLastestFinishDate.getItems().add(cellValue);
+                boxEarliestStartDate.getItems().add(cellValue);
+                boxLatestStartDate.getItems().add(cellValue);
+                boxEstimatedTime.getItems().add(cellValue);
+            
+            }
+           
+    
+    }
+    
+     public String setOutputFile() throws Exception{
+       
+       String xlsxFilePath = "./.xlsx";
+        return "./Import_data.xlsx";
+    }
+    
+    public void Read(List list) throws IOException, InvalidFormatException, Exception{
+        
+        
+        Workbook workbook = WorkbookFactory.create(new File(setOutputFile())); //finds file
+        Sheet sheet = workbook.getSheetAt(0);  // gets sheet
+        DataFormatter dataFormatter = new DataFormatter();  // formats data
+        
+        
+        int rowCounter =0;
+        int cellCounter = 0;
+        
+        
+        for (Row row: sheet) {
+            JSonObject jo = new JSonObject();
+            
+            if (rowCounter !=0){
+             for(Cell cell: row) {
+                
+                if(list.contains(cellCounter)){
+                   
+                    String cellValue = dataFormatter.formatCellValue(cell);
+            
+            
+                    if( cellCounter == (int) list.get(0)){
+                    jo.setAssetSerialNumber(cellValue);
+                    }
+                    if( cellCounter == (int) list.get(1)){
+                    jo.setType(cellValue);
+                    }
+                    if( cellCounter == (int) list.get(2)){
+                    jo.setExternalWorkOrderId(cellValue);
+                    }
+                    if( cellCounter == (int) list.get(3)){
+                    jo.setSystemStatus(cellValue);
+                    }
+                    if( cellCounter == (int) list.get(4)){
+                    jo.setUserStatus(cellValue);
+                    }
+                    
+                    // DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+                    Date date = new Date();
+                    // dateFormat.format(date)
+                     jo.setCreatedOn(date);
+                    
+                    if( cellCounter == (int) list.get(5)){
+                    jo.setCreatedBy(cellValue);
+                    }
+                    if( cellCounter == (int) list.get(6)){
+                    jo.setName(cellValue);
+                    }
+                    if( cellCounter == (int) list.get(7)){
+                    jo.setPriority(cellValue);
+                    }
+                    if( cellCounter == (int) list.get(8)){
+                    jo.setStatus(cellValue);
+                    }
+                }
+                cellCounter++;
+                
+            }
+            listData.add(jo);
+            cellCounter=0;
+            }
+            rowCounter++;
+        }
+        
+        try (FileWriter file = new FileWriter("testfile.jsons")) {
+            
+            for (JSonObject jSonObject : listData) {
+
+               Gson gson = new GsonBuilder().setPrettyPrinting().create();
+               String json = gson.toJson(jSonObject);
+
+
+
+               file.write(json);
+               file.flush();
+
+
+                System.out.println( json);
+                listOfJasons.add(json);
+                
+
+
+            } 
+        }
+        
+    }
+    
+    
+    
+    
+    
 }
