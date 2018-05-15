@@ -1,0 +1,8 @@
+
+*.properties
+build/built-jar.properties
+*.html
+*.html
+dist/run1634677774/Shoreline.html
+/build/
+/dist/
