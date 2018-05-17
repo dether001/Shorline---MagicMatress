@@ -101,20 +101,29 @@ public class NewPatternWindowController implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(NewPatternWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
+<<<<<<< HEAD
         
     }    
+=======
+    }
+    
+>>>>>>> merge
     @FXML
     private void handleCancel(ActionEvent event) throws IOException 
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
+<<<<<<< HEAD
         Parent Root = FXMLLoader.load(getClass().getResource("AddSPWindow.fxml"));
+=======
+        Parent Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
+>>>>>>> merge
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
-    
     }
+    
     @FXML
     private void chooseFileClicked(ActionEvent event) throws Exception
     {
