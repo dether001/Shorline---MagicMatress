@@ -5,7 +5,6 @@
  */
 package shoreline;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,9 +15,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.stage.FileChooser;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.stage.Stage;
 
 /**
@@ -26,15 +25,20 @@ import javafx.stage.Stage;
  *
  * @author atilk
  */
-public class AddSPWindowController implements Initializable {
+public class SLLogWindowController implements Initializable {
 
     @FXML
-    private Button ChooseFile;
+    private TableColumn<?, ?> userClm;
     @FXML
-    private TextField PathField;
-    public String path;
+    private TableColumn<?, ?> actionClm;
     @FXML
-    private Button cancelBtn;
+    private TableColumn<?, ?> dateClm;
+    @FXML
+    private ComboBox<?> companyCombo;
+    @FXML
+    private Label loggedInlbl;
+    @FXML
+    private Label dateLbl;
 
     /**
      * Initializes the controller class.
@@ -42,8 +46,8 @@ public class AddSPWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
+    }
+    
     @FXML
     private void handleCancel(ActionEvent event) throws IOException 
     {
@@ -54,26 +58,6 @@ public class AddSPWindowController implements Initializable {
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
-    
-    }
-    
-    @FXML
-    private void chooseFileClicked(ActionEvent event)
-    {
-        Stage stage = new Stage(); 
-        FileChooser fc = new FileChooser();
-        
-        FileChooser.ExtensionFilter xlsxFilter = new 
-        FileChooser.ExtensionFilter("XLSX files (*.xlsx)", "*.xlsx");
-        FileChooser.ExtensionFilter xlsFilter = new 
-        FileChooser.ExtensionFilter("XLS files (*.xls)", "*.xls");
-
-        fc.getExtensionFilters().add(xlsFilter);
-        fc.getExtensionFilters().add(xlsxFilter);
-        
-        File selectedFile = fc.showOpenDialog(stage);
-        this.path = selectedFile.getAbsolutePath();
-        PathField.setText(path); 
-    }
+    }    
     
 }

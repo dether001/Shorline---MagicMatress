@@ -19,6 +19,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -31,13 +32,13 @@ public class LoggedInWindowController implements Initializable {
     @FXML
     private Button LogOutBtn;
     @FXML
-    private Button ViewSpBtn;
-    @FXML
     private Button AddSpBtn;
     @FXML
     private Button ViewLogBtn;
     @FXML
-    private Button convert;
+    private Label loggedInlbl;
+    @FXML
+    private Label dateLbl;
 
     /**
      * Initializes the controller class.
@@ -61,7 +62,19 @@ public class LoggedInWindowController implements Initializable {
     
     }
     @FXML
-    private void handleNewSP (ActionEvent event) throws IOException 
+    private void handleNewPattern (ActionEvent event) throws IOException 
+    {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Parent Root = FXMLLoader.load(getClass().getResource("NewPatternWindow.fxml"));
+        Scene scene = new Scene (Root);
+        stage.setScene(scene);
+        stage.setTitle("ShoreLine - Data Converter");
+        stage.show();
+    }
+    
+    @FXML
+    private void handleExistingPattern (ActionEvent event) throws IOException 
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -70,14 +83,15 @@ public class LoggedInWindowController implements Initializable {
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
-    
     }
+    
     @FXML
-    private void handleConvert (ActionEvent event) throws IOException
+    private void handleLog (ActionEvent event) throws IOException
     {
+        //Add switch for company /Shoreline /other company
         Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("ConvertWindow.fxml"));
+        Parent Root = FXMLLoader.load(getClass().getResource("SLLogWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");

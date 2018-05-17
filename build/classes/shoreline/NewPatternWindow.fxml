@@ -21,10 +21,10 @@
       <ComboBox fx:id="boxEarliestStartDate" layoutX="250.0" layoutY="130.0" prefWidth="200.0" />
       <ComboBox fx:id="boxLatestStartDate" layoutX="250.0" layoutY="182.0" prefWidth="200.0" />
       <ComboBox fx:id="boxEstimatedTime" layoutX="250.0" layoutY="234.0" prefWidth="200.0" />
-      <Label layoutX="14.0" layoutY="25.0" styleClass="Labels" text="Fill the collumns with the corresponding Data" />
+      <Label layoutX="14.0" layoutY="25.0" styleClass="Labels_big" text="Fill the collumns with the corresponding Data:" />
       <Button fx:id="cancelBtn" layoutX="702.0" layoutY="553.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="Buttons_Small" text="Cancel" />
-      <Button fx:id="chooseFile" layoutX="545.0" layoutY="376.0" mnemonicParsing="false" onAction="#chooseFileClicked" styleClass="Buttons_Small" text="Choose File" />
-      <TextField fx:id="PathField" layoutX="535.0" layoutY="347.0" text="Path" />
+      <Button fx:id="chooseFile" layoutX="545.0" layoutY="427.0" mnemonicParsing="false" onAction="#chooseFileClicked" styleClass="Buttons_Small" text="Choose File" />
+      <TextField fx:id="PathField" layoutX="535.0" layoutY="398.0" text="Path" />
       <Label layoutX="14.0" layoutY="58.0" styleClass="Labels" text="Asset Serial" />
       <Label layoutX="14.0" layoutY="111.0" styleClass="Labels" text="Type" />
       <Label layoutX="14.0" layoutY="163.0" styleClass="Labels" text="External Work Order" />
@@ -38,10 +38,9 @@
       <Label layoutX="250.0" layoutY="109.0" styleClass="Labels" text="Earliest Start Date" />
       <Label layoutX="250.0" layoutY="161.0" styleClass="Labels" text="Latest Start Date" />
       <Label layoutX="250.0" layoutY="213.0" styleClass="Labels" text="Estimated Time" />
-      <Label layoutX="548.0" layoutY="304.0" styleClass="Labels" text="Choose a File" />
+      <Label layoutX="548.0" layoutY="355.0" styleClass="Labels_big" text="Choose a File" />
       <Button fx:id="buttonConvert" layoutX="412.0" layoutY="553.0" mnemonicParsing="false" onAction="#buttonConvertAction" styleClass="Buttons_Small" text="Convert" />
       <TextField fx:id="newPatternTxt" layoutX="535.0" layoutY="501.0" text="Name of New Pattern" />
-      <TextField fx:id="nameOfActionTxt" layoutX="535.0" layoutY="448.0" text="Name of Action" />
       <Button fx:id="btnSaveConvert" layoutX="524.0" layoutY="553.0" mnemonicParsing="false" styleClass="Buttons_Small" text="Save and Convert" />
    </children>
 </AnchorPane>
