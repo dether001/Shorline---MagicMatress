@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import shoreline.BE.User;
 
 /**
  * FXML Controller class
@@ -34,6 +35,8 @@ public class SelectCompanyController implements Initializable {
     @FXML
     private Button ECompanyBtn;
     
+    User user = new User();
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -43,7 +46,7 @@ public class SelectCompanyController implements Initializable {
     @FXML
     private void shrln_login(ActionEvent event) {
         try {
-            company = 1;
+            user.setSelectedCompany(1);
             System.out.println(company);
             Stage stage = (Stage) ShorelineBtn.getScene().getWindow();
             stage.close();
@@ -51,7 +54,7 @@ public class SelectCompanyController implements Initializable {
             Parent root = (Parent) loader.load();
             
             LoginWindowController lwController = loader.getController();
-            lwController.setCID(company);
+            lwController.setCID(user);
             Stage stage2 = new Stage();
             stage2.setScene(new Scene(root));
             stage2.show();
@@ -63,7 +66,7 @@ public class SelectCompanyController implements Initializable {
     @FXML
     private void ec_login(ActionEvent event) {
         try {
-            company = 2;
+            user.setSelectedCompany(1);
             System.out.println(company);
             Stage stage = (Stage) ShorelineBtn.getScene().getWindow();
             stage.close();
@@ -71,7 +74,7 @@ public class SelectCompanyController implements Initializable {
             Parent root = (Parent) loader.load();
             
             LoginWindowController lwController = loader.getController();
-            lwController.setCID(company);
+            lwController.setCID(user);
             Stage stage2 = new Stage();
             stage2.setScene(new Scene(root));
             stage2.show();
