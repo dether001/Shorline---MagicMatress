@@ -5,10 +5,26 @@
  */
 package shoreline.BLL;
 
+import shoreline.BE.User;
+import shoreline.DAL.DatabaseAL;
+
+
+
 /**
  *
  * @author Arman
  */
 public class ShoreLineBLL {
+    
+    DatabaseAL dbal = new DatabaseAL();
+
+    public User tryLogIn(User user) {
+     
+        
+        return dbal.tryLongIn(user);
+        
+    }
+
+   
     
 }

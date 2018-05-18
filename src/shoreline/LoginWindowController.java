@@ -27,6 +27,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import shoreline.BE.User;
+import shoreline.BLL.ShoreLineBLL;
 
 /**
  * FXML Controller class
@@ -35,8 +37,7 @@ import javafx.stage.Stage;
  */
 public class LoginWindowController implements Initializable {
 
-    @FXML
-    private TextField txt_id;
+    
     @FXML
     private TextField txt_pw;
     @FXML
@@ -46,36 +47,37 @@ public class LoginWindowController implements Initializable {
     private Connection con;
     private PreparedStatement pst;
     private ResultSet rs;
-    public int cid;
+    User user = new User();
+    private TextField txt_name;
+    @FXML
+    private TextField txt_id;
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        if (cid == 1) {
-            con = dba.DBConnection.Shoreline();
-        }
-        else if (cid == 0) {
-            System.out.println("Something went wrong");
-        }
+        
         
     }    
 
     //Event Handlers
     @FXML
     private void handleLogin(ActionEvent event) throws IOException {
-        if (cid == 1) {
-            con = dba.DBConnection.Shoreline();
-        }
-        else if (cid == 2) {
-            con = dba.DBConnection.ECompany();
-        }
-        if (txt_id.getText().equals(getID()) && txt_pw.getText().equals(getPW())){
+        
+        user.setName(txt_name.getText());
+        user.setPassword(txt_pw.getText());
+        user.setId(-1);
+        ShoreLineBLL bll = new ShoreLineBLL();
+        
+        user = bll.tryLogIn(user);
+        
+        
+        if (user.getId()!=-1){
             System.out.println("Succes!");
-            loginCLog();
+//            loginCLog();
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
-            loginCLog();
+//            loginCLog();
         Parent Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
@@ -109,40 +111,12 @@ public class LoginWindowController implements Initializable {
            handleLogin(event); 
     }
     
-    private String getID(){
-            String id = "";
-        try {
-            pst = con.prepareStatement("Select login from users where login = ?");
-            pst.setString(1,txt_id.getText());
-            rs = pst.executeQuery();
-            if(rs.next())
-            id = rs.getString(1);
-            rs.close();
-                    
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return id;
-    }
+
     
-    private String getPW(){
-            String pw = "";
-        try {
-            pst = con.prepareStatement("Select password from users where login = ?");
-            pst.setString(1,txt_id.getText());
-            rs = pst.executeQuery();
-            if(rs.next())
-            pw = rs.getString(1);
-            rs.close();
-                    
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return pw;
-    }
+ 
     
-    public void setCID(int cid){
-        this.cid = cid;;
+    public void setCID(User user){
+        this.user = user;
     }
     
 
@@ -150,7 +124,7 @@ public class LoginWindowController implements Initializable {
         try {
             pst = con.prepareStatement("insert into actionlog VALUES (?, 'failed to log in', CURRENT_TIMESTAMP )");;
 
-            pst.setString(1, txt_id.getText());
+            pst.setString(1, txt_name.getText());
             pst.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
@@ -162,7 +136,7 @@ public class LoginWindowController implements Initializable {
         try {
             pst = con.prepareStatement("insert into actionlog VALUES (?, 'logged in', CURRENT_TIMESTAMP )");
 
-            pst.setString(1, txt_id.getText());
+            pst.setString(1, txt_name.getText());
             pst.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
