@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
+import shoreline.BE.User;
 import shoreline.BLL.ShoreLineBLL;
 
 /**
@@ -22,12 +23,12 @@ public class Logger {
     private PreparedStatement pst;
     private ResultSet rs;
     
-        private void loginFLog () {
+       public void loginFLog (User user) {
         try {
             pst = con.prepareStatement("insert into actionlog VALUES (?, 'failed to log in', CURRENT_TIMESTAMP, ? )");;
 
-            pst.setString(1, User.getName());
-            pst.setInt(2, cid);
+            pst.setString(1, user.getName());
+            pst.setInt(2, user.getSelectedCompany());
             pst.executeUpdate();
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ShoreLineBLL.class.getName()).log(Level.SEVERE, null, ex);
@@ -35,12 +36,12 @@ public class Logger {
     }
     
 
-    private void loginCLog () {
+    public void loginCLog (User user) {
         try {
             pst = con.prepareStatement("insert into actionlog VALUES (?, 'logged in', CURRENT_TIMESTAMP, ? )");
 
-            pst.setString(1, User.getName());
-            pst.setInt(2, cid);
+            pst.setString(1, user.getName());
+            pst.setInt(2, user.getSelectedCompany());
             pst.executeUpdate();
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ShoreLineBLL.class.getName()).log(Level.SEVERE, null, ex);
@@ -48,12 +49,12 @@ public class Logger {
     }
     
     
-        private void convert () {
+        public void convert (User user) {
         try {
             pst = con.prepareStatement("insert into actionlog VALUES (?, 'converted on the spot', CURRENT_TIMESTAMP, ? )");
 
-            pst.setString(1, User.getName());
-            pst.setInt(2, cid);
+            pst.setString(1, user.getName());
+            pst.setInt(2, user.getSelectedCompany());
             pst.executeUpdate();
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ShoreLineBLL.class.getName()).log(Level.SEVERE, null, ex);
@@ -61,15 +62,17 @@ public class Logger {
     }
         
         
-        private void convertWsave () {
+        public void convertWsave (User user) {
         try {
             pst = con.prepareStatement("insert into actionlog VALUES (?, 'converted with a task linked to it', CURRENT_TIMESTAMP, ? )");
 
-            pst.setString(1, User.getName());
-            pst.setInt(2, cid);
+            pst.setString(1, user.getName());
+            pst.setInt(2, user.getSelectedCompany());
             pst.executeUpdate();
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ShoreLineBLL.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+    } 
+
+   
 }

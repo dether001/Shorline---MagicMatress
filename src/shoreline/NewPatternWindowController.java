@@ -96,11 +96,7 @@ public class NewPatternWindowController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
-            makeComboBox(path);
-        } catch (Exception ex) {
-            Logger.getLogger(NewPatternWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
         
     }
     
@@ -133,6 +129,7 @@ public class NewPatternWindowController implements Initializable {
         File selectedFile = fc.showOpenDialog(stage);
         this.path = selectedFile.getAbsolutePath();
         PathField.setText(path); 
+        System.out.println(path);
         makeComboBox(path);
         
     }

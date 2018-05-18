@@ -5,8 +5,10 @@
  */
 package shoreline.BLL;
 
+
 import shoreline.BE.User;
 import shoreline.DAL.DatabaseAL;
+import shoreline.DAL.Logger;
 
 
 
@@ -17,12 +19,21 @@ import shoreline.DAL.DatabaseAL;
 public class ShoreLineBLL {
     
     DatabaseAL dbal = new DatabaseAL();
-
+    Logger logger = new Logger();
+    
     public User tryLogIn(User user) {
      
         
         return dbal.tryLongIn(user);
         
+    }
+
+    public void loginFLog(User user) {
+      logger.loginFLog(user);
+    }
+
+    public void loginCLog(User user) {
+        logger.loginCLog(user);
     }
 
    

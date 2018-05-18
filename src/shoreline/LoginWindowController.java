@@ -51,6 +51,7 @@ public class LoginWindowController implements Initializable {
     private TextField txt_name;
     @FXML
     private TextField txt_id;
+    ShoreLineBLL bll = new ShoreLineBLL();
 
 
     @Override
@@ -64,28 +65,30 @@ public class LoginWindowController implements Initializable {
     @FXML
     private void handleLogin(ActionEvent event) throws IOException {
         
-        user.setName(txt_name.getText());
+        user.setName(txt_id.getText());
         user.setPassword(txt_pw.getText());
         user.setId(-1);
-        ShoreLineBLL bll = new ShoreLineBLL();
+        
         
         user = bll.tryLogIn(user);
         
         
         if (user.getId()!=-1){
             System.out.println("Succes!");
-//            loginCLog();
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-//            loginCLog();
+            loginCLog();
+            
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
         Parent Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
+        
         }
         else {
             loginFLog();
+            
             Alert alert = new Alert(Alert.AlertType.NONE,"Invalid ID or Password",ButtonType.OK);
             alert.setTitle("Invalid login info");
             alert.showAndWait();
@@ -121,25 +124,11 @@ public class LoginWindowController implements Initializable {
     
 
     private void loginFLog () {
-        try {
-            pst = con.prepareStatement("insert into actionlog VALUES (?, 'failed to log in', CURRENT_TIMESTAMP )");;
-
-            pst.setString(1, txt_name.getText());
-            pst.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        bll.loginFLog(user);
     }
     
 
     private void loginCLog () {
-        try {
-            pst = con.prepareStatement("insert into actionlog VALUES (?, 'logged in', CURRENT_TIMESTAMP )");
-
-            pst.setString(1, txt_name.getText());
-            pst.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       bll.loginCLog(user);
     }
 }
