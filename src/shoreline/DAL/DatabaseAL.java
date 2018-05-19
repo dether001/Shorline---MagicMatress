@@ -21,6 +21,7 @@ import shoreline.GUI.Controller.LoginWindowController;
 public class DatabaseAL {
     
     private Connection con;
+    private PreparedStatement pst;
 
     public User tryLogIn(User user) {
         
@@ -76,6 +77,30 @@ public class DatabaseAL {
         return user;
     }
     
-    
+        public void newPattern () {
+        try {
+            con = dba.DBConnection.Shoreline();
+            pst = con.prepareStatement("insert into Patterns VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            pst.setString(1, created_by);
+            pst.setString(2, AssetSerialNum);
+            pst.setString(3, Type);
+            pst.setString(4, ExternalWorkOrder);
+            pst.setString(5, SystemStatus);
+            pst.setString(6, userStatus);
+            pst.setString(7, CreatedBy);
+            pst.setString(8, Name);
+            pst.setString(9, Priority);
+            pst.setString(10, Status);
+            pst.setString(11, LatestFinishDate);
+            pst.setString(12, EarliestStartDate);
+            pst.setString(13, LatestStartDate);
+            pst.setString(14, EstimatedTime);
+            pst.setString(15, PatternName);
+            
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseAL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
     
 }

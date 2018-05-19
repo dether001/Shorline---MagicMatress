@@ -21,7 +21,6 @@ public class Logger {
     
     private Connection con;
     private PreparedStatement pst;
-    private ResultSet rs;
     
     
        public void loginFLog (User user) {
