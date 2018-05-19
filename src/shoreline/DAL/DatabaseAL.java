@@ -78,11 +78,7 @@ public class DatabaseAL {
         return user;
     }
     
-<<<<<<< HEAD
-        /*public void newPattern () {
-=======
         public void newPattern (Pattern pattern) {
->>>>>>> 27a086e681ea1f612cb49738453024e9708c4985
         try {
             con = dba.DBConnection.Shoreline();
             pst = con.prepareStatement("insert into Patterns VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -106,6 +102,6 @@ public class DatabaseAL {
         } catch (SQLException ex) {
             Logger.getLogger(DatabaseAL.class.getName()).log(Level.SEVERE, null, ex);
         }
-        }*/
+        }
     
 }
