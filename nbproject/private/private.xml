@@ -3,20 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/AddSPWindowController.java</file>
-            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/SelectCompanyController.java</file>
-            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/dba/DBConnection.java</file>
-            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/LoginWindowController.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/GUI/Controller/LoggedInWindowController.java</file>
             <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/DAL/ExcellAL.java</file>
-            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/LoggedInWindowController.java</file>
-            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/DAL/DatabaseAL.java</file>
-            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/BE/User.java</file>
-            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/BLL/ShoreLineBLL.java</file>
-            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/NewPatternWindowController.java</file>
-            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/DAL/Logger.java</file>
-            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/SLLogWindowController.java</file>
             <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/Shoreline.java</file>
-            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/SelectedSPWindowController.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/GUI/Controller/NewPatternWindowController.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/GUI/Controller/LoginWindowController.java</file>
         </group>
     </open-files>
 </project-private>

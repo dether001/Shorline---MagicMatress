@@ -20,7 +20,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import shoreline.BE.User;
 
 /**
  * FXML Controller class
@@ -39,14 +41,27 @@ public class LoggedInWindowController implements Initializable {
     private Label loggedInlbl;
     @FXML
     private Label dateLbl;
+    
+    User user;
+    
+    LoginWindowController LogInWin;
+    
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }
+    
+     public void setMainViewCont(LoginWindowController LogInWin) {
+        this.LogInWin=LogInWin;
+        user = LogInWin.returnUser();
+        
+    }
+    
+    
     
     //Event Handlers.
     @FXML
@@ -64,12 +79,14 @@ public class LoggedInWindowController implements Initializable {
     @FXML
     private void handleNewPattern (ActionEvent event) throws IOException 
     {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/NewPatternWindow.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
-        stage.setTitle("ShoreLine - Data Converter");
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/NewPatternWindow.fxml"));
+        Parent root1 = loader.load();
+        NewPatternWindowController contrl = loader.getController();
+        contrl.setMainViewCont(this);
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(new Scene(root1));
         stage.show();
     }
     
@@ -96,5 +113,12 @@ public class LoggedInWindowController implements Initializable {
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
+    }
+
+   
+    
+    public User returnUser(){
+    
+    return user;
     }
 }

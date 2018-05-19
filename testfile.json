@@ -1,540 +1,834 @@
 {
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-029",
+  "type": "DB0388-029",
+  "externalWorkOrderId": "WT DT29 DanTysk (3601210)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT29 DanTysk (3601210)",
+  "name": "ZCS5",
+  "priority": "0",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-029"
+    "lastestFinishDate": "DB0388-029",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "10/10/16"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-056",
+  "type": "DB0388-056",
+  "externalWorkOrderId": "WT DT56 DanTysk (3601237)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT56 DanTysk (3601237)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-056"
+    "lastestFinishDate": "DB0388-056",
+    "earliestStartDate": "CRTD",
+    "latestStartDate": "CRTD",
+    "estimatedTime": "6/13/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-035",
+  "type": "DB0388-035",
+  "externalWorkOrderId": "WT DT35 DanTysk (3601216)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT35 DanTysk (3601216)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-035"
+    "lastestFinishDate": "DB0388-035",
+    "earliestStartDate": "CRTD",
+    "latestStartDate": "CRTD",
+    "estimatedTime": "6/13/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-018",
+  "type": "DB0411-018",
+  "externalWorkOrderId": "WT SB18 Sandbank (4000349)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB18 Sandbank (4000349)",
+  "name": "ZCS5",
+  "priority": "3",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-018"
+    "lastestFinishDate": "DB0411-018",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "7/3/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-062",
+  "type": "DB0411-062",
+  "externalWorkOrderId": "WT SB64 Sandbank (4000393)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB64 Sandbank (4000393)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-062"
+    "lastestFinishDate": "DB0411-062",
+    "earliestStartDate": "PCNF REL",
+    "latestStartDate": "PCNF REL",
+    "estimatedTime": "7/7/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-072",
+  "type": "DB0411-072",
+  "externalWorkOrderId": "WT SB80 Sandbank (4000403)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB80 Sandbank (4000403)",
+  "name": "ZCS5",
+  "priority": "3",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-072"
+    "lastestFinishDate": "DB0411-072",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "7/15/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-069",
+  "type": "DB0411-069",
+  "externalWorkOrderId": "WT SB77 Sandbank (4000400)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB77 Sandbank (4000400)",
+  "name": "ZCS5",
+  "priority": "3",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-069"
+    "lastestFinishDate": "DB0411-069",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "7/15/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-056",
+  "type": "DB0411-056",
+  "externalWorkOrderId": "WT SB58 Sandbank (4000387)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB58 Sandbank (4000387)",
+  "name": "ZCS5",
+  "priority": "3",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-056"
+    "lastestFinishDate": "DB0411-056",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "7/21/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-054",
+  "type": "DB0411-054",
+  "externalWorkOrderId": "WT SB56 Sandbank (4000385)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB56 Sandbank (4000385)",
+  "name": "ZCS5",
+  "priority": "3",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-054"
+    "lastestFinishDate": "DB0411-054",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "7/25/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-069",
+  "type": "DB0411-069",
+  "externalWorkOrderId": "WT SB77 Sandbank (4000400)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB77 Sandbank (4000400)",
+  "name": "ZCS5",
+  "priority": "3",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-069"
+    "lastestFinishDate": "DB0411-069",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "7/31/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-043",
+  "type": "DB0411-043",
+  "externalWorkOrderId": "WT SB44 Sandbank (4000374)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB44 Sandbank (4000374)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-043"
+    "lastestFinishDate": "DB0411-043",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/7/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-071",
+  "type": "DB0411-071",
+  "externalWorkOrderId": "WT SB79 Sandbank (4000402)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB79 Sandbank (4000402)",
+  "name": "ZCS5",
+  "priority": "3",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-071"
+    "lastestFinishDate": "DB0411-071",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/15/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-015",
+  "type": "DB0411-015",
+  "externalWorkOrderId": "WT SB15 Sandbank (4000346)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB15 Sandbank (4000346)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-015"
+    "lastestFinishDate": "DB0411-015",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/15/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-038",
+  "type": "DB0411-038",
+  "externalWorkOrderId": "WT SB39 Sandbank (4000369)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB39 Sandbank (4000369)",
+  "name": "ZCS3",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-038"
+    "lastestFinishDate": "DB0411-038",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/24/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-011",
+  "type": "DB0388-011",
+  "externalWorkOrderId": "WT DT11 DanTysk (3601192)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT11 DanTysk (3601192)",
+  "name": "ZCS5",
+  "priority": "0",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-011"
+    "lastestFinishDate": "DB0388-011",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/25/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-060",
+  "type": "DB0411-060",
+  "externalWorkOrderId": "WT SB62 Sandbank (4000391)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB62 Sandbank (4000391)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-060"
+    "lastestFinishDate": "DB0411-060",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/28/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-001",
+  "type": "DB0411-001",
+  "externalWorkOrderId": "WT SB01 Sandbank (4000332)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB01 Sandbank (4000332)",
+  "name": "ZCS5",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-001"
+    "lastestFinishDate": "DB0411-001",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/29/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-022",
+  "type": "DB0411-022",
+  "externalWorkOrderId": "WT SB22 Sandbank (4000353)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB22 Sandbank (4000353)",
+  "name": "ZCS3",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-022"
+    "lastestFinishDate": "DB0411-022",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/30/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-059",
+  "type": "DB0411-059",
+  "externalWorkOrderId": "WT SB61 Sandbank (4000390)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB61 Sandbank (4000390)",
+  "name": "ZCS3",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-059"
+    "lastestFinishDate": "DB0411-059",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/30/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-078",
+  "type": "DB0388-078",
+  "externalWorkOrderId": "WT DT78 DanTysk (3601259)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT78 DanTysk (3601259)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-078"
+    "lastestFinishDate": "DB0388-078",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/31/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-078",
+  "type": "DB0388-078",
+  "externalWorkOrderId": "WT DT78 DanTysk (3601259)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT78 DanTysk (3601259)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-078"
+    "lastestFinishDate": "DB0388-078",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/31/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-040",
+  "type": "DB0388-040",
+  "externalWorkOrderId": "WT DT40 DanTysk (3601221)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT40 DanTysk (3601221)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-040"
+    "lastestFinishDate": "DB0388-040",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/31/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-040",
+  "type": "DB0388-040",
+  "externalWorkOrderId": "WT DT40 DanTysk (3601221)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT40 DanTysk (3601221)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-040"
+    "lastestFinishDate": "DB0388-040",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/31/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-040",
+  "type": "DB0388-040",
+  "externalWorkOrderId": "WT DT40 DanTysk (3601221)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT40 DanTysk (3601221)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-040"
+    "lastestFinishDate": "DB0388-040",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/31/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-040",
+  "type": "DB0388-040",
+  "externalWorkOrderId": "WT DT40 DanTysk (3601221)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT40 DanTysk (3601221)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-040"
+    "lastestFinishDate": "DB0388-040",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/31/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-007",
+  "type": "DB0388-007",
+  "externalWorkOrderId": "WT DT07 DanTysk (3601188)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT07 DanTysk (3601188)",
+  "name": "ZCS5",
+  "priority": "0",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-007"
+    "lastestFinishDate": "DB0388-007",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/31/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-007",
+  "type": "DB0388-007",
+  "externalWorkOrderId": "WT DT07 DanTysk (3601188)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT07 DanTysk (3601188)",
+  "name": "ZCS5",
+  "priority": "0",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-007"
+    "lastestFinishDate": "DB0388-007",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "8/31/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-059",
+  "type": "DB0411-059",
+  "externalWorkOrderId": "WT SB61 Sandbank (4000390)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB61 Sandbank (4000390)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-059"
+    "lastestFinishDate": "DB0411-059",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/1/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-027",
+  "type": "DB0411-027",
+  "externalWorkOrderId": "WT SB27 Sandbank (4000358)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB27 Sandbank (4000358)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-027"
+    "lastestFinishDate": "DB0411-027",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/1/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-029",
+  "type": "DB0411-029",
+  "externalWorkOrderId": "WT SB29 Sandbank (4000360)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB29 Sandbank (4000360)",
+  "name": "ZCS3",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-029"
+    "lastestFinishDate": "DB0411-029",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/1/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-061",
+  "type": "DB0411-061",
+  "externalWorkOrderId": "WT SB63 Sandbank (4000392)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB63 Sandbank (4000392)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-061"
+    "lastestFinishDate": "DB0411-061",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/1/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-066",
+  "type": "DB0411-066",
+  "externalWorkOrderId": "WT SB68 Sandbank (4000397)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB68 Sandbank (4000397)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-066"
+    "lastestFinishDate": "DB0411-066",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/1/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-023",
+  "type": "DB0411-023",
+  "externalWorkOrderId": "WT SB23 Sandbank (4000354)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB23 Sandbank (4000354)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-023"
+    "lastestFinishDate": "DB0411-023",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/4/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-075",
+  "type": "DB0388-075",
+  "externalWorkOrderId": "WT DT75 DanTysk (3601256)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT75 DanTysk (3601256)",
+  "name": "ZCS5",
+  "priority": "0",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-075"
+    "lastestFinishDate": "DB0388-075",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/18/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-061",
+  "type": "DB0411-061",
+  "externalWorkOrderId": "WT SB63 Sandbank (4000392)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB63 Sandbank (4000392)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-061"
+    "lastestFinishDate": "DB0411-061",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/19/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-064",
+  "type": "DB0388-064",
+  "externalWorkOrderId": "WT DT64 DanTysk (3601245)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT64 DanTysk (3601245)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-064"
+    "lastestFinishDate": "DB0388-064",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/30/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-064",
+  "type": "DB0388-064",
+  "externalWorkOrderId": "WT DT64 DanTysk (3601245)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT64 DanTysk (3601245)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-064"
+    "lastestFinishDate": "DB0388-064",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/30/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-064",
+  "type": "DB0388-064",
+  "externalWorkOrderId": "WT DT64 DanTysk (3601245)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT64 DanTysk (3601245)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-064"
+    "lastestFinishDate": "DB0388-064",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/30/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-064",
+  "type": "DB0388-064",
+  "externalWorkOrderId": "WT DT64 DanTysk (3601245)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT64 DanTysk (3601245)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-064"
+    "lastestFinishDate": "DB0388-064",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/30/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-020",
+  "type": "DB0388-020",
+  "externalWorkOrderId": "WT DT20 DanTysk (3601201)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT20 DanTysk (3601201)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-020"
+    "lastestFinishDate": "DB0388-020",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/30/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-020",
+  "type": "DB0388-020",
+  "externalWorkOrderId": "WT DT20 DanTysk (3601201)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT20 DanTysk (3601201)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-020"
+    "lastestFinishDate": "DB0388-020",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/30/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-012",
+  "type": "DB0388-012",
+  "externalWorkOrderId": "WT DT12 DanTysk (3601193)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT12 DanTysk (3601193)",
+  "name": "ZCS5",
+  "priority": "0",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-012"
+    "lastestFinishDate": "DB0388-012",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/30/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFDT",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0388-012",
+  "type": "DB0388-012",
+  "externalWorkOrderId": "WT DT12 DanTysk (3601193)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT DT12 DanTysk (3601193)",
+  "name": "ZCS5",
+  "priority": "0",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0388-012"
+    "lastestFinishDate": "DB0388-012",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "9/30/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-031",
+  "type": "DB0411-031",
+  "externalWorkOrderId": "WT SB32 Sandbank (4000362)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB32 Sandbank (4000362)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-031"
+    "lastestFinishDate": "DB0411-031",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "10/15/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-026",
+  "type": "DB0411-026",
+  "externalWorkOrderId": "WT SB26 Sandbank (4000357)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB26 Sandbank (4000357)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-026"
+    "lastestFinishDate": "DB0411-026",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "10/25/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-065",
+  "type": "DB0411-065",
+  "externalWorkOrderId": "WT SB67 Sandbank (4000396)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB67 Sandbank (4000396)",
+  "name": "ZCS5",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-065"
+    "lastestFinishDate": "DB0411-065",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "10/25/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFSB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-068",
+  "type": "DB0411-068",
+  "externalWorkOrderId": "WT SB76 Sandbank (4000399)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB76 Sandbank (4000399)",
+  "name": "ZCS1",
+  "priority": "2",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-068"
+    "lastestFinishDate": "DB0411-068",
+    "earliestStartDate": "CRTD",
+    "latestStartDate": "CRTD",
+    "estimatedTime": "10/27/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_OFFSB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-068",
+  "type": "DB0411-068",
+  "externalWorkOrderId": "WT SB76 Sandbank (4000399)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB76 Sandbank (4000399)",
+  "name": "ZCS1",
+  "priority": "0",
+  "status": "",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-068"
+    "lastestFinishDate": "DB0411-068",
+    "earliestStartDate": "CRTD",
+    "latestStartDate": "CRTD",
+    "estimatedTime": "10/27/17"
   }
 }{
-  "assetSerialNumber": "465C",
-  "type": "465C",
-  "externalWorkOrderId": "DE_SANDB",
-  "systemStatus": "465C",
-  "createdOn": "May 15, 2018 1:28:54 PM",
+  "assetSerialNumber": "DB0411-022",
+  "type": "DB0411-022",
+  "externalWorkOrderId": "WT SB22 Sandbank (4000353)",
+  "systemStatus": "DE",
+  "userStatus": "465C",
+  "createdOn": "May 19, 2018 4:30:00 PM",
+  "createdBy": "WT SB22 Sandbank (4000353)",
+  "name": "ZCS1",
+  "priority": "1",
+  "status": "H",
   "planning": {
-    "earliestStartDate": "BS01",
-    "latestStartDate": "BS01",
-    "estimatedTime": "DB0411-022"
+    "lastestFinishDate": "DB0411-022",
+    "earliestStartDate": "REL",
+    "latestStartDate": "REL",
+    "estimatedTime": "11/6/17"
   }
 }

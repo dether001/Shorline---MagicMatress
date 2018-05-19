@@ -11,6 +11,7 @@ import java.util.List;
 import javafx.collections.ObservableList;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import shoreline.BE.JSonObject;
+import shoreline.BE.Pattern;
 import shoreline.BE.User;
 import shoreline.DAL.DatabaseAL;
 import shoreline.DAL.ExcellAL;
@@ -51,6 +52,10 @@ public class ShoreLineBLL {
     
     public ObservableList<JSonObject> read(List list, String path) throws IOException, InvalidFormatException {
          return excell.read(list, path);
+    }
+
+    public void savePatter(Pattern patter) {
+        dbal.newPattern(patter);
     }
 
    

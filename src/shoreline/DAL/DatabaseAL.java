@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import shoreline.BE.Pattern;
 import shoreline.BE.User;
 import shoreline.GUI.Controller.LoginWindowController;
 
@@ -77,25 +78,29 @@ public class DatabaseAL {
         return user;
     }
     
+<<<<<<< HEAD
         /*public void newPattern () {
+=======
+        public void newPattern (Pattern pattern) {
+>>>>>>> 27a086e681ea1f612cb49738453024e9708c4985
         try {
             con = dba.DBConnection.Shoreline();
             pst = con.prepareStatement("insert into Patterns VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            pst.setString(1, created_by);
-            pst.setString(2, AssetSerialNum);
-            pst.setString(3, Type);
-            pst.setString(4, ExternalWorkOrder);
-            pst.setString(5, SystemStatus);
-            pst.setString(6, userStatus);
-            pst.setString(7, CreatedBy);
-            pst.setString(8, Name);
-            pst.setString(9, Priority);
-            pst.setString(10, Status);
-            pst.setString(11, LatestFinishDate);
-            pst.setString(12, EarliestStartDate);
-            pst.setString(13, LatestStartDate);
-            pst.setString(14, EstimatedTime);
-            pst.setString(15, PatternName);
+            pst.setString(1, pattern.getCreatedBy_User());
+            pst.setInt(2, pattern.getAssestSeriliaNum());
+            pst.setInt(3, pattern.getType());
+            pst.setInt(4, pattern.getExternalWorkOrder());
+            pst.setInt(5, pattern.getStatus());
+            pst.setInt(6, pattern.getUserStatus());
+            pst.setInt(7, pattern.getCreatedBy());
+            pst.setInt(8, pattern.getName());
+            pst.setInt(9, pattern.getPriority());
+            pst.setInt(10, pattern.getStatus());
+            pst.setInt(11, pattern.getLatestFinishDate());
+            pst.setInt(12, pattern.getEarliestStartDate());
+            pst.setInt(13, pattern.getLatestStartDate());
+            pst.setInt(14, pattern.getEstimatedTime());
+            pst.setString(15, pattern.getPatternName());
             
             pst.executeUpdate();
         } catch (SQLException ex) {

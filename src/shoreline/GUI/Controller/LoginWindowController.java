@@ -26,6 +26,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import shoreline.BE.User;
 import shoreline.BLL.ShoreLineBLL;
@@ -47,7 +48,7 @@ public class LoginWindowController implements Initializable {
     private Connection con;
     private PreparedStatement pst;
     private ResultSet rs;
-    User user = new User();
+    User user;
     private TextField txt_name;
     @FXML
     private TextField txt_id;
@@ -77,12 +78,16 @@ public class LoginWindowController implements Initializable {
             System.out.println(user.getSelectedCompany());
             loginCLog();
          
+      
+        
         Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
-        stage.setTitle("ShoreLine - Data Converter");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
+        Parent root1 = loader.load();
+        LoggedInWindowController contrl = loader.getController();
+        contrl.setMainViewCont(this);
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(new Scene(root1));
         stage.show();
         
         }
@@ -114,12 +119,18 @@ public class LoginWindowController implements Initializable {
            handleLogin(event); 
     }
     
+    
+    
 
     
  
     
     public void setCID(User user){
         this.user = user;
+    }
+    
+    public User returnUser(){
+    return user;
     }
     
 
@@ -131,4 +142,6 @@ public class LoginWindowController implements Initializable {
     private void loginCLog () {
        bll.loginCLog(user);
     }
+
+    
 }

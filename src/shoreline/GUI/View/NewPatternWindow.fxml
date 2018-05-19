@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.GUI.Controller.NewPatternWindowController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.GUI.Controller.NewPatternWindowController">
    <children>
       <ComboBox fx:id="boxAssestSerialNum" layoutX="14.0" layoutY="79.0" prefWidth="200.0" />
       <ComboBox fx:id="boxType" layoutX="14.0" layoutY="132.0" prefWidth="200.0" />
@@ -41,6 +41,6 @@
       <Label layoutX="548.0" layoutY="355.0" styleClass="Labels_big" text="Choose a File" />
       <Button fx:id="buttonConvert" layoutX="412.0" layoutY="553.0" mnemonicParsing="false" onAction="#buttonConvertAction" styleClass="Buttons_Small" text="Convert" />
       <TextField fx:id="newPatternTxt" layoutX="535.0" layoutY="501.0" text="Name of New Pattern" />
-      <Button fx:id="btnSaveConvert" layoutX="524.0" layoutY="553.0" mnemonicParsing="false" styleClass="Buttons_Small" text="Save and Convert" />
+      <Button fx:id="btnSaveConvert" layoutX="524.0" layoutY="553.0" mnemonicParsing="false" onAction="#buttonActionSaveConvert" styleClass="Buttons_Small" text="Save and Convert" />
    </children>
 </AnchorPane>
