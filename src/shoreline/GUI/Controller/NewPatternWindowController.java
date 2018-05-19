@@ -53,7 +53,7 @@ import shoreline.DAL.ExcellAL;
 public class NewPatternWindowController implements Initializable {
 
 
-    public String path;
+    String path;
     @FXML
     private Button chooseFile;
     @FXML
@@ -97,8 +97,11 @@ public class NewPatternWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        
-        
     }
+    
+      
+    
+    
     
     @FXML
     private void handleCancel(ActionEvent event) throws IOException 
@@ -127,7 +130,7 @@ public class NewPatternWindowController implements Initializable {
         fc.getExtensionFilters().add(xlsxFilter);
         
         File selectedFile = fc.showOpenDialog(stage);
-        this.path = selectedFile.getAbsolutePath();
+        path = selectedFile.getAbsolutePath();
         PathField.setText(path); 
         System.out.println(path);
         makeComboBox(path);
@@ -162,7 +165,7 @@ public class NewPatternWindowController implements Initializable {
         clearComboBox();
         ShoreLineBLL bll = new ShoreLineBLL();
         ObservableList<String>rowList=FXCollections.observableArrayList(); 
-        rowList.addAll(bll.makeComboboxes(path));
+        rowList.addAll(bll.makeComboboxes("./Import_data.xlsx"));
         
        
                 boxAssestSerialNum.getItems().addAll(rowList);
@@ -212,7 +215,13 @@ public class NewPatternWindowController implements Initializable {
         listData = bll.read(list, path);
         
         
-        try (FileWriter file = new FileWriter("testfile.json")) {
+       
+        
+    }
+    
+    public void convert() throws IOException{
+        
+     try (FileWriter file = new FileWriter("testfile.json")) {
             
             for (JSonObject jSonObject : listData) {
 
@@ -232,7 +241,6 @@ public class NewPatternWindowController implements Initializable {
                 
             } 
         }
-        
     }
 
 

@@ -51,12 +51,7 @@ public class ExcellAL {
         return rowList;
     }
 
-    public ObservableList<JSonObject> read(List list) {
-        
-        
-        return null;
-            
-    }
+    
 
     public ObservableList<JSonObject> read(List list, String path) throws IOException, InvalidFormatException {
         
