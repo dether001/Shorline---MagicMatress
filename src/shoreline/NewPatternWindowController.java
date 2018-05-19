@@ -209,97 +209,9 @@ public class NewPatternWindowController implements Initializable {
         
         ShoreLineBLL bll = new ShoreLineBLL();
         
-        listData = bll.read(list);
-        
-        int rowCounter =0;
-        int cellCounter = 0;
+        listData = bll.read(list, path);
         
         
-        
-        
-        for (Row row: sheet) {
-            JSonObject jo = new JSonObject();
-            PlanningBE planning = new PlanningBE();
-            
-            if (rowCounter !=0){
-             for(Cell cell: row) {
-                
-                if(list.contains(cellCounter)){
-                   
-                    String cellValue = dataFormatter.formatCellValue(cell);
-            
-            
-                    if( cellCounter == (int) list.get(0)){
-                    jo.setAssetSerialNumber(cellValue);
-                    }
-                    if( cellCounter == (int) list.get(1)){
-                    jo.setType(cellValue);
-                    }
-                    if( cellCounter == (int) list.get(2)){
-                    jo.setExternalWorkOrderId(cellValue);
-                    }
-                    if( cellCounter == (int) list.get(3)){
-                    jo.setSystemStatus(cellValue);
-                    }
-                    if( cellCounter == (int) list.get(4)){
-                    jo.setUserStatus(cellValue);
-                    }
-                    
-                    // DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-                    Date date = new Date();
-                    // dateFormat.format(date)
-                     jo.setCreatedOn(date);
-                    
-                    if( cellCounter == (int) list.get(5)){
-                    jo.setCreatedBy(cellValue);
-                    }
-                    if( cellCounter == (int) list.get(6)){
-                    jo.setName(cellValue);
-                    }
-                    if( cellCounter == (int) list.get(7)){
-                    jo.setPriority(cellValue);
-                    }
-                    
-                    if( cellCounter == (int) list.get(8)){
-                    jo.setStatus(cellValue);
-                    }
-                    
-                    
-                    // Planning BE
-                    if( cellCounter == (int) list.get(9)){
-                   
-                    planning.setLastestFinishDate(cellValue);
-                   
-                    }
-                    if( cellCounter == (int) list.get(10)){
-                     
-                    planning.setEarliestStartDate(cellValue);
-                   
-                    }
-                    if( cellCounter == (int) list.get(11)){
-                    
-                    planning.setLatestStartDate(cellValue);
-                   
-                    }
-                    if( cellCounter == (int) list.get(12)){
-                    
-                    planning.setEstimatedTime(cellValue);
-                    
-                    }
-                    
-                    jo.setPlanning(planning);
-                    
-                    
-                }
-                cellCounter++;
-                
-            }
-            listPlanning.add(planning);
-            listData.add(jo);
-            cellCounter=0;
-            }
-            rowCounter++;
-        }
         try (FileWriter file = new FileWriter("testfile.json")) {
             
             for (JSonObject jSonObject : listData) {
