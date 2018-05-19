@@ -213,7 +213,7 @@ public class NewPatternWindowController implements Initializable {
         ShoreLineBLL bll = new ShoreLineBLL();
         
         listData = bll.read(list, path);
-        
+        convert();
         
        
         
