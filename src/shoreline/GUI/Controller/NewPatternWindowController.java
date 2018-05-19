@@ -11,14 +11,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -34,16 +29,14 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import shoreline.BE.JSonObject;
-import shoreline.BE.PlanningBE;
+import shoreline.BE.Pattern;
+import shoreline.BE.User;
 import shoreline.BLL.ShoreLineBLL;
-import shoreline.DAL.ExcellAL;
 
 /**
  * FXML Controller class
@@ -90,14 +83,26 @@ public class NewPatternWindowController implements Initializable {
     private Button buttonConvert;
     
     private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();
-    private ObservableList <PlanningBE> listPlanning =  FXCollections.observableArrayList();
     
     private ObservableList <String> listOfJasons = FXCollections.observableArrayList();
+    @FXML
+    private TextField newPatternTxt;
+    @FXML
+    private Button btnSaveConvert;
+    
+    User user;
+    
+    LoggedInWindowController lgc;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
+      // user = lgc.returnUser();
     }
+    
+    public void setMainViewCont(LoggedInWindowController lgc){
+        this.lgc=lgc;
+        
+        }
     
       
     
@@ -241,6 +246,48 @@ public class NewPatternWindowController implements Initializable {
                 
             } 
         }
+    }
+
+    @FXML
+    private void buttonActionSaveConvert(ActionEvent event) throws InvalidFormatException, Exception {
+        
+         List<Integer> list = new ArrayList<Integer>();
+         Pattern patter = new Pattern();
+        list.add(boxAssestSerialNum.getSelectionModel().getSelectedIndex());
+        patter.setAssestSeriliaNum(boxAssestSerialNum.getSelectionModel().getSelectedIndex());
+        list.add(boxType.getSelectionModel().getSelectedIndex());
+        patter.setType((boxType.getSelectionModel().getSelectedIndex()));
+        list.add(boxExternalWorkOrder.getSelectionModel().getSelectedIndex());
+        patter.setExternalWorkOrder(boxExternalWorkOrder.getSelectionModel().getSelectedIndex());
+        list.add(BoxSystemStatus.getSelectionModel().getSelectedIndex());
+        patter.setStatus(BoxSystemStatus.getSelectionModel().getSelectedIndex());
+        list.add(boxUserStatus.getSelectionModel().getSelectedIndex());
+        patter.setUserStatus(boxUserStatus.getSelectionModel().getSelectedIndex());
+        list.add(boxCreatedBy.getSelectionModel().getSelectedIndex());
+        patter.setCreatedBy(boxCreatedBy.getSelectionModel().getSelectedIndex());
+        list.add(boxName.getSelectionModel().getSelectedIndex());
+        patter.setName(boxName.getSelectionModel().getSelectedIndex());
+        list.add(boxPriority.getSelectionModel().getSelectedIndex());
+        patter.setPriority(boxPriority.getSelectionModel().getSelectedIndex());
+        list.add(boxStatus.getSelectionModel().getSelectedIndex());
+        patter.setStatus(boxStatus.getSelectionModel().getSelectedIndex());
+        list.add(boxLastestFinishDate.getSelectionModel().getSelectedIndex());
+        patter.setLatestFinishDate(boxLastestFinishDate.getSelectionModel().getSelectedIndex());
+        list.add(boxEarliestStartDate.getSelectionModel().getSelectedIndex());
+        patter.setEarliestStartDate(boxEarliestStartDate.getSelectionModel().getSelectedIndex());
+        list.add(boxLatestStartDate.getSelectionModel().getSelectedIndex());
+        patter.setLatestStartDate(boxLatestStartDate.getSelectionModel().getSelectedIndex());
+        list.add(boxEstimatedTime.getSelectionModel().getSelectedIndex());
+        patter.setEstimatedTime(boxEstimatedTime.getSelectionModel().getSelectedIndex());
+        patter.setCreatedBy_User("asd");
+        patter.setPatternName(newPatternTxt.getText());
+        
+        
+        Read(list);
+        ShoreLineBLL bll = new ShoreLineBLL();
+        
+        bll.savePatter(patter);
+        
     }
 
 
