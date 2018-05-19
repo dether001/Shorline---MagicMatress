@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shoreline;
+package shoreline.GUI.Controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -50,7 +50,7 @@ public class SelectCompanyController implements Initializable {
             System.out.println(company);
             Stage stage = (Stage) ShorelineBtn.getScene().getWindow();
             stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginWindow.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoginWindow.fxml"));
             Parent root = (Parent) loader.load();
             
             LoginWindowController lwController = loader.getController();
@@ -70,7 +70,7 @@ public class SelectCompanyController implements Initializable {
             System.out.println(company);
             Stage stage = (Stage) ShorelineBtn.getScene().getWindow();
             stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginWindow.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoginWindow.fxml"));
             Parent root = (Parent) loader.load();
             
             LoginWindowController lwController = loader.getController();

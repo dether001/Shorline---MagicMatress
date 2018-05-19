@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import shoreline.BE.User;
-import shoreline.LoginWindowController;
+import shoreline.GUI.Controller.LoginWindowController;
 
 /**
  *

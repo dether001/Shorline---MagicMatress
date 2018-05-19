@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.GUI.Controller.SelectCompanyController">
+   <children>
+      <Button fx:id="ShorelineBtn" layoutX="90.0" layoutY="188.0" mnemonicParsing="false" onAction="#shrln_login" styleClass="Buttons_Big" stylesheets="@loginwindow.css" text="Shoreline" />
+      <Button fx:id="ECompanyBtn" layoutX="375.0" layoutY="188.0" mnemonicParsing="false" onAction="#ec_login" styleClass="Buttons_Big" text="EComapny" />
+   </children>
+</AnchorPane>

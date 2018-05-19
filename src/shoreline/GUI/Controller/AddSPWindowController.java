@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shoreline;
+package shoreline.GUI.Controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,7 +17,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
@@ -24,20 +26,15 @@ import javafx.stage.Stage;
  *
  * @author atilk
  */
-public class SelectedSPWindowController implements Initializable {
+public class AddSPWindowController implements Initializable {
 
     @FXML
-    private Label SelectedItem;
+    private Button ChooseFile;
     @FXML
-    private Button SaveBtn;
+    private TextField PathField;
+    public String path;
     @FXML
-    private Button BackBtn;
-    @FXML
-    private Button LogOutBtn;
-    @FXML
-    private Label LoggedInAsLabel;
-    @FXML
-    private Label CurrentDateLabel;
+    private Button cancelBtn;
 
     /**
      * Initializes the controller class.
@@ -46,28 +43,37 @@ public class SelectedSPWindowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
     @FXML
     private void handleCancel(ActionEvent event) throws IOException 
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
+        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
     
     }
+    
     @FXML
-    private void handleLogOut(ActionEvent event) throws IOException 
+    private void chooseFileClicked(ActionEvent event)
     {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("LoginWindow.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
-        stage.setTitle("ShoreLine - Data Converter");
-        stage.show();
-    
+        Stage stage = new Stage(); 
+        FileChooser fc = new FileChooser();
+        
+        FileChooser.ExtensionFilter xlsFilter = new 
+        FileChooser.ExtensionFilter("XLS files (*.xls)", "*.xls");
+        FileChooser.ExtensionFilter xlsxFilter = new 
+        FileChooser.ExtensionFilter("XLSX files (*.xlsx)", "*.xlsx");
+
+        fc.getExtensionFilters().add(xlsFilter);
+        fc.getExtensionFilters().add(xlsxFilter);
+        
+        File selectedFile = fc.showOpenDialog(stage);
+        this.path = selectedFile.getAbsolutePath();
+        PathField.setText(path); 
     }
+    
 }

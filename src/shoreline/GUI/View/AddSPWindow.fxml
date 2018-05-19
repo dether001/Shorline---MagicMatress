@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.AddSPWindowController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.GUI.Controller.AddSPWindowController">
    <children>
       <Button fx:id="ChooseFile" layoutX="237.0" layoutY="93.0" mnemonicParsing="false" onAction="#chooseFileClicked" styleClass="Buttons_Small" text="Choose File" />
       <TextField fx:id="PathField" layoutX="226.0" layoutY="48.0" text="Path" />

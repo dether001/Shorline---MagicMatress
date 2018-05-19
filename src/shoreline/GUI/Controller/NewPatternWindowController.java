@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shoreline;
+package shoreline.GUI.Controller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -105,7 +105,7 @@ public class NewPatternWindowController implements Initializable {
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));
+        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");

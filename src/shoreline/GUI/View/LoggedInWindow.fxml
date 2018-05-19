@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.LoggedInWindowController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.GUI.Controller.LoggedInWindowController">
    <children>
       <Button fx:id="LogOutBtn" layoutX="480.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="Buttons_Small" text="Log-Out" />
       <Button fx:id="AddSpBtn" layoutX="14.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleExistingPattern" styleClass="Buttons_Small" text="Convert with existing Pattern" />

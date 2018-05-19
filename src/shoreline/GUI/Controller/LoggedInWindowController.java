@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shoreline;
+package shoreline.GUI.Controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -54,7 +54,7 @@ public class LoggedInWindowController implements Initializable {
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("SelectCompany.fxml"));
+        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/SelectCompany.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
@@ -66,7 +66,7 @@ public class LoggedInWindowController implements Initializable {
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("NewPatternWindow.fxml"));
+        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/NewPatternWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
@@ -78,7 +78,7 @@ public class LoggedInWindowController implements Initializable {
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("AddSPWindow.fxml"));
+        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/AddSPWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
@@ -91,7 +91,7 @@ public class LoggedInWindowController implements Initializable {
         //Add switch for company /Shoreline /other company
         Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("SLLogWindow.fxml"));
+        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/SLLogWindow.fxml"));
         Scene scene = new Scene (Root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
