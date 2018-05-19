@@ -22,7 +22,7 @@ public class DatabaseAL {
     
     private Connection con;
 
-    public User tryLongIn(User user) {
+    public User tryLogIn(User user) {
         
         if (user.getSelectedCompany() == 1) {
             con = dba.DBConnection.Shoreline();

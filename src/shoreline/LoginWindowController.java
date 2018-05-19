@@ -64,7 +64,7 @@ public class LoginWindowController implements Initializable {
     //Event Handlers
     @FXML
     private void handleLogin(ActionEvent event) throws IOException {
-        
+
         user.setName(txt_id.getText());
         user.setPassword(txt_pw.getText());
         user.setId(-1);
@@ -74,9 +74,9 @@ public class LoginWindowController implements Initializable {
         
         
         if (user.getId()!=-1){
-            System.out.println("Succes!");
+            System.out.println(user.getSelectedCompany());
             loginCLog();
-            
+         
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Parent Root = FXMLLoader.load(getClass().getResource("LoggedInWindow.fxml"));

@@ -31,7 +31,7 @@ public class ShoreLineBLL {
     public User tryLogIn(User user) {
      
         
-        return dbal.tryLongIn(user);
+        return dbal.tryLogIn(user);
         
     }
 
