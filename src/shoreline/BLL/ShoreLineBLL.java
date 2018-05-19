@@ -48,11 +48,7 @@ public class ShoreLineBLL {
         return excell.makeComboboxes(path);
     }
 
-    public ObservableList<JSonObject> read(List list) {
-        return excell.read(list);
-        
-    }
-
+    
     public ObservableList<JSonObject> read(List list, String path) throws IOException, InvalidFormatException {
          return excell.read(list, path);
     }
