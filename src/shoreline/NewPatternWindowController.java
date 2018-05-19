@@ -160,28 +160,25 @@ public class NewPatternWindowController implements Initializable {
     
     private void makeComboBox(String path) throws Exception{
         clearComboBox();
-        Workbook workbook = WorkbookFactory.create(new File(path));
-        Sheet sheet = workbook.getSheetAt(0);
-        DataFormatter dataFormatter = new DataFormatter();
-             
-            for (Cell cell : sheet.getRow(0)) {
-                String cellValue = dataFormatter.formatCellValue(cell);
+        ShoreLineBLL bll = new ShoreLineBLL();
+        ObservableList<String>rowList=FXCollections.observableArrayList(); 
+        rowList.addAll(bll.makeComboboxes(path));
         
-                boxAssestSerialNum.getItems().add(cellValue);
-                boxType.getItems().add(cellValue);
-                boxExternalWorkOrder.getItems().add(cellValue);
-                BoxSystemStatus.getItems().add(cellValue);
-                boxUserStatus.getItems().add(cellValue);
-                boxCreatedBy.getItems().add(cellValue);
-                boxName.getItems().add(cellValue);
-                boxPriority.getItems().add(cellValue);
-                boxStatus.getItems().add(cellValue);
-                boxLastestFinishDate.getItems().add(cellValue);
-                boxEarliestStartDate.getItems().add(cellValue);
-                boxLatestStartDate.getItems().add(cellValue);
-                boxEstimatedTime.getItems().add(cellValue);
+       
+                boxAssestSerialNum.getItems().addAll(rowList);
+                boxType.getItems().addAll(rowList);
+                boxExternalWorkOrder.getItems().addAll(rowList);
+                BoxSystemStatus.getItems().addAll(rowList);
+                boxUserStatus.getItems().addAll(rowList);
+                boxCreatedBy.getItems().addAll(rowList);
+                boxName.getItems().addAll(rowList);
+                boxPriority.getItems().addAll(rowList);
+                boxStatus.getItems().addAll(rowList);
+                boxLastestFinishDate.getItems().addAll(rowList);
+                boxEarliestStartDate.getItems().addAll(rowList);
+                boxLatestStartDate.getItems().addAll(rowList);
+                boxEstimatedTime.getItems().addAll(rowList);
             
-            }
            
     
     }
@@ -205,13 +202,19 @@ public class NewPatternWindowController implements Initializable {
     public void Read(List list) throws IOException, InvalidFormatException, Exception{
         
         
+        
         Workbook workbook = WorkbookFactory.create(new File(path)); //finds file
         Sheet sheet = workbook.getSheetAt(0);  // gets sheet
         DataFormatter dataFormatter = new DataFormatter();  // formats data
         
+        ShoreLineBLL bll = new ShoreLineBLL();
+        
+        listData = bll.read(list);
         
         int rowCounter =0;
         int cellCounter = 0;
+        
+        
         
         
         for (Row row: sheet) {
@@ -303,6 +306,7 @@ public class NewPatternWindowController implements Initializable {
 
                Gson gson = new GsonBuilder().setPrettyPrinting().create();
                String json = gson.toJson(jSonObject);
+             
                
                     
                 
