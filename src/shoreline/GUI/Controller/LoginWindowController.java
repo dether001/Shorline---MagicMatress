@@ -117,6 +117,7 @@ public class LoginWindowController implements Initializable {
     public void onEnter(ActionEvent event) throws IOException
     {
            handleLogin(event); 
+           System.out.println(user.getName());
     }
     
     
