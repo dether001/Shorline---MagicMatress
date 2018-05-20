@@ -34,22 +34,21 @@ public class LoggedInWindowController implements Initializable {
     @FXML
     private Button LogOutBtn;
     @FXML
-    private Button AddSpBtn;
-    @FXML
     private Button ViewLogBtn;
     @FXML
     private Label loggedInlbl;
     @FXML
     private Label dateLbl;
+    @FXML
+    private Button SavedPatternBtn;
+    @FXML
+    private Button NewPatternBtn;
+    
+    public String LoggedInUser;
     
     User user;
-    
     LoginWindowController LogInWin;
     
-
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -75,30 +74,27 @@ public class LoggedInWindowController implements Initializable {
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
-    
     }
     @FXML
     private void handleNewPattern (ActionEvent event) throws IOException 
-    {       System.out.println(user.getName());
-        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/NewPatternWindow.fxml"));
-        Parent root1 = loader.load();
-        NewPatternWindowController contrl = loader.getController();
-        contrl.setMainViewCont(this);
-        Stage stage = new Stage();
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(new Scene(root1));
-        stage.show();
+    {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/NewPatternWindow.fxml"));
+            Parent root = (Parent) loader.load();
+            
+            NewPatternWindowController lwController = loader.getController();
+            lwController.setUser(LoggedInUser);
+            Stage stage2 = new Stage();
+            stage2.setScene(new Scene(root));
+            stage2.show();
     }
-    
+
     @FXML
     private void handleExistingPattern (ActionEvent event) throws IOException 
     {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/AddSPWindow.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/AddSPWindow.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
     }
@@ -107,19 +103,20 @@ public class LoggedInWindowController implements Initializable {
     private void handleLog (ActionEvent event) throws IOException
     {
         //Add switch for company /Shoreline /other company
-        Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/SLLogWindow.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/SLLogWindow.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
     }
 
-   
-    
     public User returnUser(){
     
     return user;
+    }
+        public void setUser (String user)
+    {
+        this.LoggedInUser = user;
     }
 }

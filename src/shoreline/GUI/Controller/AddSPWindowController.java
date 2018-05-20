@@ -54,7 +54,6 @@ public class AddSPWindowController implements Initializable {
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
-    
     }
     
     @FXML

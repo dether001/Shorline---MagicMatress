@@ -5,6 +5,7 @@
  */
 package shoreline.GUI.Controller;
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -30,6 +31,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import shoreline.BE.User;
 import shoreline.BLL.ShoreLineBLL;
+import shoreline.GUI.Controller.NewPatternWindowController;
 
 /**
  * FXML Controller class
@@ -69,6 +71,7 @@ public class LoginWindowController implements Initializable {
         user.setName(txt_id.getText());
         user.setPassword(txt_pw.getText());
         user.setId(-1);
+        String loggedinuser = txt_id.getText();
         
         
         user = bll.tryLogIn(user);
@@ -80,15 +83,17 @@ public class LoginWindowController implements Initializable {
          
       
         
-        Node node = (Node) event.getSource();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
-        Parent root1 = loader.load();
-        LoggedInWindowController contrl = loader.getController();
-        contrl.setMainViewCont(this);
-        Stage stage = new Stage();
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(new Scene(root1));
-        stage.show();
+         //Add switch for company /Shoreline /other company
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
+            Parent root = (Parent) loader.load();
+            
+            LoggedInWindowController ctrl = loader.getController();
+            ctrl.setUser(loggedinuser);
+            Stage stage2 = new Stage(); 
+            Stage stage = (Stage) btn_Login.getScene().getWindow();
+            stage.close();
+            stage2.setScene(new Scene(root));
+            stage2.show();
         
         }
         else {
@@ -117,15 +122,8 @@ public class LoginWindowController implements Initializable {
     public void onEnter(ActionEvent event) throws IOException
     {
            handleLogin(event); 
-           System.out.println(user.getName());
     }
-    
-    
-    
 
-    
- 
-    
     public void setCID(User user){
         this.user = user;
     }
