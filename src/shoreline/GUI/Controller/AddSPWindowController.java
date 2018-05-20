@@ -5,10 +5,24 @@
  */
 package shoreline.GUI.Controller;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,9 +31,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import shoreline.BE.JSonObject;
+import shoreline.BLL.ShoreLineBLL;
 
 /**
  * FXML Controller class
@@ -35,13 +57,26 @@ public class AddSPWindowController implements Initializable {
     public String path;
     @FXML
     private Button cancelBtn;
+    @FXML
+    private ComboBox<?> patternBox;
+    @FXML
+    private Button convertBtn;
+    private Connection con;
+    private PreparedStatement pst;
+    private ResultSet rs;
+    final ObservableList patterns= FXCollections.observableArrayList();
+    @FXML
+    private Button saveandConvertBtn;
+    List<Integer> list = new ArrayList<Integer>();
+    private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        con = dba.DBConnection.Shoreline();
+        loadPatterns();
     }    
 
     @FXML
@@ -76,4 +111,104 @@ public class AddSPWindowController implements Initializable {
         PathField.setText(path); 
     }
     
+    private void loadPatterns() {
+        try {
+            String sql = "select PatternName from Patterns";
+            pst=con.prepareStatement(sql);
+            rs = pst.executeQuery();
+            
+            while(rs.next()) {
+                patterns.add(rs.getString("PatternName"));
+                patternBox.setItems(patterns);
+            }   } catch (SQLException ex) {
+            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }   
+
+    @FXML
+    private void selectionHandler(ActionEvent event) {
+        getPattern();
+    }
+    
+    private void getPattern () {
+        try {
+            String selectedPattern = patternBox.getSelectionModel().getSelectedItem().toString();
+            String sql = "select AssetSerialNum, Type, ExternalWorkOrder, SystemStatus, userStatus, CreatedBy, Name, Priority, Status, LatestFinishDate, EarliestStartDate, LatestStartDate, EstimatedTime FROM Patterns WHERE PatternName = ?;";
+            pst=con.prepareStatement(sql);
+            pst.setString(1, selectedPattern);
+            rs = pst.executeQuery();
+            while(rs.next()) {
+            
+            list.add(Integer.valueOf(rs.getString(1)));
+            list.add(Integer.valueOf(rs.getString(2)));
+            list.add(Integer.valueOf(rs.getString(3)));
+            list.add(Integer.valueOf(rs.getString(4)));
+            list.add(Integer.valueOf(rs.getString(5)));
+            list.add(Integer.valueOf(rs.getString(6)));
+            list.add(Integer.valueOf(rs.getString(7)));
+            list.add(Integer.valueOf(rs.getString(8)));
+            list.add(Integer.valueOf(rs.getString(9)));
+            list.add(Integer.valueOf(rs.getString(10)));
+            list.add(Integer.valueOf(rs.getString(11)));
+            list.add(Integer.valueOf(rs.getString(12)));
+            list.add(Integer.valueOf(rs.getString(13)));     
+            
+            
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public List<Integer> getList() {
+        return list;
+    }
+    
+        public void Read(List list) throws IOException, InvalidFormatException, Exception{
+        
+        
+        
+        Workbook workbook = WorkbookFactory.create(new File(path)); //finds file
+        Sheet sheet = workbook.getSheetAt(0);  // gets sheet
+        DataFormatter dataFormatter = new DataFormatter();  // formats data
+        
+        ShoreLineBLL bll = new ShoreLineBLL();
+        
+        listData = bll.read(list, path);
+        convert();
+        
+       
+        
+    }
+    
+    public void convert() throws IOException{
+        
+     try (FileWriter file = new FileWriter("testfile.json")) {
+            
+            for (JSonObject jSonObject : listData) {
+
+               Gson gson = new GsonBuilder().setPrettyPrinting().create();
+               String json = gson.toJson(jSonObject);
+             
+               
+                    
+                
+               file.write(json);
+               file.flush();
+               
+                
+            } 
+        }
+    }
+
+    @FXML
+    private void fuckingConvertpls(ActionEvent event) {
+        try {
+            Read(getList());
+        } catch (InvalidFormatException ex) {
+            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
