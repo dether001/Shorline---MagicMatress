@@ -165,12 +165,11 @@ public class NewPatternWindowController implements Initializable {
     }
     
     
-    
     private void makeComboBox(String path) throws Exception{
         clearComboBox();
         ShoreLineBLL bll = new ShoreLineBLL();
         ObservableList<String>rowList=FXCollections.observableArrayList(); 
-        rowList.addAll(bll.makeComboboxes("./Import_data.xlsx"));
+        rowList.addAll(bll.makeComboboxes(path));
         
        
                 boxAssestSerialNum.getItems().addAll(rowList);
@@ -186,10 +185,9 @@ public class NewPatternWindowController implements Initializable {
                 boxEarliestStartDate.getItems().addAll(rowList);
                 boxLatestStartDate.getItems().addAll(rowList);
                 boxEstimatedTime.getItems().addAll(rowList);
-            
-           
-    
     }
+    
+    //Clears all comboboxes.
     private void clearComboBox(){
                 boxAssestSerialNum.getItems().clear();
                 boxType.getItems().clear();
@@ -206,7 +204,8 @@ public class NewPatternWindowController implements Initializable {
                 boxEstimatedTime.getItems().clear();
     }
     
-    
+    //Calls to BLL Read method to read the given file with the given list of headers.
+    //It will skip collumns not contained in the list regarding index number.
     public void Read(List list) throws IOException, InvalidFormatException, Exception{
         
         
@@ -223,10 +222,11 @@ public class NewPatternWindowController implements Initializable {
        
         
     }
-    
+     
+    //FileWriter method. Used to create the output JSon file "testfile.json.
+    //TODO create filesaver dialogue for dir choosing UX.
     public void convert() throws IOException{
-        
-     try (FileWriter file = new FileWriter("testfile.json")) {
+         try (FileWriter file = new FileWriter("testfile.json")) {
             
             for (JSonObject jSonObject : listData) {
 
@@ -238,10 +238,11 @@ public class NewPatternWindowController implements Initializable {
                 
                file.write(json);
                file.flush();
-               
 
 
                 System.out.println( json);
+                //System.out.println(outPath);
+
                 listOfJasons.add(json);
                 
             } 
@@ -279,7 +280,7 @@ public class NewPatternWindowController implements Initializable {
         patter.setLatestStartDate(boxLatestStartDate.getSelectionModel().getSelectedIndex());
         list.add(boxEstimatedTime.getSelectionModel().getSelectedIndex());
         patter.setEstimatedTime(boxEstimatedTime.getSelectionModel().getSelectedIndex());
-        patter.setCreatedBy_User("asd");
+        patter.setCreatedBy_User(User.class.getName());
         patter.setPatternName(newPatternTxt.getText());
         
         
