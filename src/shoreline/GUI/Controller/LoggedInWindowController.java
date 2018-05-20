@@ -59,6 +59,7 @@ public class LoggedInWindowController implements Initializable {
         this.LogInWin=LogInWin;
         user = LogInWin.returnUser();
         
+        
     }
     
     
@@ -78,7 +79,7 @@ public class LoggedInWindowController implements Initializable {
     }
     @FXML
     private void handleNewPattern (ActionEvent event) throws IOException 
-    {
+    {       System.out.println(user.getName());
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/NewPatternWindow.fxml"));
         Parent root1 = loader.load();
