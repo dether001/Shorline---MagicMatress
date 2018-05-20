@@ -282,11 +282,7 @@ public class NewPatternWindowController implements Initializable {
         patter.setLatestStartDate(boxLatestStartDate.getSelectionModel().getSelectedIndex());
         list.add(boxEstimatedTime.getSelectionModel().getSelectedIndex());
         patter.setEstimatedTime(boxEstimatedTime.getSelectionModel().getSelectedIndex());
-<<<<<<< HEAD
-        patter.setCreatedBy_User(User.class.getName());
-=======
         patter.setCreatedBy_User(user.getName());
->>>>>>> 62d725c6bf457511520f5a5d83b66e0a11f24b95
         patter.setPatternName(newPatternTxt.getText());
         
         
