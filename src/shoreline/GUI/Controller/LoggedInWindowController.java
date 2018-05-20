@@ -18,7 +18,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -45,6 +47,7 @@ public class LoggedInWindowController implements Initializable {
     private Button NewPatternBtn;
     
     public String LoggedInUser;
+    public int SelectedCompany;
     
     User user;
     LoginWindowController LogInWin;
@@ -102,21 +105,34 @@ public class LoggedInWindowController implements Initializable {
     @FXML
     private void handleLog (ActionEvent event) throws IOException
     {
-        //Add switch for company /Shoreline /other company
+       if(SelectedCompany != 1)
+       {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/SLLogWindow.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
+       }
+       else
+       {
+        Alert alert = new Alert(Alert.AlertType.NONE,"Feature is only available for ShoreLine users!",ButtonType.OK);
+            alert.setTitle("Not a Shoreline User!");
+            alert.showAndWait();   
+       }
     }
 
     public User returnUser(){
     
     return user;
     }
-        public void setUser (String user)
+    
+    public void setUser (String user)
     {
         this.LoggedInUser = user;
+    }
+    public void setCompany (int id)
+    {
+        this.SelectedCompany = id;
     }
 }

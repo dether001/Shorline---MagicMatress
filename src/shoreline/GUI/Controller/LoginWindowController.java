@@ -55,6 +55,7 @@ public class LoginWindowController implements Initializable {
     @FXML
     private TextField txt_id;
     ShoreLineBLL bll = new ShoreLineBLL();
+    public int SelectedCompany;
 
 
     @Override
@@ -128,10 +129,14 @@ public class LoginWindowController implements Initializable {
         this.user = user;
     }
     
-    public User returnUser(){
+    public User returnUser()
+    {
     return user;
     }
-    
+    public void setCompany(int id)
+    {
+        this.SelectedCompany = id;
+    }
 
     private void loginFLog () {
         bll.loginFLog(user);
