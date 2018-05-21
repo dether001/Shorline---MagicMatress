@@ -36,6 +36,7 @@ public class SelectCompanyController implements Initializable {
     private Button ECompanyBtn;
     
     User user = new User();
+    public int SelectedCompany;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -47,14 +48,14 @@ public class SelectCompanyController implements Initializable {
     private void shrln_login(ActionEvent event) {
         try {
             user.setSelectedCompany(1);
-            System.out.println(company);
+            SelectedCompany = 1;
             Stage stage = (Stage) ShorelineBtn.getScene().getWindow();
             stage.close();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoginWindow.fxml"));
             Parent root = (Parent) loader.load();
-            
             LoginWindowController lwController = loader.getController();
             lwController.setCID(user);
+            lwController.setCompany(SelectedCompany);
             Stage stage2 = new Stage();
             stage2.setScene(new Scene(root));
             stage2.show();
@@ -66,9 +67,10 @@ public class SelectCompanyController implements Initializable {
     @FXML
     private void ec_login(ActionEvent event) {
         try {
-            user.setSelectedCompany(1);
+            user.setSelectedCompany(0);
             System.out.println(company);
-            Stage stage = (Stage) ShorelineBtn.getScene().getWindow();
+            SelectedCompany = 0;
+            Stage stage = (Stage) ECompanyBtn.getScene().getWindow();
             stage.close();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoginWindow.fxml"));
             Parent root = (Parent) loader.load();

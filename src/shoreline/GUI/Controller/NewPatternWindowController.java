@@ -37,6 +37,7 @@ import shoreline.BE.JSonObject;
 import shoreline.BE.Pattern;
 import shoreline.BE.User;
 import shoreline.BLL.ShoreLineBLL;
+import shoreline.GUI.Controller.LoginWindowController;
 
 /**
  * FXML Controller class
@@ -47,6 +48,7 @@ public class NewPatternWindowController implements Initializable {
 
 
     String path;
+    String LoggedInUser;
     @FXML
     private Button chooseFile;
     @FXML
@@ -91,7 +93,7 @@ public class NewPatternWindowController implements Initializable {
     private Button btnSaveConvert;
     
     User user;
-    
+    LoginWindowController LWC;
     LoggedInWindowController lgc;
     
     @Override
@@ -251,6 +253,10 @@ public class NewPatternWindowController implements Initializable {
         }
     }
 
+    public void setUser (String user)
+    {
+        this.LoggedInUser = user;
+    }
     @FXML
     private void buttonActionSaveConvert(ActionEvent event) throws InvalidFormatException, Exception {
         
@@ -282,9 +288,9 @@ public class NewPatternWindowController implements Initializable {
         patter.setLatestStartDate(boxLatestStartDate.getSelectionModel().getSelectedIndex());
         list.add(boxEstimatedTime.getSelectionModel().getSelectedIndex());
         patter.setEstimatedTime(boxEstimatedTime.getSelectionModel().getSelectedIndex());
-        patter.setCreatedBy_User(user.getName());
+        patter.setCreatedBy_User(LoggedInUser);
         patter.setPatternName(newPatternTxt.getText());
-        
+        System.out.println(LoggedInUser);
         
         Read(list);
         ShoreLineBLL bll = new ShoreLineBLL();
