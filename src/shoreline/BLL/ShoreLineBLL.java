@@ -63,6 +63,14 @@ public class ShoreLineBLL {
         return dbal.getExsistingPattern(selectedPattern);
     }
 
+    public void convertLog(User user) {
+       logger.convertLog(user);
+    }
+
+    public void convertWLog(User user) {
+        logger.convertWsave(user);
+    }
+
    
 
 
