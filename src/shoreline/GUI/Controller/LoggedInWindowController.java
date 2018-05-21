@@ -105,7 +105,11 @@ public class LoggedInWindowController implements Initializable {
     @FXML
     private void handleLog (ActionEvent event) throws IOException
     {
+<<<<<<< HEAD
        if(SelectedCompany == 1)
+=======
+       if(SelectedCompany != 1)
+>>>>>>> origin/clean
        {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/SLLogWindow.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
@@ -113,14 +117,21 @@ public class LoggedInWindowController implements Initializable {
         stage.setScene(new Scene(root1));
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
+<<<<<<< HEAD
         System.out.println(SelectedCompany);
+=======
+>>>>>>> origin/clean
        }
        else
        {
         Alert alert = new Alert(Alert.AlertType.NONE,"Feature is only available for ShoreLine users!",ButtonType.OK);
             alert.setTitle("Not a Shoreline User!");
+<<<<<<< HEAD
             alert.showAndWait();
             System.out.println(SelectedCompany);
+=======
+            alert.showAndWait();   
+>>>>>>> origin/clean
        }
     }
 

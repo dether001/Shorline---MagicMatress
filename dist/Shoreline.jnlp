@@ -9,10 +9,14 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <jar href="Shoreline.jar" size="153309" download="eager" />
 =======
     <jar href="Shoreline.jar" size="151265" download="eager" />
 >>>>>>> c2bb468fba6c0d043363ee989fd273a80881d64d
+=======
+    <jar href="Shoreline.jar" size="151190" download="eager" />
+>>>>>>> origin/clean
     <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib\dom4j-1.6.jar" size="313359" download="eager" />
     <jar href="lib\gson-2.2.2.jar" size="189285" download="eager" />

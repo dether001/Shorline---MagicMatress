@@ -9,10 +9,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import shoreline.BE.Pattern;
 import shoreline.BE.User;
+import shoreline.GUI.Controller.AddSPWindowController;
 import shoreline.GUI.Controller.LoginWindowController;
 
 /**
@@ -23,6 +26,7 @@ public class DatabaseAL {
     
     private Connection con;
     private PreparedStatement pst;
+    private ResultSet rs;
 
     public User tryLogIn(User user) {
         
@@ -103,5 +107,38 @@ public class DatabaseAL {
             Logger.getLogger(DatabaseAL.class.getName()).log(Level.SEVERE, null, ex);
         }
         }
+
+    public List<Integer> getExsistingPattern(String selectedPattern) {
+       List<Integer> listOfIDs = new ArrayList<Integer>();
+        try {
+            
+            String sql = "select AssetSerialNum, Type, ExternalWorkOrder, SystemStatus, userStatus, CreatedBy, Name, Priority, Status, LatestFinishDate, EarliestStartDate, LatestStartDate, EstimatedTime FROM Patterns WHERE PatternName = ?;";
+            pst=con.prepareStatement(sql);
+            pst.setString(1, selectedPattern);
+            rs = pst.executeQuery();
+            while(rs.next()) {
+            
+            listOfIDs.add(Integer.valueOf(rs.getString(1)));
+            listOfIDs.add(Integer.valueOf(rs.getString(2)));
+            listOfIDs.add(Integer.valueOf(rs.getString(3)));
+            listOfIDs.add(Integer.valueOf(rs.getString(4)));
+            listOfIDs.add(Integer.valueOf(rs.getString(5)));
+            listOfIDs.add(Integer.valueOf(rs.getString(6)));
+            listOfIDs.add(Integer.valueOf(rs.getString(7)));
+            listOfIDs.add(Integer.valueOf(rs.getString(8)));
+            listOfIDs.add(Integer.valueOf(rs.getString(9)));
+            listOfIDs.add(Integer.valueOf(rs.getString(10)));
+            listOfIDs.add(Integer.valueOf(rs.getString(11)));
+            listOfIDs.add(Integer.valueOf(rs.getString(12)));
+            listOfIDs.add(Integer.valueOf(rs.getString(13)));     
+            
+            
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return listOfIDs;
+    }
     
 }

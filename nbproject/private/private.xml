@@ -4,6 +4,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/GUI/Controller/AddSPWindowController.java</file>
             <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/GUI/Controller/SLLogWindowController.java</file>
             <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/BE/Log.java</file>
@@ -16,6 +17,17 @@
             <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/GUI/Controller/LoginWindowController.java</file>
             <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/Shoreline.java</file>
 >>>>>>> c2bb468fba6c0d043363ee989fd273a80881d64d
+=======
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/GUI/Controller/LoggedInWindowController.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/GUI/Controller/AddSPWindowController.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/BLL/ShoreLineBLL.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/DAL/ExcellAL.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/GUI/Controller/SelectCompanyController.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/GUI/Controller/NewPatternWindowController.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/GUI/Controller/SLLogWindowController.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/DAL/DatabaseAL.java</file>
+            <file>file:/C:/Users/Arman/Desktop/Computer%20Science/Assingments/Shorline---MagicMatress/src/shoreline/GUI/Controller/LoginWindowController.java</file>
+>>>>>>> origin/clean
         </group>
     </open-files>
 </project-private>

@@ -67,7 +67,11 @@ public class AddSPWindowController implements Initializable {
     final ObservableList patterns= FXCollections.observableArrayList();
     @FXML
     private Button saveandConvertBtn;
+<<<<<<< HEAD
     List<Integer> list = new ArrayList<Integer>();
+=======
+    List<Integer> listOfIDs = new ArrayList<Integer>();
+>>>>>>> origin/clean
     private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();
 
     /**
@@ -126,6 +130,7 @@ public class AddSPWindowController implements Initializable {
 
     @FXML
     private void selectionHandler(ActionEvent event) {
+<<<<<<< HEAD
         getPattern();
     }
     
@@ -170,6 +175,25 @@ public class AddSPWindowController implements Initializable {
         Workbook workbook = WorkbookFactory.create(new File(path)); //finds file
         Sheet sheet = workbook.getSheetAt(0);  // gets sheet
         DataFormatter dataFormatter = new DataFormatter();  // formats data
+=======
+        getItemsID();
+    }
+    
+    ShoreLineBLL bll = new ShoreLineBLL();
+    
+    private void getItemsID(){
+    
+        String selectedPattern = patternBox.getSelectionModel().getSelectedItem().toString();
+        listOfIDs = bll.getExistingPattern(selectedPattern);
+    }
+    
+    
+    public List<Integer> getList() {
+        return listOfIDs;
+    }
+    
+    public void Read(List list) throws IOException, InvalidFormatException, Exception{
+>>>>>>> origin/clean
         
         ShoreLineBLL bll = new ShoreLineBLL();
         

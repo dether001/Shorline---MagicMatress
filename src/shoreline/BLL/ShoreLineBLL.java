@@ -58,6 +58,11 @@ public class ShoreLineBLL {
         dbal.newPattern(patter);
     }
 
+    public List<Integer> getExistingPattern(String selectedPattern) {
+     
+        return dbal.getExsistingPattern(selectedPattern);
+    }
+
    
 
 
