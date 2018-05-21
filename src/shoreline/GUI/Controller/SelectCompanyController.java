@@ -67,7 +67,7 @@ public class SelectCompanyController implements Initializable {
     @FXML
     private void ec_login(ActionEvent event) {
         try {
-            user.setSelectedCompany(0);
+            user.setSelectedCompany(2);
             System.out.println(company);
             SelectedCompany = 0;
             Stage stage = (Stage) ECompanyBtn.getScene().getWindow();
