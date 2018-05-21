@@ -72,7 +72,7 @@ public class LoginWindowController implements Initializable {
         user.setName(txt_id.getText());
         user.setPassword(txt_pw.getText());
         user.setId(-1);
-        String loggedinuser = txt_id.getText();
+        
         
         
         user = bll.tryLogIn(user);
@@ -89,7 +89,7 @@ public class LoginWindowController implements Initializable {
             Parent root = (Parent) loader.load();
             
             LoggedInWindowController ctrl = loader.getController();
-            ctrl.setUser(loggedinuser);
+            ctrl.setUser(user);
             Stage stage2 = new Stage(); 
             Stage stage = (Stage) btn_Login.getScene().getWindow();
             stage.close();

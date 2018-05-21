@@ -79,13 +79,6 @@ public class LoggedInWindowController implements Initializable {
         setCellTable();
     }
     
-     public void setMainViewCont(LoginWindowController LogInWin) {
-        this.LogInWin=LogInWin;
-        user = LogInWin.returnUser();
-        
-        
-    }
-    
     
     
     //Event Handlers.
@@ -107,7 +100,8 @@ public class LoggedInWindowController implements Initializable {
             Parent root = (Parent) loader.load();
             
             NewPatternWindowController lwController = loader.getController();
-            lwController.setUser(LoggedInUser);
+            lwController.setUser(user);
+            System.out.println(user.getName());
             Stage stage2 = new Stage();
             stage2.setScene(new Scene(root));
             stage2.show();
@@ -163,15 +157,10 @@ public class LoggedInWindowController implements Initializable {
 
        }
     }
-
-    public User returnUser(){
     
-    return user;
-    }
-    
-    public void setUser (String user)
+    public void setUser (User user)
     {
-        this.LoggedInUser = user;
+        this.user = user;
     }
     public void setCompany (int id)
     {
