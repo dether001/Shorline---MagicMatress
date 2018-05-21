@@ -53,7 +53,6 @@ public class SLLogWindowController implements Initializable {
     private Label dateLbl;
     @FXML
     private Button cancelBtn;
-<<<<<<< HEAD
     @FXML
     private TableView<Log> logTable;
     private PreparedStatement pst;
@@ -62,8 +61,7 @@ public class SLLogWindowController implements Initializable {
     public int companyCID;
     public String companyName;
     private ObservableList<Log> logList;
-=======
->>>>>>> origin/clean
+
 
     /**
      * Initializes the controller class.

@@ -67,11 +67,9 @@ public class AddSPWindowController implements Initializable {
     final ObservableList patterns= FXCollections.observableArrayList();
     @FXML
     private Button saveandConvertBtn;
-<<<<<<< HEAD
-    List<Integer> list = new ArrayList<Integer>();
-=======
+
     List<Integer> listOfIDs = new ArrayList<Integer>();
->>>>>>> origin/clean
+
     private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();
 
     /**
@@ -130,52 +128,7 @@ public class AddSPWindowController implements Initializable {
 
     @FXML
     private void selectionHandler(ActionEvent event) {
-<<<<<<< HEAD
-        getPattern();
-    }
-    
-    private void getPattern () {
-        try {
-            String selectedPattern = patternBox.getSelectionModel().getSelectedItem().toString();
-            String sql = "select AssetSerialNum, Type, ExternalWorkOrder, SystemStatus, userStatus, CreatedBy, Name, Priority, Status, LatestFinishDate, EarliestStartDate, LatestStartDate, EstimatedTime FROM Patterns WHERE PatternName = ?;";
-            pst=con.prepareStatement(sql);
-            pst.setString(1, selectedPattern);
-            rs = pst.executeQuery();
-            while(rs.next()) {
-            
-            list.add(Integer.valueOf(rs.getString(1)));
-            list.add(Integer.valueOf(rs.getString(2)));
-            list.add(Integer.valueOf(rs.getString(3)));
-            list.add(Integer.valueOf(rs.getString(4)));
-            list.add(Integer.valueOf(rs.getString(5)));
-            list.add(Integer.valueOf(rs.getString(6)));
-            list.add(Integer.valueOf(rs.getString(7)));
-            list.add(Integer.valueOf(rs.getString(8)));
-            list.add(Integer.valueOf(rs.getString(9)));
-            list.add(Integer.valueOf(rs.getString(10)));
-            list.add(Integer.valueOf(rs.getString(11)));
-            list.add(Integer.valueOf(rs.getString(12)));
-            list.add(Integer.valueOf(rs.getString(13)));     
-            
-            
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    public List<Integer> getList() {
-        return list;
-    }
-    
-        public void Read(List list) throws IOException, InvalidFormatException, Exception{
-        
-        
-        
-        Workbook workbook = WorkbookFactory.create(new File(path)); //finds file
-        Sheet sheet = workbook.getSheetAt(0);  // gets sheet
-        DataFormatter dataFormatter = new DataFormatter();  // formats data
-=======
+
         getItemsID();
     }
     
@@ -193,7 +146,7 @@ public class AddSPWindowController implements Initializable {
     }
     
     public void Read(List list) throws IOException, InvalidFormatException, Exception{
->>>>>>> origin/clean
+
         
         ShoreLineBLL bll = new ShoreLineBLL();
         
