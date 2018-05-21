@@ -51,7 +51,7 @@ public class Logger {
     }
     
     
-        public void convert (User user) {
+        public void convertLog (User user) {
         try {
             con = dba.DBConnection.Shoreline();
             pst = con.prepareStatement("insert into actionlog VALUES (?, 'converted on the spot', CURRENT_TIMESTAMP, ? )");

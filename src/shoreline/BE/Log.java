@@ -26,38 +26,23 @@ public class Log {
         return user_name;
     }
 
-    /**
-     * @param name the name to set
-     */
     public void setUser_name(String user_name) {
         this.user_name = user_name;
     }
 
 
-    /**
-     * @return the rating
-     */
     public String getAction() {
         return action;
     }
 
-    /**
-     * @param rating the rating to set
-     */
     public void setAction(String action) {
         this.action = action;
     }
 
-    /**
-     * @return the prating
-     */
     public String getDate() {
         return date;
     }
 
-    /**
-     * @param prating the prating to set
-     */
     public void setDate(String date) {
         this.date = date;
     }

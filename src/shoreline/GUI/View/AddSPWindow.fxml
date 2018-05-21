@@ -12,6 +12,6 @@
       <ComboBox fx:id="patternBox" layoutX="225.0" layoutY="140.0" onAction="#selectionHandler" prefWidth="150.0" promptText="Choose Pattern" />
       <Button fx:id="convertBtn" layoutX="249.0" layoutY="250.0" mnemonicParsing="false" onAction="#fuckingConvertpls" styleClass="Buttons_Small" text="Convert" />
       <Button fx:id="cancelBtn" layoutX="491.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="Buttons_Small" text="Cancel" />
-      <Button fx:id="saveandConvertBtn" layoutX="216.0" layoutY="200.0" mnemonicParsing="false" styleClass="Buttons_Small" text="Save and Convert" />
+      <Button fx:id="saveandConvertBtn" layoutX="216.0" layoutY="200.0" mnemonicParsing="false" onAction="#convertWSave" styleClass="Buttons_Small" text="Save and Convert" />
    </children>
 </AnchorPane>

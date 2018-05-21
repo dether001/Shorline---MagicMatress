@@ -61,6 +61,8 @@ public class AddSPWindowController implements Initializable {
     private ComboBox<?> patternBox;
     @FXML
     private Button convertBtn;
+    public String sPath;
+    public String sPattern;
     private Connection con;
     private PreparedStatement pst;
     private ResultSet rs;
@@ -186,5 +188,24 @@ public class AddSPWindowController implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void convertWSave(ActionEvent event) {
+            sPath = PathField.getText();
+            sPattern = patternBox.getSelectionModel().getSelectedItem().toString();
+        try {
+            pst = con.prepareStatement("INSERT INTO tasks VALUES('admin', ?, ?)");
+            pst.setString(1, sPattern);
+            pst.setString(2, sPath);
+            pst.executeUpdate();
+            //Read(getList());
+        } catch (SQLException ex) {
+            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }/* catch (InvalidFormatException ex) {
+            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
     }
 }

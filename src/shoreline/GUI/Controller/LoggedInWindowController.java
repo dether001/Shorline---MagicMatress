@@ -7,10 +7,15 @@ package shoreline.GUI.Controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,8 +27,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import shoreline.BE.Tasks;
 import shoreline.BE.User;
 
 /**
@@ -51,10 +60,23 @@ public class LoggedInWindowController implements Initializable {
     
     User user;
     LoginWindowController LogInWin;
+    @FXML
+    private TableView<Tasks> taskTable;
+    @FXML
+    private TableColumn<?, ?> patternClm;
+    private PreparedStatement pst;
+    private ResultSet rs;
+    private Connection con;
+    private ObservableList<Tasks> taskList;
+    @FXML
+    private TableColumn<?, ?> pathClm;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        con = dba.DBConnection.Shoreline();
+        taskList = FXCollections.observableArrayList();
+        loadDataFromDB();
+        setCellTable();
     }
     
      public void setMainViewCont(LoginWindowController LogInWin) {
@@ -100,6 +122,24 @@ public class LoggedInWindowController implements Initializable {
         stage.setScene(new Scene(root1));
         stage.setTitle("ShoreLine - Data Converter");
         stage.show();
+    }
+    
+    private void loadDataFromDB() {
+        try {
+            pst = con.prepareStatement("Select usedPattern, path FROM tasks");
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                taskList.add(new Tasks(rs.getString(1), rs.getString(2)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        taskTable.setItems(taskList);
+    }
+    
+    private void setCellTable() {
+        patternClm.setCellValueFactory(new PropertyValueFactory<>("usedPattern"));
+        pathClm.setCellValueFactory(new PropertyValueFactory<>("path"));
     }
     
     @FXML
