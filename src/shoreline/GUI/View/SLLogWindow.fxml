@@ -7,9 +7,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="400.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.GUI.Controller.SLLogWindowController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="400.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.GUI.Controller.SLLogWindowController">
    <children>
-      <TableView layoutX="200.0" layoutY="103.0" prefHeight="246.0" prefWidth="400.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="103.0">
+      <TableView fx:id="logTable" layoutX="200.0" layoutY="103.0" prefHeight="246.0" prefWidth="400.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="103.0">
         <columns>
           <TableColumn fx:id="userClm" prefWidth="122.0" text="User-Name" />
           <TableColumn fx:id="actionClm" prefWidth="130.0" text="Action" />
@@ -17,7 +17,7 @@
         </columns>
       </TableView>
       <Label layoutX="16.0" layoutY="15.0" styleClass="Labels_small" text="Logged-in as:" />
-      <ComboBox fx:id="companyCombo" layoutX="125.0" layoutY="49.0" prefWidth="150.0" promptText="Choose Company" />
+      <ComboBox fx:id="companyCombo" layoutX="125.0" layoutY="49.0" onAction="#selectCID" prefWidth="150.0" promptText="Choose Company" />
       <Label fx:id="loggedInlbl" layoutX="114.0" layoutY="16.0" prefHeight="17.0" prefWidth="24.0" />
       <Label layoutX="14.0" layoutY="31.0" styleClass="Labels_small" text="Current Date:" />
       <Label fx:id="dateLbl" layoutX="117.0" layoutY="31.0" prefHeight="17.0" prefWidth="17.0" />
