@@ -268,7 +268,7 @@ public class NewPatternWindowController implements Initializable {
         
         bll.savePatter(patter);
     }
-    public void CreateList() throws Exception
+    public List<Integer> createList() throws Exception
     {
         List<Integer> list = new ArrayList<Integer>();
         list.add(boxAssestSerialNum.getSelectionModel().getSelectedIndex());
@@ -284,7 +284,7 @@ public class NewPatternWindowController implements Initializable {
         list.add(boxEarliestStartDate.getSelectionModel().getSelectedIndex());
         list.add(boxLatestStartDate.getSelectionModel().getSelectedIndex());
         list.add(boxEstimatedTime.getSelectionModel().getSelectedIndex());
-        Read(list);
+        return list;
     }
 
     public void startTask(String string)
@@ -333,13 +333,15 @@ public class NewPatternWindowController implements Initializable {
     public void saveTask() throws Exception
     {
         createPatternandSave();
-        CreateList();
+        createList();
+        Read(createList());
         System.out.println("Inside Runtask SaveConvert - Success");
     }
     
     public void convertTask() throws Exception
     {
-        CreateList();
+        createList();
+        Read(createList());
         System.out.println("Inside Runtask Convert - Success");
     }
     
