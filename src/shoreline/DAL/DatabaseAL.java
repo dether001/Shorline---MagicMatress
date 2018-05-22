@@ -111,7 +111,7 @@ public class DatabaseAL {
     public List<Integer> getExsistingPattern(String selectedPattern) {
        List<Integer> listOfIDs = new ArrayList<Integer>();
         try {
-            
+            con = dba.DBConnection.Shoreline();
             String sql = "select AssetSerialNum, Type, ExternalWorkOrder, SystemStatus, userStatus, CreatedBy, Name, Priority, Status, LatestFinishDate, EarliestStartDate, LatestStartDate, EstimatedTime FROM Patterns WHERE PatternName = ?;";
             pst=con.prepareStatement(sql);
             pst.setString(1, selectedPattern);

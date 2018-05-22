@@ -23,5 +23,6 @@
       <Label fx:id="loggedInlbl" layoutX="480.0" layoutY="17.0" styleClass="Labels_small" text="asd" textAlignment="RIGHT" />
       <Label fx:id="dateLbl" layoutX="480.0" layoutY="35.0" styleClass="Labels_small" text="asd" textAlignment="RIGHT" />
       <Button fx:id="NewPatternBtn" layoutX="359.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleNewPattern" styleClass="Buttons_Small" text="Convert with new Pattern" />
+      <Button fx:id="taskRepeate" layoutX="281.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleTaskRepeate" text="WIP" />
    </children>
 </AnchorPane>
