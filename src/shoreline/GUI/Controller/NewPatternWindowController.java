@@ -259,14 +259,7 @@ public class NewPatternWindowController implements Initializable {
         patter.setEstimatedTime(boxEstimatedTime.getSelectionModel().getSelectedIndex());
         patter.setCreatedBy_User(user.getName());
         patter.setPatternName(newPatternTxt.getText());
-        
-<<<<<<< HEAD
-=======
-        
-        Read(list);
-        ShoreLineBLL bll = new ShoreLineBLL();
         bll.convertWLog(user);
->>>>>>> origin/login
         bll.savePatter(patter);
     }
     public List<Integer> createList() throws Exception
