@@ -14,6 +14,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,6 +38,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import shoreline.BE.JSonObject;
 import shoreline.BE.Pattern;
 import shoreline.BE.User;
+import shoreline.BE.Log;
 import shoreline.BLL.ShoreLineBLL;
 import shoreline.GUI.Controller.LoginWindowController;
 
@@ -92,8 +95,11 @@ public class NewPatternWindowController implements Initializable {
     private Button btnSaveConvert;
     
     User user;
+    Log log;
     LoginWindowController LWC;
     LoggedInWindowController lgc;
+    ShoreLineBLL bll = new ShoreLineBLL();
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -138,31 +144,25 @@ public class NewPatternWindowController implements Initializable {
     }
 
     @FXML
-    private void buttonConvertAction(ActionEvent event) throws InvalidFormatException, Exception {
-        
-        List<Integer> list = new ArrayList<Integer>();
-        list.add(boxAssestSerialNum.getSelectionModel().getSelectedIndex());
-        list.add(boxType.getSelectionModel().getSelectedIndex());
-        list.add(boxExternalWorkOrder.getSelectionModel().getSelectedIndex());
-        list.add(BoxSystemStatus.getSelectionModel().getSelectedIndex());
-        list.add(boxUserStatus.getSelectionModel().getSelectedIndex());
-        list.add(boxCreatedBy.getSelectionModel().getSelectedIndex());
-        list.add(boxName.getSelectionModel().getSelectedIndex());
-        list.add(boxPriority.getSelectionModel().getSelectedIndex());
-        list.add(boxStatus.getSelectionModel().getSelectedIndex());
-        list.add(boxLastestFinishDate.getSelectionModel().getSelectedIndex());
-        list.add(boxEarliestStartDate.getSelectionModel().getSelectedIndex());
-        list.add(boxLatestStartDate.getSelectionModel().getSelectedIndex());
-        list.add(boxEstimatedTime.getSelectionModel().getSelectedIndex());
-        
-        Read(list);
-        
+    private void buttonConvertAction(ActionEvent event) throws InvalidFormatException, Exception 
+    {
+        String string = new String();
+        string = "convert";
+        startTask(string);
     }
     
+    @FXML
+    private void buttonActionSaveConvert(ActionEvent event) throws InvalidFormatException, Exception 
+    {
+        String string = new String();
+        string = "save";
+        startTask(string);
+        bll.convertWLog(user);
+    }
     
     private void makeComboBox(String path) throws Exception{
         clearComboBox();
-        ShoreLineBLL bll = new ShoreLineBLL();
+
         ObservableList<String>rowList=FXCollections.observableArrayList(); 
         rowList.addAll(bll.makeComboboxes(path));
         
@@ -235,9 +235,6 @@ public class NewPatternWindowController implements Initializable {
                file.flush();
 
 
-                System.out.println( json);
-                //System.out.println(outPath);
-
                 listOfJasons.add(json);
                 
             } 
@@ -248,49 +245,104 @@ public class NewPatternWindowController implements Initializable {
     {
         this.user = user;
     }
-    @FXML
-    private void buttonActionSaveConvert(ActionEvent event) throws InvalidFormatException, Exception {
-        
-         List<Integer> list = new ArrayList<Integer>();
-         Pattern patter = new Pattern();
-        list.add(boxAssestSerialNum.getSelectionModel().getSelectedIndex());
+
+    public void createPatternandSave()
+    {
+        Pattern patter = new Pattern();
         patter.setAssestSeriliaNum(boxAssestSerialNum.getSelectionModel().getSelectedIndex());
-        list.add(boxType.getSelectionModel().getSelectedIndex());
         patter.setType((boxType.getSelectionModel().getSelectedIndex()));
-        list.add(boxExternalWorkOrder.getSelectionModel().getSelectedIndex());
         patter.setExternalWorkOrder(boxExternalWorkOrder.getSelectionModel().getSelectedIndex());
-        list.add(BoxSystemStatus.getSelectionModel().getSelectedIndex());
         patter.setStatus(BoxSystemStatus.getSelectionModel().getSelectedIndex());
-        list.add(boxUserStatus.getSelectionModel().getSelectedIndex());
         patter.setUserStatus(boxUserStatus.getSelectionModel().getSelectedIndex());
-        list.add(boxCreatedBy.getSelectionModel().getSelectedIndex());
         patter.setCreatedBy(boxCreatedBy.getSelectionModel().getSelectedIndex());
-        list.add(boxName.getSelectionModel().getSelectedIndex());
         patter.setName(boxName.getSelectionModel().getSelectedIndex());
-        list.add(boxPriority.getSelectionModel().getSelectedIndex());
         patter.setPriority(boxPriority.getSelectionModel().getSelectedIndex());
-        list.add(boxStatus.getSelectionModel().getSelectedIndex());
         patter.setStatus(boxStatus.getSelectionModel().getSelectedIndex());
-        list.add(boxLastestFinishDate.getSelectionModel().getSelectedIndex());
         patter.setLatestFinishDate(boxLastestFinishDate.getSelectionModel().getSelectedIndex());
-        list.add(boxEarliestStartDate.getSelectionModel().getSelectedIndex());
+        patter.setLatestFinishDate(boxLastestFinishDate.getSelectionModel().getSelectedIndex());
         patter.setEarliestStartDate(boxEarliestStartDate.getSelectionModel().getSelectedIndex());
-        list.add(boxLatestStartDate.getSelectionModel().getSelectedIndex());
         patter.setLatestStartDate(boxLatestStartDate.getSelectionModel().getSelectedIndex());
-        list.add(boxEstimatedTime.getSelectionModel().getSelectedIndex());
         patter.setEstimatedTime(boxEstimatedTime.getSelectionModel().getSelectedIndex());
         patter.setCreatedBy_User(user.getName());
         patter.setPatternName(newPatternTxt.getText());
         
-        
-        Read(list);
-        ShoreLineBLL bll = new ShoreLineBLL();
-        
         bll.savePatter(patter);
-        
+    }
+    public void CreateList() throws Exception
+    {
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(boxAssestSerialNum.getSelectionModel().getSelectedIndex());
+        list.add(boxType.getSelectionModel().getSelectedIndex());
+        list.add(boxExternalWorkOrder.getSelectionModel().getSelectedIndex());
+        list.add(BoxSystemStatus.getSelectionModel().getSelectedIndex());
+        list.add(boxUserStatus.getSelectionModel().getSelectedIndex());
+        list.add(boxCreatedBy.getSelectionModel().getSelectedIndex());
+        list.add(boxName.getSelectionModel().getSelectedIndex());
+        list.add(boxPriority.getSelectionModel().getSelectedIndex());
+        list.add(boxStatus.getSelectionModel().getSelectedIndex());
+        list.add(boxLastestFinishDate.getSelectionModel().getSelectedIndex());
+        list.add(boxEarliestStartDate.getSelectionModel().getSelectedIndex());
+        list.add(boxLatestStartDate.getSelectionModel().getSelectedIndex());
+        list.add(boxEstimatedTime.getSelectionModel().getSelectedIndex());
+        Read(list);
     }
 
-
+    public void startTask(String string)
+    { if(string == "save")
+    {
+        Runnable task = new Runnable()
+        {
+            @Override
+            public void run() 
+            {
+                try {
+                    saveTask();
+                } catch (Exception ex) {
+                    Logger.getLogger(NewPatternWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+        };
+        Thread ConvThread = new Thread(task);
+        ConvThread.setDaemon(true);
+        ConvThread.start();
+    }
+      if(string=="convert")
+      {
+          Runnable task = new Runnable()
+        {
+            @Override
+            public void run() 
+            {
+                try {
+                    convertTask();
+                } catch (Exception ex) {
+                    Logger.getLogger(NewPatternWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+        };
+        Thread ConvThread = new Thread(task);
+        ConvThread.setDaemon(true);
+        ConvThread.start();
+      }
+        
+    
+    }
+    
+    public void saveTask() throws Exception
+    {
+        createPatternandSave();
+        CreateList();
+        System.out.println("Inside Runtask SaveConvert - Success");
+    }
+    
+    public void convertTask() throws Exception
+    {
+        CreateList();
+        System.out.println("Inside Runtask Convert - Success");
+    }
+    
     
     
     
