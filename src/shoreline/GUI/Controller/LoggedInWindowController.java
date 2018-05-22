@@ -11,6 +11,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -161,6 +164,10 @@ public class LoggedInWindowController implements Initializable {
     public void setUser (User user)
     {
         this.user = user;
+        loggedInlbl.setText(user.getName());
+                  DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+                    Date date = new Date();
+                    dateLbl.setText(dateFormat.format(date)+"");
     }
     public void setCompany (int id)
     {
