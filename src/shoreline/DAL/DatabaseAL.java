@@ -27,6 +27,7 @@ public class DatabaseAL {
     private Connection con;
     private PreparedStatement pst;
     private ResultSet rs;
+    private User user;
 
     public User tryLogIn(User user) {
         
@@ -36,8 +37,6 @@ public class DatabaseAL {
         else if (user.getSelectedCompany() == 2) {
             con = dba.DBConnection.ECompany();
         }
-        
-        
         return getID(user);
         
         
@@ -47,11 +46,12 @@ public class DatabaseAL {
             
         try {
             PreparedStatement pst = con.prepareStatement("Select password from users where login = ?");
-            pst.setString(1,user.getPassword());
+            pst.setString(1,user.getName());
             ResultSet rs = pst.executeQuery();
             if(rs.next()) {
-            
-            user.setId(1);
+                String pass = rs.getString(1);
+            if(user.getPassword().equalsIgnoreCase(pass)){
+            user.setId(1);}
             rs.close();
             }
             
@@ -65,21 +65,23 @@ public class DatabaseAL {
     }
     
     private User getID(User user){
-            
+            User newuser = new User();
         try {
+            
             PreparedStatement pst = con.prepareStatement("Select login from users where login = ?");
             pst.setString(1,user.getName());
             ResultSet rs = pst.executeQuery();
             if(rs.next()) {
-            user = getPW(user);
+            newuser = getPW(user);
             rs.close();
+                System.out.println("getID method " + user.getName());
             }
                     
         } catch (SQLException ex) {
             Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
        
-        return user;
+        return newuser;
     }
     
         public void newPattern (Pattern pattern) {
@@ -114,7 +116,10 @@ public class DatabaseAL {
             con = dba.DBConnection.Shoreline();
             String sql = "select AssetSerialNum, Type, ExternalWorkOrder, SystemStatus, userStatus, CreatedBy, Name, Priority, Status, LatestFinishDate, EarliestStartDate, LatestStartDate, EstimatedTime FROM Patterns WHERE PatternName = ?;";
             pst=con.prepareStatement(sql);
+            System.out.println("selected pattern is her " + selectedPattern);
             pst.setString(1, selectedPattern);
+            
+            System.out.println("selected pattern is not here " + selectedPattern);
             rs = pst.executeQuery();
             while(rs.next()) {
             

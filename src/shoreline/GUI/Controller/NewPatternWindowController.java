@@ -203,12 +203,6 @@ public class NewPatternWindowController implements Initializable {
     //It will skip collumns not contained in the list regarding index number.
     public void Read(List list) throws IOException, InvalidFormatException, Exception{
         
-        
-        
-        Workbook workbook = WorkbookFactory.create(new File(path)); //finds file
-        Sheet sheet = workbook.getSheetAt(0);  // gets sheet
-        DataFormatter dataFormatter = new DataFormatter();  // formats data
-        
         ShoreLineBLL bll = new ShoreLineBLL();
         
         listData = bll.read(list, path);
@@ -266,6 +260,13 @@ public class NewPatternWindowController implements Initializable {
         patter.setCreatedBy_User(user.getName());
         patter.setPatternName(newPatternTxt.getText());
         
+<<<<<<< HEAD
+=======
+        
+        Read(list);
+        ShoreLineBLL bll = new ShoreLineBLL();
+        bll.convertWLog(user);
+>>>>>>> origin/login
         bll.savePatter(patter);
     }
     public List<Integer> createList() throws Exception

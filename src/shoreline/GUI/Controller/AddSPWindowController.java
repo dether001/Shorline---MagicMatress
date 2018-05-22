@@ -58,7 +58,7 @@ public class AddSPWindowController implements Initializable {
     @FXML
     private Button cancelBtn;
     @FXML
-    private ComboBox<?> patternBox;
+    private ComboBox<String> patternBox;
     @FXML
     private Button convertBtn;
     public String sPath;
@@ -138,7 +138,8 @@ public class AddSPWindowController implements Initializable {
     
     private void getItemsID(){
     
-        String selectedPattern = patternBox.getSelectionModel().getSelectedItem().toString();
+        String selectedPattern = patternBox.getSelectionModel().getSelectedItem();
+        System.out.println(selectedPattern);
         listOfIDs = bll.getExistingPattern(selectedPattern);
     }
     
@@ -170,7 +171,7 @@ public class AddSPWindowController implements Initializable {
              
                
                     
-                
+                System.out.println(json);
                file.write(json);
                file.flush();
                
@@ -193,19 +194,19 @@ public class AddSPWindowController implements Initializable {
     @FXML
     private void convertWSave(ActionEvent event) {
             sPath = PathField.getText();
-            sPattern = patternBox.getSelectionModel().getSelectedItem().toString();
+            sPattern = patternBox.getSelectionModel().getSelectedItem();
         try {
             pst = con.prepareStatement("INSERT INTO tasks VALUES('admin', ?, ?)");
             pst.setString(1, sPattern);
             pst.setString(2, sPath);
             pst.executeUpdate();
-            //Read(getList());
+            Read(listOfIDs);
         } catch (SQLException ex) {
             Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }/* catch (InvalidFormatException ex) {
+        }catch (InvalidFormatException ex) {
             Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
             Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+        }
     }
 }
