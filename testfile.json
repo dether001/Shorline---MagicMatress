@@ -1,1 +1,834 @@
-{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
+{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "0,0",
+  "userStatus": "DB0388-029",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT29 (3601210)",
+  "priority": "12345678",
+  "status": "0,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "10/10/16",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0388-056",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT56 (3601237)",
+  "priority": "12345679",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "CRTD",
+    "earliestStartDate": "6/14/18",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0388-035",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT35 (3601216)",
+  "priority": "12345680",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "CRTD",
+    "earliestStartDate": "6/14/18",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-018",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB18 (4000349)",
+  "priority": "12345681",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "7/3/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-062",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB64 (4000393)",
+  "priority": "12345682",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "PCNF REL",
+    "earliestStartDate": "7/7/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-072",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB80 (4000403)",
+  "priority": "12345683",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "7/14/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-069",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB77 (4000400)",
+  "priority": "12345684",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "7/14/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-056",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB58 (4000387)",
+  "priority": "12345685",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "7/21/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-054",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB56 (4000385)",
+  "priority": "12345686",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "7/25/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-069",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB77 (4000400)",
+  "priority": "12345687",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "7/31/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0411-043",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB44 (4000374)",
+  "priority": "12345688",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "6/20/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-071",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB79 (4000402)",
+  "priority": "12345689",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "7/14/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-015",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB15 (4000346)",
+  "priority": "12345690",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/15/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "0,5",
+  "userStatus": "DB0411-038",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB39 (4000369)",
+  "priority": "12345691",
+  "status": "0,5",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/24/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "0,0",
+  "userStatus": "DB0388-011",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT11 (3601192)",
+  "priority": "12345692",
+  "status": "0,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/25/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-060",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB62 (4000391)",
+  "priority": "12345693",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "6/28/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-001",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB01 (4000332)",
+  "priority": "12345694",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/29/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-022",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB22 (4000353)",
+  "priority": "12345695",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "6/30/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-059",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB61 (4000390)",
+  "priority": "12345696",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "6/30/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0388-078",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT78 (3601259)",
+  "priority": "12345697",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/19/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0388-078",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT78 (3601259)",
+  "priority": "12345698",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/19/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0388-040",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT40 (3601221)",
+  "priority": "12345699",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/18/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0388-040",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT40 (3601221)",
+  "priority": "12345700",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/18/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0388-040",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT40 (3601221)",
+  "priority": "12345701",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/18/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0388-040",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT40 (3601221)",
+  "priority": "12345702",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/18/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "0,0",
+  "userStatus": "DB0388-007",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT07 (3601188)",
+  "priority": "12345703",
+  "status": "0,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/31/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "0,0",
+  "userStatus": "DB0388-007",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT07 (3601188)",
+  "priority": "12345704",
+  "status": "0,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/31/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-059",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB61 (4000390)",
+  "priority": "12345705",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "7/24/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "1,0",
+  "userStatus": "DB0411-027",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB27 (4000358)",
+  "priority": "12345706",
+  "status": "1,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "7/27/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-029",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB29 (4000360)",
+  "priority": "12345707",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "9/1/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "0,5",
+  "userStatus": "DB0411-061",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB63 (4000392)",
+  "priority": "12345708",
+  "status": "0,5",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "9/1/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "0,5",
+  "userStatus": "DB0411-066",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB68 (4000397)",
+  "priority": "12345709",
+  "status": "0,5",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "9/1/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "1,0",
+  "userStatus": "DB0411-023",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB23 (4000354)",
+  "priority": "12345710",
+  "status": "1,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "9/4/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "0,0",
+  "userStatus": "DB0388-075",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT75 (3601256)",
+  "priority": "12345711",
+  "status": "0,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "9/18/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "1,0",
+  "userStatus": "DB0411-061",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB63 (4000392)",
+  "priority": "12345712",
+  "status": "1,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "9/19/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0388-064",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT64 (3601245)",
+  "priority": "12345713",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/25/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0388-064",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT64 (3601245)",
+  "priority": "12345714",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/25/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0388-064",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT64 (3601245)",
+  "priority": "12345715",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/25/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0388-064",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT64 (3601245)",
+  "priority": "12345716",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/25/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0388-020",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT20 (3601201)",
+  "priority": "12345717",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "9/1/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "3,0",
+  "userStatus": "DB0388-020",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT20 (3601201)",
+  "priority": "12345718",
+  "status": "3,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "9/1/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "0,0",
+  "userStatus": "DB0388-012",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT12 (3601193)",
+  "priority": "12345719",
+  "status": "0,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "9/30/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "0,0",
+  "userStatus": "DB0388-012",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFDT",
+  "name": "WT Dan Tysk ,DT12 (3601193)",
+  "priority": "12345720",
+  "status": "0,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "9/30/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-031",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB32 (4000362)",
+  "priority": "12345721",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "7/17/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "0,5",
+  "userStatus": "DB0411-026",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB26 (4000357)",
+  "priority": "12345722",
+  "status": "0,5",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/25/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "2,0",
+  "userStatus": "DB0411-065",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB67 (4000396)",
+  "priority": "12345723",
+  "status": "2,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "8/25/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "59,0",
+  "userStatus": "DB0411-068",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFSB",
+  "name": "WT Sandbank ,SB76 (4000399)",
+  "priority": "12345724",
+  "status": "59,0",
+  "planning": {
+    "lastestFinishDate": "CRTD",
+    "earliestStartDate": "10/27/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "0,0",
+  "userStatus": "DB0411-068",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_OFFSB",
+  "name": "WT Sandbank ,SB76 (4000399)",
+  "priority": "12345725",
+  "status": "0,0",
+  "planning": {
+    "lastestFinishDate": "CRTD",
+    "earliestStartDate": "10/27/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}{
+  "assetSerialNumber": "DE",
+  "type": "465C",
+  "externalWorkOrderId": "BS01",
+  "systemStatus": "1,0",
+  "userStatus": "DB0411-022",
+  "createdOn": "May 22, 2018 5:00:50 PM",
+  "createdBy": "DE_SANDB",
+  "name": "WT Sandbank ,SB22 (4000353)",
+  "priority": "12345726",
+  "status": "1,0",
+  "planning": {
+    "lastestFinishDate": "REL",
+    "earliestStartDate": "9/6/17",
+    "latestStartDate": "",
+    "estimatedTime": ""
+  }
+}

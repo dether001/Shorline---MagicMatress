@@ -5,12 +5,17 @@
  */
 package shoreline.GUI.Controller;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,8 +37,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import shoreline.BE.JSonObject;
 import shoreline.BE.Tasks;
 import shoreline.BE.User;
+import shoreline.BLL.ShoreLineBLL;
 
 /**
  * FXML Controller class
@@ -67,9 +75,17 @@ public class LoggedInWindowController implements Initializable {
     private PreparedStatement pst;
     private ResultSet rs;
     private Connection con;
+    private String taskPath;
+    private String taskPattern;
     private ObservableList<Tasks> taskList;
     @FXML
     private TableColumn<?, ?> pathClm;
+    @FXML
+    private Button taskRepeate;
+    
+    List<Integer> listOfIDs = new ArrayList<Integer>();
+    private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();    
+    ShoreLineBLL bll = new ShoreLineBLL();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -165,5 +181,58 @@ public class LoggedInWindowController implements Initializable {
     public void setCompany (int id)
     {
         this.SelectedCompany = id;
+    }
+
+    @FXML
+    private void handleTaskRepeate(ActionEvent event) {
+        
+            taskPattern = taskTable.getSelectionModel().getSelectedItem().getUsedPattern();
+            taskPath = taskTable.getSelectionModel().getSelectedItem().getPath();
+            
+        try {
+
+            
+            getItemsID();
+            Read(listOfIDs);
+        } catch (InvalidFormatException ex) {
+            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+        private void getItemsID(){
+    
+        String selectedPattern = taskPattern;
+        listOfIDs = bll.getExistingPattern(selectedPattern);
+    }
+        
+    public void convert() throws IOException{
+        
+     try (FileWriter file = new FileWriter("testfile.json")) {
+            
+            for (JSonObject jSonObject : listData) {
+
+               Gson gson = new GsonBuilder().setPrettyPrinting().create();
+               String json = gson.toJson(jSonObject);
+             
+               
+                    
+                
+               file.write(json);
+               file.flush();
+               
+                
+            } 
+        }
+    }
+        
+    public void Read(List list) throws IOException, InvalidFormatException, Exception{
+
+        
+        ShoreLineBLL bll = new ShoreLineBLL();
+        
+        listData = bll.read(list, taskPath);
+        convert();
     }
 }
