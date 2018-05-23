@@ -158,7 +158,7 @@ public class LoggedInWindowController implements Initializable {
     @FXML
     private void handleLog (ActionEvent event) throws IOException
     {
-       if(SelectedCompany == 1)
+       if(user.getSelectedCompany() == 1)
 
        {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/SLLogWindow.fxml"));
