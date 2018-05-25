@@ -77,6 +77,19 @@ public class Logger {
             java.util.logging.Logger.getLogger(ShoreLineBLL.class.getName()).log(Level.SEVERE, null, ex);
         }
     } 
+        
+        public void errorLog (User user) {
+        try {
+            con = dba.DBConnection.Shoreline();
+            pst = con.prepareStatement("insert into actionlog VALUES (?, 'had an error', CURRENT_TIMESTAMP, ? )");
+
+            pst.setString(1, user.getName());
+            pst.setInt(2, user.getSelectedCompany());
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ShoreLineBLL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    } 
 
    
 }
