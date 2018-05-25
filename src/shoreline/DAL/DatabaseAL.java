@@ -152,6 +152,7 @@ public class DatabaseAL {
     }
 
     public List<Tasks> loadusedPatterns() {
+        con = dba.DBConnection.Shoreline();
         ArrayList<Tasks> taskList = new ArrayList<Tasks>();
         con = dba.DBConnection.Shoreline();
             try {
@@ -168,6 +169,7 @@ public class DatabaseAL {
     }
 
     public List<String> loadExsistingPatterns() {
+         con = dba.DBConnection.Shoreline();
         ArrayList<String> taskList = new ArrayList<String>();
        try {
             String sql = "select PatternName from Patterns";

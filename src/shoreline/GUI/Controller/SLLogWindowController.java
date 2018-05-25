@@ -92,6 +92,7 @@ public class SLLogWindowController implements Initializable {
     }
     
     private void loadDataFromDB() {
+        
         try {
             pst = con.prepareStatement("Select user_name, action, date FROM actionlog WHERE cid = ?");
             pst.setInt(1, companyCID);

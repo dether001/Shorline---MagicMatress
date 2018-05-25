@@ -169,6 +169,7 @@ public class AddSPWindowController implements Initializable {
 
     @FXML
     private void convertWSave(ActionEvent event) {
+         con = dba.DBConnection.Shoreline();
             sPath = PathField.getText();
             sPattern = patternBox.getSelectionModel().getSelectedItem();
         try {
@@ -185,5 +186,9 @@ public class AddSPWindowController implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    void setUser(User user) {
+      this.user = user;
     }
 }

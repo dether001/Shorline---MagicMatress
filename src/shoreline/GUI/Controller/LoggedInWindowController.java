@@ -96,8 +96,7 @@ public class LoggedInWindowController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        taskList = FXCollections.observableArrayList();
-        loadDataFromDB();
+        
         setCellTable();
     }
 
@@ -131,31 +130,34 @@ public class LoggedInWindowController implements Initializable {
     @FXML
     private void handleExistingPattern (ActionEvent event) throws IOException 
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/AddSPWindow.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root1));
-        stage.setTitle("ShoreLine - Data Converter");
-        stage.show();
+        
+        
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/AddSPWindow.fxml"));
+            Parent root = (Parent) loader.load();
+            
+            AddSPWindowController lwController = loader.getController();
+            lwController.setUser(user);
+            System.out.println(user.getName());
+            Stage stage2 = new Stage();
+            stage2.setScene(new Scene(root));
+            stage2.show();
     }
     
-    private void loadDataFromDB() {
-<<<<<<< HEAD
+    public void loadDataFromDB() {
+        con = dba.DBConnection.Shoreline();
+        List<Tasks> taskLists = new ArrayList<Tasks>();
         try {
             pst = con.prepareStatement("Select usedPattern, path FROM tasks WHERE created_by = ?");
-            pst.setString(1, loadName);
+            pst.setString(1, user.getName());
             rs = pst.executeQuery();
             while (rs.next()) {
-                taskList.add(new Tasks(rs.getString(1), rs.getString(2)));
+                taskLists.add(new Tasks(rs.getString(1), rs.getString(2)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
-=======
-        ObservableList<Tasks> taskList = FXCollections.observableArrayList();
-        taskList.addAll(bll.loadusedPatterns());
->>>>>>> 0532e34c69b8d898e8aee1aa8f604286912df5a3
-        taskTable.setItems(taskList);
+        taskTable.getItems().addAll(taskLists);
     }
     
     private void setCellTable() {

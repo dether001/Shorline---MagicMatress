@@ -90,6 +90,7 @@ public class LoginWindowController implements Initializable {
             
             LoggedInWindowController ctrl = loader.getController();
             ctrl.setUser(user);
+            ctrl.loadDataFromDB();
             Stage stage2 = new Stage(); 
             Stage stage = (Stage) btn_Login.getScene().getWindow();
             stage.close();
@@ -127,6 +128,7 @@ public class LoginWindowController implements Initializable {
 
     public void setCID(User user){
         this.user = user;
+        
     }
     
     public User returnUser()
