@@ -73,6 +73,8 @@ public class AddSPWindowController implements Initializable {
     User user;
 
     List<Integer> listOfIDs = new ArrayList<Integer>();
+    Model model = new Model();
+    
 
     private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();
 
@@ -117,17 +119,9 @@ public class AddSPWindowController implements Initializable {
     }
     
     private void loadPatterns() {
-        try {
-            String sql = "select PatternName from Patterns";
-            pst=con.prepareStatement(sql);
-            rs = pst.executeQuery();
-            
-            while(rs.next()) {
-                patterns.add(rs.getString("PatternName"));
-                patternBox.setItems(patterns);
-            }   } catch (SQLException ex) {
-            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
+        patterns.addAll(bll.loadExsistingPatterns());
+        patternBox.setItems(patterns);
     }   
 
     @FXML
@@ -156,30 +150,10 @@ public class AddSPWindowController implements Initializable {
         ShoreLineBLL bll = new ShoreLineBLL();
         
         listData = bll.read(list, path);
-        convert();
+        model.convert(listData);
         
        
         
-    }
-    
-    public void convert() throws IOException{
-        
-     try (FileWriter file = new FileWriter("testfile.json")) {
-            
-            for (JSonObject jSonObject : listData) {
-
-               Gson gson = new GsonBuilder().setPrettyPrinting().create();
-               String json = gson.toJson(jSonObject);
-             
-               
-                    
-                System.out.println(json);
-               file.write(json);
-               file.flush();
-               
-                
-            } 
-        }
     }
 
     @FXML

@@ -16,6 +16,8 @@ import java.util.logging.Logger;
  * @author dell
  */
 public class DBConnection {
+    
+    private static DBConnection instance;
     public static Connection Shoreline() {
         Connection con = null;
         try {

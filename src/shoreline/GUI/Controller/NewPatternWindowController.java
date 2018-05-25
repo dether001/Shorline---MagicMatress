@@ -99,6 +99,7 @@ public class NewPatternWindowController implements Initializable {
     LoginWindowController LWC;
     LoggedInWindowController lgc;
     ShoreLineBLL bll = new ShoreLineBLL();
+    Model model = new Model();
     
     
     @Override
@@ -132,8 +133,8 @@ public class NewPatternWindowController implements Initializable {
         FileChooser.ExtensionFilter xlsFilter = new 
         FileChooser.ExtensionFilter("XLS files (*.xls)", "*.xls");
 
-        fc.getExtensionFilters().add(xlsFilter);
         fc.getExtensionFilters().add(xlsxFilter);
+        fc.getExtensionFilters().add(xlsFilter);
         
         File selectedFile = fc.showOpenDialog(stage);
         path = selectedFile.getAbsolutePath();
@@ -206,34 +207,14 @@ public class NewPatternWindowController implements Initializable {
         ShoreLineBLL bll = new ShoreLineBLL();
         
         listData = bll.read(list, path);
-        convert();
+        
+        model.convert(listData);
         
        
         
     }
      
-    //FileWriter method. Used to create the output JSon file "testfile.json.
-    //TODO create filesaver dialogue for dir choosing UX.
-    public void convert() throws IOException{
-         try (FileWriter file = new FileWriter("testfile.json")) {
-            
-            for (JSonObject jSonObject : listData) {
-
-               Gson gson = new GsonBuilder().setPrettyPrinting().create();
-               String json = gson.toJson(jSonObject);
-             
-               
-                    
-                
-               file.write(json);
-               file.flush();
-
-
-                listOfJasons.add(json);
-                
-            } 
-        }
-    }
+    
 
     public void setUser (User user)
     {

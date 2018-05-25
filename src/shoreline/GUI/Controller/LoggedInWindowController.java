@@ -88,13 +88,14 @@ public class LoggedInWindowController implements Initializable {
     private Button taskRepeate;
     public String loadName;
     
+    Model model = new Model();
+    
     List<Integer> listOfIDs = new ArrayList<Integer>();
     private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();    
     ShoreLineBLL bll = new ShoreLineBLL();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        con = dba.DBConnection.Shoreline();
         taskList = FXCollections.observableArrayList();
         loadDataFromDB();
         setCellTable();
@@ -139,6 +140,7 @@ public class LoggedInWindowController implements Initializable {
     }
     
     private void loadDataFromDB() {
+<<<<<<< HEAD
         try {
             pst = con.prepareStatement("Select usedPattern, path FROM tasks WHERE created_by = ?");
             pst.setString(1, loadName);
@@ -149,6 +151,10 @@ public class LoggedInWindowController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
+=======
+        ObservableList<Tasks> taskList = FXCollections.observableArrayList();
+        taskList.addAll(bll.loadusedPatterns());
+>>>>>>> 0532e34c69b8d898e8aee1aa8f604286912df5a3
         taskTable.setItems(taskList);
     }
     
@@ -160,7 +166,7 @@ public class LoggedInWindowController implements Initializable {
     @FXML
     private void handleLog (ActionEvent event) throws IOException
     {
-       if(SelectedCompany == 1)
+       if(user.getSelectedCompany() == 1)
 
        {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/SLLogWindow.fxml"));
@@ -219,33 +225,13 @@ public class LoggedInWindowController implements Initializable {
         listOfIDs = bll.getExistingPattern(selectedPattern);
     }
         
-    public void convert() throws IOException{
-        
-     try (FileWriter file = new FileWriter("testfile.json")) {
-            
-            for (JSonObject jSonObject : listData) {
-
-               Gson gson = new GsonBuilder().setPrettyPrinting().create();
-               String json = gson.toJson(jSonObject);
-             
-               
-                    
-                
-               file.write(json);
-               file.flush();
-               
-                
-            } 
-        }
-    }
-        
     public void Read(List list) throws IOException, InvalidFormatException, Exception{
 
         
         ShoreLineBLL bll = new ShoreLineBLL();
         
         listData = bll.read(list, taskPath);
-        convert();
+        model.convert(listData);
     }
 
 }
