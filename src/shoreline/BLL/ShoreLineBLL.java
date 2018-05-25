@@ -12,6 +12,7 @@ import javafx.collections.ObservableList;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import shoreline.BE.JSonObject;
 import shoreline.BE.Pattern;
+import shoreline.BE.Tasks;
 import shoreline.BE.User;
 import shoreline.DAL.DatabaseAL;
 import shoreline.DAL.ExcellAL;
@@ -69,6 +70,14 @@ public class ShoreLineBLL {
 
     public void convertWLog(User user) {
         logger.convertWsave(user);
+    }
+
+    public List<Tasks> loadusedPatterns() {
+        return dbal.loadusedPatterns();
+    }
+
+    public List<String> loadExsistingPatterns() {
+       return dbal.loadExsistingPatterns();
     }
 
    

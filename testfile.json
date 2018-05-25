@@ -1,834 +1,541 @@
-{
-  "assetSerialNumber": "WT Dan Tysk ,DT29 (3601210)",
-  "type": "12345678",
-  "externalWorkOrderId": "12345678",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RECV ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "A9B10196358 Retrofit non-phys Fix earth",
-  "priority": "",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "10/10/16",
-    "earliestStartDate": "10/10/16",
-    "latestStartDate": "10/10/16",
-    "estimatedTime": "0.000"
+[
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
+  },
+  {
+    "assetSerialNumber": "BS01",
+    "type": "465C",
+    "createdOn": "May 25, 2018 3:26:07 PM",
+    "planning": {
+      "lastestFinishDate": "DE",
+      "earliestStartDate": "DE",
+      "latestStartDate": "465C",
+      "estimatedTime": "DE"
+    }
   }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT56 (3601237)",
-  "type": "12345679",
-  "externalWorkOrderId": "12345679",
-  "systemStatus": "CRTD MANC NMAT NTUP PRC",
-  "userStatus": "ZBNQ",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "DT56: UPS battery exchange",
-  "priority": "",
-  "status": "CRTD MANC NMAT NTUP PRC",
-  "planning": {
-    "lastestFinishDate": "6/13/17",
-    "earliestStartDate": "6/14/17",
-    "latestStartDate": "6/13/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT35 (3601216)",
-  "type": "12345680",
-  "externalWorkOrderId": "12345680",
-  "systemStatus": "CRTD MANC NMAT NTUP PRC",
-  "userStatus": "ZBNQ",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "DT35: UPS battery exchange",
-  "priority": "",
-  "status": "CRTD MANC NMAT NTUP PRC",
-  "planning": {
-    "lastestFinishDate": "6/13/17",
-    "earliestStartDate": "6/14/17",
-    "latestStartDate": "6/13/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB18 (4000349)",
-  "type": "12345681",
-  "externalWorkOrderId": "12345681",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "exchange rubber bellows",
-  "priority": "",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "7/3/17",
-    "earliestStartDate": "7/3/17",
-    "latestStartDate": "7/3/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB64 (4000393)",
-  "type": "12345682",
-  "externalWorkOrderId": "12345682",
-  "systemStatus": "REL  PCNF CCOK NMAT PRC  RESA SETC",
-  "userStatus": "ZBNQ CLAR PERF ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "SB64 TS Outlet socket in tower",
-  "priority": "",
-  "status": "REL  PCNF CCOK NMAT PRC  RESA SETC",
-  "planning": {
-    "lastestFinishDate": "7/7/17",
-    "earliestStartDate": "7/7/17",
-    "latestStartDate": "7/7/17",
-    "estimatedTime": "2.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB80 (4000403)",
-  "type": "12345683",
-  "externalWorkOrderId": "12345683",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "Exchange Rubber Bellow",
-  "priority": "",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "7/15/17",
-    "earliestStartDate": "7/14/17",
-    "latestStartDate": "7/14/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB77 (4000400)",
-  "type": "12345684",
-  "externalWorkOrderId": "12345684",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "Exchange Rubber Bellow",
-  "priority": "",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "7/15/17",
-    "earliestStartDate": "7/14/17",
-    "latestStartDate": "7/14/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB58 (4000387)",
-  "type": "12345685",
-  "externalWorkOrderId": "12345685",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "Water Ingress Tower Ligth",
-  "priority": "2",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "7/21/17",
-    "earliestStartDate": "7/21/17",
-    "latestStartDate": "7/21/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB56 (4000385)",
-  "type": "12345686",
-  "externalWorkOrderId": "12345686",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ CLAR PERF",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "SB56: broke plugs on Hiab Crane",
-  "priority": "",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "7/25/17",
-    "earliestStartDate": "7/25/17",
-    "latestStartDate": "7/25/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB77 (4000400)",
-  "type": "12345687",
-  "externalWorkOrderId": "12345687",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "exchange rubber bellows",
-  "priority": "",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "7/31/17",
-    "earliestStartDate": "7/31/17",
-    "latestStartDate": "7/31/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB44 (4000374)",
-  "type": "12345688",
-  "externalWorkOrderId": "12345688",
-  "systemStatus": "REL  CCOK MSPT PRC  SETC",
-  "userStatus": "ZBNQ CLAR PERF ZBA1 ZBPO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "Boom Extension on Hiab Crane",
-  "priority": "2",
-  "status": "REL  CCOK MSPT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "8/7/17",
-    "earliestStartDate": "6/20/17",
-    "latestStartDate": "6/20/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB79 (4000402)",
-  "type": "12345689",
-  "externalWorkOrderId": "12345689",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "Exchange Rubber Bellow",
-  "priority": "",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "8/15/17",
-    "earliestStartDate": "7/14/17",
-    "latestStartDate": "7/14/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB15 (4000346)",
-  "type": "12345690",
-  "externalWorkOrderId": "12345690",
-  "systemStatus": "REL  CCOK GMPS NMAT PRC  RESA SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "10000 : No connection",
-  "priority": "",
-  "status": "REL  CCOK GMPS NMAT PRC  RESA SETC",
-  "planning": {
-    "lastestFinishDate": "8/15/17",
-    "earliestStartDate": "8/15/17",
-    "latestStartDate": "8/15/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB39 (4000369)",
-  "type": "12345691",
-  "externalWorkOrderId": "12345691",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "SB39 Remote stop - Owner",
-  "priority": "",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "8/24/17",
-    "earliestStartDate": "8/24/17",
-    "latestStartDate": "8/24/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT11 (3601192)",
-  "type": "12345692",
-  "externalWorkOrderId": "12345692",
-  "systemStatus": "REL  CCOK MACM PRC  SETC",
-  "userStatus": "ZBNQ PERF RECV RFCO ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "A9B10191123 - Retrofit, yaw software 201",
-  "priority": "",
-  "status": "REL  CCOK MACM PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "8/25/17",
-    "earliestStartDate": "8/25/17",
-    "latestStartDate": "8/25/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB62 (4000391)",
-  "type": "12345693",
-  "externalWorkOrderId": "12345693",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "exchange rubber bellows",
-  "priority": "1",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "8/28/17",
-    "earliestStartDate": "6/28/17",
-    "latestStartDate": "6/28/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB01 (4000332)",
-  "type": "12345694",
-  "externalWorkOrderId": "12345694",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "HIAB Crane: Troubleshooting",
-  "priority": "2",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "8/29/17",
-    "earliestStartDate": "8/29/17",
-    "latestStartDate": "8/29/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB22 (4000353)",
-  "type": "12345695",
-  "externalWorkOrderId": "12345695",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "Krima-2439613: Sabik UPS battery replace",
-  "priority": "2",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "8/30/17",
-    "earliestStartDate": "6/30/17",
-    "latestStartDate": "6/30/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB61 (4000390)",
-  "type": "12345696",
-  "externalWorkOrderId": "12345696",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "Krima-2439613: UPS batteries replacement",
-  "priority": "2",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "8/30/17",
-    "earliestStartDate": "6/30/17",
-    "latestStartDate": "6/30/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT78 (3601259)",
-  "type": "12345697",
-  "externalWorkOrderId": "12345697",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "3,00_WT-BS01 3601259 Yearly Crane Inspec",
-  "priority": "",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "8/31/17",
-    "earliestStartDate": "8/19/17",
-    "latestStartDate": "8/19/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT78 (3601259)",
-  "type": "12345698",
-  "externalWorkOrderId": "12345698",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "3,00_WT-BS01 3601259 Yearly Crane Inspec",
-  "priority": "",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "8/31/17",
-    "earliestStartDate": "8/19/17",
-    "latestStartDate": "8/19/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT40 (3601221)",
-  "type": "12345699",
-  "externalWorkOrderId": "12345699",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ PERF RFCO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "3,00_WT-BS01 3601221 Yearly Lift Inspect",
-  "priority": "",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "8/31/17",
-    "earliestStartDate": "8/18/17",
-    "latestStartDate": "8/18/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT40 (3601221)",
-  "type": "12345700",
-  "externalWorkOrderId": "12345700",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ PERF RFCO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "3,00_WT-BS01 3601221 Yearly Lift Inspect",
-  "priority": "",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "8/31/17",
-    "earliestStartDate": "8/18/17",
-    "latestStartDate": "8/18/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT40 (3601221)",
-  "type": "12345701",
-  "externalWorkOrderId": "12345701",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ PERF RFCO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "3,00_WT-BS01 3601221 Yearly Crane Inspec",
-  "priority": "",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "8/31/17",
-    "earliestStartDate": "8/18/17",
-    "latestStartDate": "8/18/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT40 (3601221)",
-  "type": "12345702",
-  "externalWorkOrderId": "12345702",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ PERF RFCO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "3,00_WT-BS01 3601221 Yearly Crane Inspec",
-  "priority": "",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "8/31/17",
-    "earliestStartDate": "8/18/17",
-    "latestStartDate": "8/18/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT07 (3601188)",
-  "type": "12345703",
-  "externalWorkOrderId": "12345703",
-  "systemStatus": "REL  CCOK GMPS MACM PRC  RESA SETC",
-  "userStatus": "ZBNQ PERF RECV RFCO ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "A9B10170721 Retrofit Power Supply G4",
-  "priority": "",
-  "status": "REL  CCOK GMPS MACM PRC  RESA SETC",
-  "planning": {
-    "lastestFinishDate": "8/31/17",
-    "earliestStartDate": "8/31/17",
-    "latestStartDate": "8/31/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT07 (3601188)",
-  "type": "12345704",
-  "externalWorkOrderId": "12345704",
-  "systemStatus": "REL  CCOK GMPS NMAT PRC  RESA SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "A9B10196140  Retrofit, sign f dehumidifi",
-  "priority": "",
-  "status": "REL  CCOK GMPS NMAT PRC  RESA SETC",
-  "planning": {
-    "lastestFinishDate": "8/31/17",
-    "earliestStartDate": "8/31/17",
-    "latestStartDate": "8/31/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB61 (4000390)",
-  "type": "12345705",
-  "externalWorkOrderId": "12345705",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBCC ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "0 : Damaged fiber optic cable",
-  "priority": "2",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "9/1/17",
-    "earliestStartDate": "7/24/17",
-    "latestStartDate": "7/24/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB27 (4000358)",
-  "type": "12345706",
-  "externalWorkOrderId": "12345706",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ CLAR PERF RFCO ZBCC ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "0 : Hiab Crane Slow",
-  "priority": "3",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "9/1/17",
-    "earliestStartDate": "7/27/17",
-    "latestStartDate": "7/27/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB29 (4000360)",
-  "type": "12345707",
-  "externalWorkOrderId": "12345707",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "Switching support Vattenfall",
-  "priority": "",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "9/1/17",
-    "earliestStartDate": "9/1/17",
-    "latestStartDate": "9/1/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB63 (4000392)",
-  "type": "12345708",
-  "externalWorkOrderId": "12345708",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "Inspection on Water Ingress",
-  "priority": "2",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "9/1/17",
-    "earliestStartDate": "9/1/17",
-    "latestStartDate": "9/1/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB68 (4000397)",
-  "type": "12345709",
-  "externalWorkOrderId": "12345709",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ RFCO ZBCC ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "Inspection on Water Ingress",
-  "priority": "2",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "9/1/17",
-    "earliestStartDate": "9/1/17",
-    "latestStartDate": "9/1/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB23 (4000354)",
-  "type": "12345710",
-  "externalWorkOrderId": "12345710",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "Inspection on Water Ingress",
-  "priority": "2",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "9/4/17",
-    "earliestStartDate": "9/4/17",
-    "latestStartDate": "9/4/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT75 (3601256)",
-  "type": "12345711",
-  "externalWorkOrderId": "12345711",
-  "systemStatus": "REL  CCOK MACM PRC  SETC",
-  "userStatus": "ZBNQ PERF RECV ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "A9B10191123 - Retrofit, yaw software 201",
-  "priority": "",
-  "status": "REL  CCOK MACM PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "9/18/17",
-    "earliestStartDate": "9/18/17",
-    "latestStartDate": "9/18/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB63 (4000392)",
-  "type": "12345712",
-  "externalWorkOrderId": "12345712",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBMC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "No Connection",
-  "priority": "3",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "9/19/17",
-    "earliestStartDate": "9/19/17",
-    "latestStartDate": "9/19/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT64 (3601245)",
-  "type": "12345713",
-  "externalWorkOrderId": "12345713",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "3,00_WT-BS01 3601245 Yearly Crane Inspec",
-  "priority": "",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "9/30/17",
-    "earliestStartDate": "8/25/17",
-    "latestStartDate": "8/25/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT64 (3601245)",
-  "type": "12345714",
-  "externalWorkOrderId": "12345714",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "3,00_WT-BS01 3601245 Yearly Crane Inspec",
-  "priority": "",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "9/30/17",
-    "earliestStartDate": "8/25/17",
-    "latestStartDate": "8/25/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT64 (3601245)",
-  "type": "12345715",
-  "externalWorkOrderId": "12345715",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "3,00_WT-BS01 3601245 TMSE",
-  "priority": "",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "9/30/17",
-    "earliestStartDate": "8/25/17",
-    "latestStartDate": "8/25/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT64 (3601245)",
-  "type": "12345716",
-  "externalWorkOrderId": "12345716",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "3,00_WT-BS01 3601245 TMSE",
-  "priority": "",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "9/30/17",
-    "earliestStartDate": "8/25/17",
-    "latestStartDate": "8/25/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT20 (3601201)",
-  "type": "12345717",
-  "externalWorkOrderId": "12345717",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ PERF RECV RFCO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "3,00_WT-BS01 3601201 Yearly Crane Inspec",
-  "priority": "",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "9/30/17",
-    "earliestStartDate": "9/1/17",
-    "latestStartDate": "9/1/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT20 (3601201)",
-  "type": "12345718",
-  "externalWorkOrderId": "12345718",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ PERF RECV RFCO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "3,00_WT-BS01 3601201 Yearly Crane Inspec",
-  "priority": "",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "9/30/17",
-    "earliestStartDate": "9/1/17",
-    "latestStartDate": "9/1/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT12 (3601193)",
-  "type": "12345719",
-  "externalWorkOrderId": "12345719",
-  "systemStatus": "REL  CCOK MACM PRC  SETC",
-  "userStatus": "ZBNQ PERF RECV ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "A9B10191123 - Retrofit, yaw software 201",
-  "priority": "",
-  "status": "REL  CCOK MACM PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "9/30/17",
-    "earliestStartDate": "9/30/17",
-    "latestStartDate": "9/30/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Dan Tysk ,DT12 (3601193)",
-  "type": "12345720",
-  "externalWorkOrderId": "12345720",
-  "systemStatus": "REL  CCOK GMPS MACM PRC  RESA SETC",
-  "userStatus": "ZBNQ PERF RFCO ZBCC",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "A9B10196140  Retrofit, sign f dehumidifi",
-  "priority": "",
-  "status": "REL  CCOK GMPS MACM PRC  RESA SETC",
-  "planning": {
-    "lastestFinishDate": "9/30/17",
-    "earliestStartDate": "9/30/17",
-    "latestStartDate": "9/30/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB32 (4000362)",
-  "type": "12345721",
-  "externalWorkOrderId": "12345721",
-  "systemStatus": "REL  CCOK MACM PRC  SETC",
-  "userStatus": "ZBNQ PERF ZBA1 ZBPO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "Broken hose holder on pitch station tank",
-  "priority": "2",
-  "status": "REL  CCOK MACM PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "10/15/17",
-    "earliestStartDate": "7/17/17",
-    "latestStartDate": "7/17/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB26 (4000357)",
-  "type": "12345722",
-  "externalWorkOrderId": "12345722",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "TMSE: Exchange Fire Extinguishers",
-  "priority": "3",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "10/25/17",
-    "earliestStartDate": "8/25/17",
-    "latestStartDate": "8/25/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB67 (4000396)",
-  "type": "12345723",
-  "externalWorkOrderId": "12345723",
-  "systemStatus": "REL  CCOK NMAT PRC  SETC",
-  "userStatus": "ZBNQ PERF RFCO",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "PT100 sensors possible swapped",
-  "priority": "2",
-  "status": "REL  CCOK NMAT PRC  SETC",
-  "planning": {
-    "lastestFinishDate": "10/25/17",
-    "earliestStartDate": "8/25/17",
-    "latestStartDate": "8/25/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB76 (4000399)",
-  "type": "12345724",
-  "externalWorkOrderId": "12345724",
-  "systemStatus": "CRTD MANC NTUP SETC",
-  "userStatus": "ZBNQ",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "WT-BS01 4000399 Service Maintenance",
-  "priority": "",
-  "status": "CRTD MANC NTUP SETC",
-  "planning": {
-    "lastestFinishDate": "10/27/17",
-    "earliestStartDate": "10/27/17",
-    "latestStartDate": "10/27/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB76 (4000399)",
-  "type": "12345725",
-  "externalWorkOrderId": "12345725",
-  "systemStatus": "CRTD MANC NTUP SETC",
-  "userStatus": "ZBNQ",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "WT-BS01 4000399 Service Maintenance",
-  "priority": "",
-  "status": "CRTD MANC NTUP SETC",
-  "planning": {
-    "lastestFinishDate": "10/27/17",
-    "earliestStartDate": "10/27/17",
-    "latestStartDate": "10/27/17",
-    "estimatedTime": "0.000"
-  }
-}{
-  "assetSerialNumber": "WT Sandbank ,SB22 (4000353)",
-  "type": "12345726",
-  "externalWorkOrderId": "12345726",
-  "systemStatus": "REL  NMAT SETC",
-  "userStatus": "ZBNQ",
-  "createdOn": "May 22, 2018 8:17:18 PM",
-  "createdBy": "465C",
-  "name": "TMSE: Echange Fire extinguisher",
-  "priority": "3",
-  "status": "REL  NMAT SETC",
-  "planning": {
-    "lastestFinishDate": "11/6/17",
-    "earliestStartDate": "9/6/17",
-    "latestStartDate": "9/6/17",
-    "estimatedTime": "0.000"
-  }
-}
+]

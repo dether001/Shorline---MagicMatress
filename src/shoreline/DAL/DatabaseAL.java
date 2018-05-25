@@ -13,9 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import shoreline.BE.Pattern;
+import shoreline.BE.Tasks;
 import shoreline.BE.User;
 import shoreline.GUI.Controller.AddSPWindowController;
+import shoreline.GUI.Controller.LoggedInWindowController;
 import shoreline.GUI.Controller.LoginWindowController;
 
 /**
@@ -144,6 +149,39 @@ public class DatabaseAL {
         }
         
         return listOfIDs;
+    }
+
+    public List<Tasks> loadusedPatterns() {
+        ArrayList<Tasks> taskList = new ArrayList<Tasks>();
+        con = dba.DBConnection.Shoreline();
+            try {
+            pst = con.prepareStatement("Select usedPattern, path FROM tasks");
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                Tasks task = new Tasks(rs.getString(1), rs.getString(2));
+                taskList.add(task);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return taskList;
+    }
+
+    public List<String> loadExsistingPatterns() {
+        ArrayList<String> taskList = new ArrayList<String>();
+       try {
+            String sql = "select PatternName from Patterns";
+            pst=con.prepareStatement(sql);
+            rs = pst.executeQuery();
+            
+            while(rs.next()) {
+                taskList.add(rs.getString("PatternName"));
+            }   } catch (SQLException ex) {
+            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       return taskList;
+       
+       
     }
     
 }

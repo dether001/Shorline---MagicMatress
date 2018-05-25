@@ -68,7 +68,7 @@ public class LoginWindowController implements Initializable {
     //Event Handlers
     @FXML
     private void handleLogin(ActionEvent event) throws IOException {
-
+        
         user.setName(txt_id.getText());
         user.setPassword(txt_pw.getText());
         user.setId(-1);
@@ -143,6 +143,7 @@ public class LoginWindowController implements Initializable {
     }
     
 
+    
     private void loginCLog () {
        bll.loginCLog(user);
     }
