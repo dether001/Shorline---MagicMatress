@@ -41,6 +41,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import shoreline.BE.JSonObject;
+import shoreline.BE.User;
 import shoreline.BLL.ShoreLineBLL;
 
 /**
@@ -69,6 +70,7 @@ public class AddSPWindowController implements Initializable {
     final ObservableList patterns= FXCollections.observableArrayList();
     @FXML
     private Button saveandConvertBtn;
+    User user;
 
     List<Integer> listOfIDs = new ArrayList<Integer>();
 
@@ -196,9 +198,10 @@ public class AddSPWindowController implements Initializable {
             sPath = PathField.getText();
             sPattern = patternBox.getSelectionModel().getSelectedItem();
         try {
-            pst = con.prepareStatement("INSERT INTO tasks VALUES('admin', ?, ?)");
-            pst.setString(1, sPattern);
-            pst.setString(2, sPath);
+            pst = con.prepareStatement("INSERT INTO tasks VALUES(?, ?, ?)");
+            pst.setString(1, user.getName());
+            pst.setString(2, sPattern);
+            pst.setString(3, sPath);
             pst.executeUpdate();
             Read(listOfIDs);
         } catch (SQLException ex) {

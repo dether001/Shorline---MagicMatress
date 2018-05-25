@@ -40,6 +40,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javax.annotation.PostConstruct;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import shoreline.BE.JSonObject;
 import shoreline.BE.Tasks;
@@ -85,6 +86,7 @@ public class LoggedInWindowController implements Initializable {
     private TableColumn<?, ?> pathClm;
     @FXML
     private Button taskRepeate;
+    public String loadName;
     
     List<Integer> listOfIDs = new ArrayList<Integer>();
     private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();    
@@ -97,8 +99,7 @@ public class LoggedInWindowController implements Initializable {
         loadDataFromDB();
         setCellTable();
     }
-    
-    
+
     
     //Event Handlers.
     @FXML
@@ -139,7 +140,8 @@ public class LoggedInWindowController implements Initializable {
     
     private void loadDataFromDB() {
         try {
-            pst = con.prepareStatement("Select usedPattern, path FROM tasks");
+            pst = con.prepareStatement("Select usedPattern, path FROM tasks WHERE created_by = ?");
+            pst.setString(1, loadName);
             rs = pst.executeQuery();
             while (rs.next()) {
                 taskList.add(new Tasks(rs.getString(1), rs.getString(2)));
@@ -180,10 +182,13 @@ public class LoggedInWindowController implements Initializable {
     public void setUser (User user)
     {
         this.user = user;
+        loadName = user.getName();
         loggedInlbl.setText(user.getName());
                   DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
                     Date date = new Date();
                     dateLbl.setText(dateFormat.format(date)+"");
+        loadDataFromDB();
+        setCellTable();
     }
     public void setCompany (int id)
     {
@@ -242,4 +247,5 @@ public class LoggedInWindowController implements Initializable {
         listData = bll.read(list, taskPath);
         convert();
     }
+
 }
