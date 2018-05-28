@@ -14,9 +14,11 @@
    <children>
       <TextField fx:id="txt_id" layoutX="113.0" layoutY="138.0" prefHeight="25.0" prefWidth="175.0" />
       <PasswordField fx:id="txt_pw" layoutX="113.0" layoutY="201.0" onAction="#onEnter" prefHeight="25.0" prefWidth="175.0" />
-      <Label layoutX="146.0" layoutY="117.0" styleClass="Labels_big" text="User Name:" />
-      <Label layoutX="152.0" layoutY="180.0" styleClass="Labels_big" text="Password:" />
+      <Label layoutX="144.0" layoutY="117.0" styleClass="Labels_big" text="User Name:" />
+      <Label layoutX="150.0" layoutY="180.0" styleClass="Labels_big" text="Password:" />
       <Button fx:id="btn_Login" layoutX="14.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleLogin" styleClass="Buttons_Big" text="Login" />
       <Button fx:id="btn_Cacel" layoutX="280.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="Buttons_Big" text="Cancel" />
+      <TextField fx:id="cmp_id" layoutX="111.0" layoutY="83.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label layoutX="126.0" layoutY="62.0" styleClass="Labels_big" text="Company Code:" />
    </children>
 </AnchorPane>

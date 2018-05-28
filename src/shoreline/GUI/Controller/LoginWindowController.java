@@ -56,6 +56,8 @@ public class LoginWindowController implements Initializable {
     private TextField txt_id;
     ShoreLineBLL bll = new ShoreLineBLL();
     public int SelectedCompany;
+    @FXML
+    private TextField cmp_id;
 
 
     @Override
@@ -68,7 +70,8 @@ public class LoginWindowController implements Initializable {
     //Event Handlers
     @FXML
     private void handleLogin(ActionEvent event) throws IOException {
-        
+        SelectedCompany = Integer.valueOf(cmp_id.getText());
+        user.setId(SelectedCompany);
         user.setName(txt_id.getText());
         user.setPassword(txt_pw.getText());
         user.setId(-1);
