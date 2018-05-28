@@ -75,7 +75,7 @@ public class LoginWindowController implements Initializable {
         
         
         
-        user = bll.tryLogIn(user);
+        bll.tryLogIn(user);
         
         
         if (user.getId()!=-1){

@@ -6,8 +6,8 @@
 
 }
 
-@font-face {
-    src: url("Images/Freshman.ttf");
+@font-face1 {
+    src: url("Images/Neuton-Extrabold.ttf");
 }
 
 .Buttons_Big
@@ -21,7 +21,7 @@
     -fx-background-radius: 50;
     -fx-padding: 4 20 4 20;
     -fx-text-fill: #dbdbdb;
-    -fx-font-family: 'Georgia';
+    -fx-font-family: 'Neuton';
     -fx-font-size: 20px;
     -fx-border-color: #494b4d;
     -fx-border-width: 3;
@@ -38,7 +38,7 @@
     -fx-background-radius: 50;
     -fx-padding: 4 20 4 20;
     -fx-text-fill: #dbdbdb;
-    -fx-font-family: 'Georgia';
+    -fx-font-family: 'Neuton';
     -fx-font-size: 16px;
     -fx-border-color: #494b4d;
     -fx-border-width: 3;
@@ -55,7 +55,7 @@
     -fx-background-radius: 50;
     -fx-padding: 4 20 4 20;
     -fx-text-fill: #dbdbdb;
-    -fx-font-family: 'Freshman';
+    -fx-font-family: 'Neuton';
     -fx-font-size: 35px;
     -fx-border-color: #494b4d;
     -fx-border-width: 3;
@@ -65,7 +65,7 @@
 {
     -fx-font-size: 18px;
     -fx-font-weight: bolder;
-    -fx-font-family: Georgia;
+    -fx-font-family: 'Neuton';
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
     -fx-alignment: center ;
     -fx-background-color: rgb(128,128,128,.5);
@@ -75,7 +75,7 @@
 {
     -fx-font-size: 14px;
     -fx-font-weight: bolder;
-    -fx-font-family: Georgia;
+    -fx-font-family: 'Neuton';
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
     -fx-alignment: center ;
     -fx-background-color: rgb(128,128,128,.5);
@@ -84,8 +84,9 @@
 .Login_root
 {
     -fx-background-image: url("Images/Login_background.jpg");
-    -fx-background-repeat: stretch;
+    -fx-background-repeat: repeat;
     -fx-background-position: center center;
+    -fx-background-size: cover, auto;
 }
 .table-view 
 {
@@ -117,6 +118,8 @@
     -fx-font-size: 12pt;
     -fx-text-fill: white;
     -fx-opacity: 1;
+    -fx-font-family: 'Neuton';
+    
 }
 
 .table-view:focused .table-row-cell:filled:focused:selected 
