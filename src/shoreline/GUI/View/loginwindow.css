@@ -13,17 +13,14 @@
 .Buttons_Big
 {
     -fx-background-color: 
-        #000000,
-        linear-gradient(#40a8ed, #0a5787),
-        linear-gradient(#40a8ed, #0a5787),
-        linear-gradient(#40a8ed, #0a5787);
+        rgba(255,255,255,.0);
     -fx-background-insets: 2,2,2,2;
     -fx-background-radius: 50;
     -fx-padding: 4 20 4 20;
-    -fx-text-fill: #dbdbdb;
     -fx-font-family: 'Neuton';
     -fx-font-size: 20px;
-    -fx-border-color: #494b4d;
+    -fx-text-fill: rgb(255,255,255);
+    -fx-border-color: rgb(255,255,255);
     -fx-border-width: 3;
     -fx-border-radius: 50;
 }
@@ -51,10 +48,11 @@
         linear-gradient(#40a8ed, #0a5787),
         linear-gradient(#40a8ed, #0a5787),
         linear-gradient(#40a8ed, #0a5787);
-    -fx-background-insets: 2,2,2,2;
+    -fx-background-insets: 5,5,5,5;
     -fx-background-radius: 50;
     -fx-padding: 4 20 4 20;
     -fx-text-fill: #dbdbdb;
+    -fx-text-: 
     -fx-font-family: 'Neuton';
     -fx-font-size: 35px;
     -fx-border-color: #494b4d;
@@ -68,8 +66,9 @@
     -fx-font-family: 'Neuton';
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
     -fx-alignment: center ;
-    -fx-background-color: rgb(128,128,128,.5);
+    -fx-background-color: rgba(128,128,128,0);
     -fx-padding: 0 ;
+    -fx-text-fill: rgb(255,255,255);
 }
 .Labels_small
 {
@@ -78,8 +77,17 @@
     -fx-font-family: 'Neuton';
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
     -fx-alignment: center ;
-    -fx-background-color: rgb(128,128,128,.5);
+    -fx-background-color: rgba(128,128,128,0.5);
     -fx-padding: 0 ;
+}
+.Text_Field 
+{
+    -fx-background-color: 
+        rgb(255,255,255);
+    -fx-background-radius: 50;
+    -fx-padding: 4 20 4 20;
+    -fx-font-family: 'Neuton';
+    -fx-text-fill: rgb(106, 112, 122);
 }
 .Login_root
 {

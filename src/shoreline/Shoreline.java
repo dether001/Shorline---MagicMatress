@@ -22,10 +22,9 @@ public class Shoreline extends Application
     @Override
     public void start(Stage stage) throws Exception 
     {
-        
         Font.loadFont(Shoreline.class.getResource("/shoreline/GUI/View/Images/Neuton-Extrabold.ttf").toExternalForm(), 10);
         
-        Parent root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/SelectCompany.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/LoginWindow.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");

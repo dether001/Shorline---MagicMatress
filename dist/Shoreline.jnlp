@@ -8,11 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="Shoreline.jar" size="12660312" download="eager" />
-=======
-    <jar href="Shoreline.jar" size="159643" download="eager" />
->>>>>>> 1dad1543b9c6b0c700402dcd5de0972700ac784c
+    <jar href="Shoreline.jar" size="12716432" download="eager" />
     <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib\dom4j-1.6.jar" size="313359" download="eager" />
     <jar href="lib\gson-2.2.2.jar" size="189285" download="eager" />

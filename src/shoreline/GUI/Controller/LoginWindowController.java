@@ -50,13 +50,13 @@ public class LoginWindowController implements Initializable {
     private Connection con;
     private PreparedStatement pst;
     private ResultSet rs;
-    User user;
     @FXML
     private TextField txt_id;
     ShoreLineBLL bll = new ShoreLineBLL();
     public int SelectedCompany;
     @FXML
     private TextField cmp_id;
+            User user = new User();
 
 
     @Override
@@ -70,20 +70,14 @@ public class LoginWindowController implements Initializable {
     @FXML
     private void handleLogin(ActionEvent event) throws IOException {
         
-        if(cmp_id.getText() == null || cmp_id.getText().trim().isEmpty()) {
-            
+        if(cmp_id.getText() == null || cmp_id.getText().trim().isEmpty()) 
+        {
             Alert alert = new Alert(Alert.AlertType.NONE,"Company Code is empty. Please fill to log in !",ButtonType.OK);
             alert.setTitle("Empty Company Code");
             alert.showAndWait();
-
-
         }
-        else {
+
         SelectedCompany = Integer.valueOf(cmp_id.getText());
-
-            
-        }
-
         System.out.println(txt_id.getText());
         user.setName(txt_id.getText());
         user.setPassword(txt_pw.getText());
@@ -120,21 +114,16 @@ public class LoginWindowController implements Initializable {
             
             Alert alert = new Alert(Alert.AlertType.NONE,"Invalid ID or Password",ButtonType.OK);
             alert.setTitle("Invalid login info");
+            txt_pw.clear();
             alert.showAndWait();
         }
     }
     
     @FXML
-    private void handleCancel(ActionEvent event) throws IOException 
+    private void Exit ()
     {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/SelectCompany.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
-        stage.setTitle("ShoreLine - Data Converter");
-        stage.show();
-    
+        Stage stage = (Stage) btn_Cacel.getScene().getWindow();
+        stage.close();
     }
     
     @FXML
