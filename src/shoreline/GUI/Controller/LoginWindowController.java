@@ -51,7 +51,6 @@ public class LoginWindowController implements Initializable {
     private PreparedStatement pst;
     private ResultSet rs;
     User user;
-    private TextField txt_name;
     @FXML
     private TextField txt_id;
     ShoreLineBLL bll = new ShoreLineBLL();
@@ -71,17 +70,21 @@ public class LoginWindowController implements Initializable {
     @FXML
     private void handleLogin(ActionEvent event) throws IOException {
         
-        if(cmp_id.getText() != null) {
-        SelectedCompany = Integer.valueOf(cmp_id.getText());
-
-        }
-        else {
+        if(cmp_id.getText() == null || cmp_id.getText().trim().isEmpty()) {
+            
             Alert alert = new Alert(Alert.AlertType.NONE,"Company Code is empty. Please fill to log in !",ButtonType.OK);
             alert.setTitle("Empty Company Code");
             alert.showAndWait();
+
+
+        }
+        else {
+        SelectedCompany = Integer.valueOf(cmp_id.getText());
+
             
         }
 
+        System.out.println(txt_id.getText());
         user.setName(txt_id.getText());
         user.setPassword(txt_pw.getText());
         user.setId(-1);
