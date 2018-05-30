@@ -16,7 +16,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -33,6 +32,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.apache.log4j.Logger;
+import static org.apache.log4j.Logger.getLogger;
 import shoreline.BE.Log;
 import shoreline.BE.User;
 
@@ -66,6 +67,7 @@ public class SLLogWindowController implements Initializable {
     public String companyName;
     private ObservableList<Log> logList;
     User user;
+    private static Logger loggerErrorSaver =getLogger(SLLogWindowController.class);
 
 
     /**
@@ -79,7 +81,7 @@ public class SLLogWindowController implements Initializable {
     }
     
     @FXML
-    private void handleCancel(ActionEvent event) throws IOException 
+    private void handleCancel(ActionEvent event)
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -102,7 +104,7 @@ public class SLLogWindowController implements Initializable {
                 logList.add(new Log(rs.getString(1), rs.getString(2), ""+rs.getDate(3)));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(SLLogWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            loggerErrorSaver.error("error while loadingDataFromDB. SLLogWindow: " + ex + ex);
         }
         logTable.setItems(logList);
         

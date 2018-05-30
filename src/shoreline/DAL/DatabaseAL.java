@@ -11,11 +11,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
+import org.apache.log4j.Logger;
 import shoreline.BE.Pattern;
 import shoreline.BE.Tasks;
 import shoreline.BE.User;
@@ -33,6 +32,7 @@ public class DatabaseAL {
     private PreparedStatement pst;
     private ResultSet rs;
     private User user;
+    private static Logger loggerErrorSaver = Logger.getLogger(DatabaseAL.class);
 
     public User tryLogIn(User user) {
         
@@ -63,7 +63,7 @@ public class DatabaseAL {
             
                     
         } catch (SQLException ex) {
-            Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
+          loggerErrorSaver.error("error while getting password: " + ex + ex);
         }
         return user;
         
@@ -83,13 +83,13 @@ public class DatabaseAL {
             }
                     
         } catch (SQLException ex) {
-            Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
+         loggerErrorSaver.error("error while getting ID(username): " + ex + ex);
         }
        
         return newuser;
     }
     
-        public void newPattern (Pattern pattern) {
+       public void newPattern (Pattern pattern) {
         try {
             con = dba.DBConnection.Shoreline();
             pst = con.prepareStatement("insert into Patterns VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -111,7 +111,7 @@ public class DatabaseAL {
             
             pst.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(DatabaseAL.class.getName()).log(Level.SEVERE, null, ex);
+            loggerErrorSaver.error("error while  SavingNewPattern(new pattern): " + ex + ex);
         }
         }
 
@@ -145,7 +145,7 @@ public class DatabaseAL {
             
             }
         } catch (SQLException ex) {
-            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+             loggerErrorSaver.error("error while gettingExsistingPatternsIDLIST: " + ex + ex);
         }
         
         return listOfIDs;
@@ -163,7 +163,7 @@ public class DatabaseAL {
                 taskList.add(task);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            loggerErrorSaver.error("error while getting UsedPatterns: " + ex + ex);
         }
             return taskList;
     }
@@ -179,7 +179,7 @@ public class DatabaseAL {
             while(rs.next()) {
                 taskList.add(rs.getString("PatternName"));
             }   } catch (SQLException ex) {
-            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+             loggerErrorSaver.error("error while getting ExsistingPatternsLISTofNames: " + ex + ex);
         }
        return taskList;
        

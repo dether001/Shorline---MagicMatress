@@ -21,7 +21,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -41,6 +40,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javax.annotation.PostConstruct;
+import org.apache.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import shoreline.BE.JSonObject;
 import shoreline.BE.Tasks;
@@ -96,6 +96,8 @@ public class LoggedInWindowController implements Initializable {
     private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();    
     ShoreLineBLL bll = new ShoreLineBLL();
     
+    private static Logger loggerErrorSaver = Logger.getLogger(NewPatternWindowController.class);
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -105,20 +107,39 @@ public class LoggedInWindowController implements Initializable {
     
     //Event Handlers.
     @FXML
-    private void handleCancel(ActionEvent event) throws IOException 
+    private void handleCancel(ActionEvent event)
     {
-        createScene("cancel");
+        try 
+        {
+            createScene("cancel");
+        } catch (IOException ex) {
+           loggerErrorSaver.error("error while cancel button LoggedInWindow: " + ex + ex);
+        }
     }
     @FXML
-    private void handleNewPattern (ActionEvent event) throws IOException 
+    private void handleNewPattern (ActionEvent event) 
     {
-        createScene("NewPatternWindow");
+        try 
+        {
+            createScene("NewPatternWindow");
+        } 
+        catch (IOException ex) 
+        {
+            loggerErrorSaver.error("error while Clicking HandleNewPattern in LoggedInWindow: " + ex + ex);
+        }
     }
 
     @FXML
-    private void handleExistingPattern (ActionEvent event) throws IOException 
+    private void handleExistingPattern (ActionEvent event) throws IOException
     {
-        createScene("AddSPWindow");
+        try 
+        {
+            createScene("AddSPWindow");
+        } 
+        catch (IOException ex) 
+        {
+            loggerErrorSaver.error("error while Clicking Handle Existing Pattern in LoggedInWindow: " + ex + ex);
+        }
     }
     
     @FXML
@@ -135,30 +156,7 @@ public class LoggedInWindowController implements Initializable {
             alert.showAndWait();   
        }
     }
-    
-    
-    //Handles Task repeat event
-    @FXML
-    private void handleTaskRepeate(ActionEvent event) 
-    {
-        taskPattern = taskTable.getSelectionModel().getSelectedItem().getUsedPattern();
-        taskPath = taskTable.getSelectionModel().getSelectedItem().getPath(); 
-        
-        try 
-        {
-            getItemsID();
-            Read(listOfIDs);
-        }
-        catch (InvalidFormatException ex) 
-        {
-            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        catch (Exception ex) 
-        {
-            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
+
     private void getItemsID()
     {
         String selectedPattern = taskPattern;
@@ -233,7 +231,7 @@ public class LoggedInWindowController implements Initializable {
                 taskLists.add(new Tasks(rs.getString(1), rs.getString(2)));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            loggerErrorSaver.error("error while trying loadingUsedPatternsFromDataBase 'Created_by': " + ex + ex);
         }
         taskTable.getItems().addAll(taskLists);
     }
@@ -243,6 +241,7 @@ public class LoggedInWindowController implements Initializable {
         pathClm.setCellValueFactory(new PropertyValueFactory<>("path"));
     }
     
+
     public void setUser (User user)
     {
         this.user = user;
@@ -259,15 +258,41 @@ public class LoggedInWindowController implements Initializable {
     {
         this.SelectedCompany = id;
     }
-
    
-    public void Read(List list) throws IOException, InvalidFormatException, Exception{
+    @FXML
+    private void handleTaskRepeate(ActionEvent event) {
+        
+            
+        try {
+            
+            taskPattern = taskTable.getSelectionModel().getSelectedItem().getUsedPattern();
+            taskPath = taskTable.getSelectionModel().getSelectedItem().getPath();
+            
 
+            
+            getItemsID();
+            Read(listOfIDs);
+        } catch (Exception ex) {
+             loggerErrorSaver.error("error while trying repeat task from Table view with read:': " + ex + ex);
+        }
+    }
         
-        ShoreLineBLL bll = new ShoreLineBLL();
-        
-        listData = bll.read(list, taskPath);
-        model.convert(listData);
+    public void Read(List list) 
+    {
+        try 
+        {
+            ShoreLineBLL bll = new ShoreLineBLL();
+            listData = bll.read(list, taskPath);
+            model.convert(listData);
+        } 
+        catch (IOException ex) 
+        {
+             loggerErrorSaver.error("error while trying repeat task from Table view with read: " + ex + ex);
+        } 
+        catch (InvalidFormatException ex) 
+        {
+             loggerErrorSaver.error("error while trying repeat task from Table view with read: " + ex + ex);
+        }
     }
 
 }

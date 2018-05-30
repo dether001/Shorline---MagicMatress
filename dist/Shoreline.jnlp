@@ -8,10 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Shoreline.jar" size="12603857" download="eager" />
+    <jar href="Shoreline.jar" size="12607381" download="eager" />
     <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib\dom4j-1.6.jar" size="313359" download="eager" />
     <jar href="lib\gson-2.2.2.jar" size="189285" download="eager" />
+    <jar href="lib\log4j-1.2.17.jar" size="489883" download="eager" />
     <jar href="lib\poi-3.17.jar" size="2701171" download="eager" />
     <jar href="lib\poi-ooxml-3.17.jar" size="1479023" download="eager" />
     <jar href="lib\poi-ooxml-schemas-3.17.jar" size="5924600" download="eager" />

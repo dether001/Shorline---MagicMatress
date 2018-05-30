@@ -9,13 +9,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author dell
  */
 public class DBConnection {
+    
+    private static Logger loggerErrorSaver = Logger.getLogger(DBConnection.class);
     
     private static DBConnection instance;
     public static Connection Shoreline() {
@@ -25,9 +27,9 @@ public class DBConnection {
             String url = "jdbc:sqlserver://10.176.111.31:1433;databaseName=Shoreline;username=CS2017B_28_java;password=javajava";
             con = DriverManager.getConnection(url);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+             loggerErrorSaver.error("error while trying to connect to DatabaseShoreline: " + ex + ex);
         } catch (SQLException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+             loggerErrorSaver.error("error while trying to connect to DatabaseShoreline: " + ex + ex);
         }
         
         return con;
@@ -41,9 +43,9 @@ public class DBConnection {
             String url = "jdbc:sqlserver://10.176.111.31:1433;databaseName=ECompany;username=CS2017B_28_java;password=javajava";
             con = DriverManager.getConnection(url);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+             loggerErrorSaver.error("error while trying to connect to DatbaseEcompany: " + ex + ex);
         } catch (SQLException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+            loggerErrorSaver.error("error while trying to connect to DatbaseEcompany: " + ex + ex);
         }
         
         return con;

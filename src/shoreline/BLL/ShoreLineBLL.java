@@ -9,6 +9,8 @@ package shoreline.BLL;
 import java.io.IOException;
 import java.util.List;
 import javafx.collections.ObservableList;
+import org.apache.log4j.Logger;
+import static org.apache.log4j.Logger.getLogger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import shoreline.BE.JSonObject;
 import shoreline.BE.Pattern;
@@ -16,7 +18,7 @@ import shoreline.BE.Tasks;
 import shoreline.BE.User;
 import shoreline.DAL.DatabaseAL;
 import shoreline.DAL.ExcellAL;
-import shoreline.DAL.Logger;
+import shoreline.DAL.UserLogs;
 
 
 
@@ -26,8 +28,9 @@ import shoreline.DAL.Logger;
  */
 public class ShoreLineBLL {
     
+    private static Logger log = getLogger(ShoreLineBLL.class);
     DatabaseAL dbal = new DatabaseAL();
-    Logger logger = new Logger();
+    UserLogs userLogs = new UserLogs();
     ExcellAL excell = new ExcellAL();
     
     public User tryLogIn(User user) {
@@ -38,14 +41,14 @@ public class ShoreLineBLL {
     }
 
     public void loginFLog(User user) {
-      logger.loginFLog(user);
+      userLogs.loginFLog(user);
     }
 
     public void loginCLog(User user) {
-        logger.loginCLog(user);
+        userLogs.loginCLog(user);
     }
 
-    public List<String> makeComboboxes(String path) throws IOException, InvalidFormatException {
+    public List<String> makeComboboxes(String path) throws InvalidFormatException, IOException{
         
         return excell.makeComboboxes(path);
     }
@@ -65,11 +68,11 @@ public class ShoreLineBLL {
     }
 
     public void convertLog(User user) {
-       logger.convertLog(user);
+       userLogs.convertLog(user);
     }
 
     public void convertWLog(User user) {
-        logger.convertWsave(user);
+        userLogs.convertWsave(user);
     }
 
     public List<Tasks> loadusedPatterns() {
