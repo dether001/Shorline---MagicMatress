@@ -67,8 +67,13 @@ public class LoginWindowController implements Initializable {
     }    
 
     //Event Handlers
-    @FXML
-    private void handleLogin(ActionEvent event) throws IOException {
+    
+    
+    //Checks if the company code if filled out or not, if it is, it sets the connection based on the information
+    
+    private void validateCID () {
+        
+        SelectedCompany = Integer.valueOf(cmp_id.getText());
         
         if(cmp_id.getText() == null || cmp_id.getText().trim().isEmpty()) 
         {
@@ -77,23 +82,33 @@ public class LoginWindowController implements Initializable {
             alert.showAndWait();
         }
 
-        if (SelectedCompany == 1) {
-            con = dba.DBConnection.Shoreline();
-        }
-        else if (SelectedCompany == 2) {
-            con = dba.DBConnection.ECompany();
-        }
-        else {
+        switch (SelectedCompany) {
+            case 1: 
+                con = dba.DBConnection.Shoreline();
+                Login();
+            break;
             
-            Alert alert = new Alert(Alert.AlertType.NONE,"Invalid Company Code !",ButtonType.OK);
-            alert.setTitle("Invalid Code");
-            alert.showAndWait();
+            case 2: 
+                con = dba.DBConnection.ECompany();
+                Login();
+            break;
             
-        }
+            default:
+                Alert alert = new Alert(Alert.AlertType.NONE,"Invalid Company Code !",ButtonType.OK);
+                alert.setTitle("Invalid Code");
+                alert.showAndWait();
+            break;
         
+        }
+    }
+    
+    @FXML
+    private void handleLogin(ActionEvent event) throws IOException {
+        validateCID();
 
-        SelectedCompany = Integer.valueOf(cmp_id.getText());
-        System.out.println(txt_id.getText());
+    }
+    
+    private void Login() {
         user.setName(txt_id.getText());
         user.setPassword(txt_pw.getText());
         user.setId(-1);
@@ -105,23 +120,27 @@ public class LoginWindowController implements Initializable {
         
         
         if (user.getId()!=-1){
-            System.out.println(user.getSelectedCompany());
-            loginCLog();
-         
-      
-        
-         //Add switch for company /Shoreline /other company
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
-            Parent root = (Parent) loader.load();
-            
-            LoggedInWindowController ctrl = loader.getController();
-            ctrl.setUser(user);
-            ctrl.loadDataFromDB();
-            Stage stage2 = new Stage(); 
-            Stage stage = (Stage) btn_Login.getScene().getWindow();
-            stage.close();
-            stage2.setScene(new Scene(root));
-            stage2.show();
+            try {
+                System.out.println(user.getSelectedCompany());
+                loginCLog();
+                
+                
+                
+                //Add switch for company /Shoreline /other company
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
+                Parent root = (Parent) loader.load();
+                
+                LoggedInWindowController ctrl = loader.getController();
+                ctrl.setUser(user);
+                ctrl.loadDataFromDB();
+                Stage stage2 = new Stage();
+                Stage stage = (Stage) btn_Login.getScene().getWindow();
+                stage.close();
+                stage2.setScene(new Scene(root));
+                stage2.show();
+            } catch (IOException ex) {
+                Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         
         }
         else {
@@ -143,8 +162,8 @@ public class LoginWindowController implements Initializable {
     
     @FXML
     public void onEnter(ActionEvent event) throws IOException
-    {
-           handleLogin(event); 
+    {    
+        validateCID();
     }
 
     public void setCID(User user){
