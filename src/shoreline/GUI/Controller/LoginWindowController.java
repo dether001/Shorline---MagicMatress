@@ -50,13 +50,13 @@ public class LoginWindowController implements Initializable {
     private Connection con;
     private PreparedStatement pst;
     private ResultSet rs;
+    User user = new User();
     @FXML
     private TextField txt_id;
     ShoreLineBLL bll = new ShoreLineBLL();
     public int SelectedCompany;
     @FXML
     private TextField cmp_id;
-            User user = new User();
 
 
     @Override
@@ -67,13 +67,12 @@ public class LoginWindowController implements Initializable {
     }    
 
     //Event Handlers
-    //Login handler with exception handling. Wrong Login will show message.
-    @FXML
-    private void handleLogin(ActionEvent event) throws IOException 
-    {
+    private void validateCID () throws IOException {
         
-        //Checks if Company ID was given. If not alert is shown.
-        if(cmp_id.getText() == null || cmp_id.getText().trim().isEmpty()) 
+        try {
+        SelectedCompany = Integer.valueOf(cmp_id.getText());
+        
+                if(cmp_id.getText() == null || cmp_id.getText().trim().isEmpty()) 
         {
             Alert alert = new Alert(Alert.AlertType.NONE,"Company Code is empty. Please fill to log in !",ButtonType.OK);
             alert.setTitle("Empty Company Code");
@@ -81,6 +80,41 @@ public class LoginWindowController implements Initializable {
         }
 
         SelectedCompany = Integer.valueOf(cmp_id.getText());
+        switch (SelectedCompany) {
+            case 1: 
+                con = dba.DBConnection.Shoreline();
+                Login();
+            break;
+            
+            case 2: 
+                con = dba.DBConnection.ECompany();
+                Login();
+            break;
+            
+            default:
+                Alert alert = new Alert(Alert.AlertType.NONE,"Invalid Company Code !",ButtonType.OK);
+                alert.setTitle("Invalid Code");
+                alert.showAndWait();
+            break;
+        
+        }
+        
+        }
+        catch (NumberFormatException e) {
+                Alert alert = new Alert(Alert.AlertType.NONE,"Company code has to be a number !",ButtonType.OK);
+                alert.setTitle("Invalid Code");
+                alert.showAndWait();
+        }
+
+    }
+    
+    @FXML
+    private void handleLogin(ActionEvent event) throws IOException {
+        validateCID();
+
+    }
+    
+    private void Login() throws IOException {
         user.setName(txt_id.getText());
         user.setPassword(txt_pw.getText());
         user.setId(-1);
@@ -88,6 +122,7 @@ public class LoginWindowController implements Initializable {
         
         bll.tryLogIn(user);
         
+
         if (user.getId()!=-1)
         {
             
@@ -127,8 +162,8 @@ public class LoginWindowController implements Initializable {
     
     @FXML
     public void onEnter(ActionEvent event) throws IOException
-    {
-           handleLogin(event); 
+    {    
+        validateCID();
     }
 
     public void setCID(User user)
