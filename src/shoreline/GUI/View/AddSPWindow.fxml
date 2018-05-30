@@ -5,13 +5,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.GUI.Controller.AddSPWindowController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.GUI.Controller.AddSPWindowController">
    <children>
-      <Button fx:id="ChooseFile" layoutX="237.0" layoutY="93.0" mnemonicParsing="false" onAction="#chooseFileClicked" styleClass="Buttons_Small" text="Choose File" />
-      <TextField fx:id="PathField" layoutX="226.0" layoutY="48.0" text="Path" />
+      <Button fx:id="ChooseFile" layoutX="246.0" layoutY="93.0" mnemonicParsing="false" onAction="#chooseFileClicked" styleClass="Buttons_Small" text="Choose File" />
+      <TextField fx:id="PathField" layoutX="190.0" layoutY="50.0" styleClass="Text_Field" text="Path" />
       <ComboBox fx:id="patternBox" layoutX="225.0" layoutY="140.0" onAction="#selectionHandler" prefWidth="150.0" promptText="Choose Pattern" />
-      <Button fx:id="convertBtn" layoutX="249.0" layoutY="250.0" mnemonicParsing="false" onAction="#fuckingConvertpls" styleClass="Buttons_Small" text="Convert" />
-      <Button fx:id="cancelBtn" layoutX="491.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="Buttons_Small" text="Cancel" />
-      <Button fx:id="saveandConvertBtn" layoutX="216.0" layoutY="200.0" mnemonicParsing="false" onAction="#convertWSave" styleClass="Buttons_Small" text="Save and Convert" />
+      <Button fx:id="convertBtn" layoutX="259.0" layoutY="226.0" mnemonicParsing="false" onAction="#fuckingConvertpls" styleClass="Buttons_Small" text="Convert" />
+      <Button fx:id="cancelBtn" layoutX="513.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="Buttons_Small" text="Cancel" />
+      <Button fx:id="saveandConvertBtn" layoutX="225.0" layoutY="183.0" mnemonicParsing="false" onAction="#convertWSave" styleClass="Buttons_Small" text="Save and Convert" />
    </children>
 </AnchorPane>

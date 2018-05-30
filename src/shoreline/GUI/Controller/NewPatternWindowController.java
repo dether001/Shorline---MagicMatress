@@ -5,10 +5,7 @@
  */
 package shoreline.GUI.Controller;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -31,10 +28,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import shoreline.BE.JSonObject;
 import shoreline.BE.Pattern;
 import shoreline.BE.User;
@@ -115,11 +108,8 @@ public class NewPatternWindowController implements Initializable {
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
-        stage.setTitle("ShoreLine - Data Converter");
-        stage.show();
+        stage.close();
+
     }
     
     @FXML
@@ -147,71 +137,60 @@ public class NewPatternWindowController implements Initializable {
     @FXML
     private void buttonConvertAction(ActionEvent event) throws InvalidFormatException, Exception 
     {
-        String string = new String();
-        string = "convert";
-        startTask(string);
+        startTask("convert");
     }
     
     @FXML
     private void buttonActionSaveConvert(ActionEvent event) throws InvalidFormatException, Exception 
     {
-        String string = new String();
-        string = "save";
-        startTask(string);
+        startTask("save");
         bll.convertWLog(user);
     }
     
     private void makeComboBox(String path) throws Exception{
         clearComboBox();
-
         ObservableList<String>rowList=FXCollections.observableArrayList(); 
         rowList.addAll(bll.makeComboboxes(path));
-        
-       
-                boxAssestSerialNum.getItems().addAll(rowList);
-                boxType.getItems().addAll(rowList);
-                boxExternalWorkOrder.getItems().addAll(rowList);
-                BoxSystemStatus.getItems().addAll(rowList);
-                boxUserStatus.getItems().addAll(rowList);
-                boxCreatedBy.getItems().addAll(rowList);
-                boxName.getItems().addAll(rowList);
-                boxPriority.getItems().addAll(rowList);
-                boxStatus.getItems().addAll(rowList);
-                boxLastestFinishDate.getItems().addAll(rowList);
-                boxEarliestStartDate.getItems().addAll(rowList);
-                boxLatestStartDate.getItems().addAll(rowList);
-                boxEstimatedTime.getItems().addAll(rowList);
+        boxAssestSerialNum.getItems().addAll(rowList);
+        boxType.getItems().addAll(rowList);
+        boxExternalWorkOrder.getItems().addAll(rowList);
+        BoxSystemStatus.getItems().addAll(rowList);
+        boxUserStatus.getItems().addAll(rowList);
+        boxCreatedBy.getItems().addAll(rowList);
+        boxName.getItems().addAll(rowList);
+        boxPriority.getItems().addAll(rowList);
+        boxStatus.getItems().addAll(rowList);
+        boxLastestFinishDate.getItems().addAll(rowList);
+        boxEarliestStartDate.getItems().addAll(rowList);
+        boxLatestStartDate.getItems().addAll(rowList);
+        boxEstimatedTime.getItems().addAll(rowList);
     }
     
     //Clears all comboboxes.
-    private void clearComboBox(){
-                boxAssestSerialNum.getItems().clear();
-                boxType.getItems().clear();
-                boxExternalWorkOrder.getItems().clear();
-                BoxSystemStatus.getItems().clear();
-                boxUserStatus.getItems().clear();
-                boxCreatedBy.getItems().clear();
-                boxName.getItems().clear();
-                boxPriority.getItems().clear();
-                boxStatus.getItems().clear();
-                boxLastestFinishDate.getItems().clear();
-                boxEarliestStartDate.getItems().clear();
-                boxLatestStartDate.getItems().clear();
-                boxEstimatedTime.getItems().clear();
+    private void clearComboBox()
+    {
+        boxAssestSerialNum.getItems().clear();
+        boxType.getItems().clear();
+        boxExternalWorkOrder.getItems().clear();
+        BoxSystemStatus.getItems().clear();
+        boxUserStatus.getItems().clear();
+        boxCreatedBy.getItems().clear();
+        boxName.getItems().clear();
+        boxPriority.getItems().clear();
+        boxStatus.getItems().clear();
+        boxLastestFinishDate.getItems().clear();
+        boxEarliestStartDate.getItems().clear();
+        boxLatestStartDate.getItems().clear();
+        boxEstimatedTime.getItems().clear();
     }
     
     //Calls to BLL Read method to read the given file with the given list of headers.
     //It will skip collumns not contained in the list regarding index number.
-    public void Read(List list) throws IOException, InvalidFormatException, Exception{
-        
+    public void Read(List list) throws IOException, InvalidFormatException, Exception
+    {
         ShoreLineBLL bll = new ShoreLineBLL();
-        
         listData = bll.read(list, path);
-        
         model.convert(listData);
-        
-       
-        
     }
      
     
@@ -263,67 +242,51 @@ public class NewPatternWindowController implements Initializable {
     }
 
     public void startTask(String string)
-    { if(string == "save")
-    {
-        Runnable task = new Runnable()
+    { 
+        if(string == "save")
         {
-            @Override
-            public void run() 
+            Runnable task = new Runnable()
             {
-                try {
-                    saveTask();
-                } catch (Exception ex) {
-                    Logger.getLogger(NewPatternWindowController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            
-        };
-        Thread ConvThread = new Thread(task);
-        ConvThread.setDaemon(true);
-        ConvThread.start();
-    }
-      if(string=="convert")
-      {
-          Runnable task = new Runnable()
+                @Override
+                public void run() 
+                {
+                    try 
+                    {
+                        createPatternandSave();
+                        createList();
+                        Read(createList());
+                    } 
+                    catch (Exception ex) 
+                    {
+                        Logger.getLogger(NewPatternWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }   
+            };
+            Thread ConvThread = new Thread(task);
+            ConvThread.setDaemon(true);
+            ConvThread.start();
+        }
+        if(string=="convert")
         {
-            @Override
-            public void run() 
+            Runnable task = new Runnable()
             {
-                try {
-                    convertTask();
-                } catch (Exception ex) {
+                @Override
+                public void run() 
+                {
+                    try 
+                    {
+                        createList();
+                        Read(createList());
+                    } 
+                    catch (Exception ex) 
+                    {
                     Logger.getLogger(NewPatternWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
-            }
-            
-        };
-        Thread ConvThread = new Thread(task);
-        ConvThread.setDaemon(true);
-        ConvThread.start();
-      }
-        
-    
-    }
-    
-    public void saveTask() throws Exception
-    {
-        createPatternandSave();
-        createList();
-        Read(createList());
-        System.out.println("Inside Runtask SaveConvert - Success");
-    }
-    
-    public void convertTask() throws Exception
-    {
-        createList();
-        Read(createList());
-        System.out.println("Inside Runtask Convert - Success");
-    }
-    
-    
-    
-    
-    
-    
-    
+            };
+            Thread ConvThread = new Thread(task);
+            ConvThread.setDaemon(true);
+            ConvThread.start();
+        }
+    }    
 }

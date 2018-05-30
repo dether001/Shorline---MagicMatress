@@ -66,26 +66,28 @@ public class LoggedInWindowController implements Initializable {
     private Button SavedPatternBtn;
     @FXML
     private Button NewPatternBtn;
+    @FXML
+    private TableView<Tasks> taskTable;
+    @FXML
+    private TableColumn<?, ?> patternClm;
+    @FXML
+    private TableColumn<?, ?> pathClm;
+    @FXML
+    private Button taskRepeate;
     
     public String LoggedInUser;
     public int SelectedCompany;
     
     User user;
     LoginWindowController LogInWin;
-    @FXML
-    private TableView<Tasks> taskTable;
-    @FXML
-    private TableColumn<?, ?> patternClm;
+    
     private PreparedStatement pst;
     private ResultSet rs;
     private Connection con;
     private String taskPath;
     private String taskPattern;
     private ObservableList<Tasks> taskList;
-    @FXML
-    private TableColumn<?, ?> pathClm;
-    @FXML
-    private Button taskRepeate;
+
     public String loadName;
     
     Model model = new Model();
@@ -105,43 +107,119 @@ public class LoggedInWindowController implements Initializable {
     @FXML
     private void handleCancel(ActionEvent event) throws IOException 
     {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/SelectCompany.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
-        stage.setTitle("ShoreLine - Data Converter");
-        stage.show();
+        createScene("cancel");
     }
     @FXML
     private void handleNewPattern (ActionEvent event) throws IOException 
     {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/NewPatternWindow.fxml"));
-            Parent root = (Parent) loader.load();
-            
-            NewPatternWindowController lwController = loader.getController();
-            lwController.setUser(user);
-            System.out.println(user.getName());
-            Stage stage2 = new Stage();
-            stage2.setScene(new Scene(root));
-            stage2.show();
+        createScene("NewPatternWindow");
     }
 
     @FXML
     private void handleExistingPattern (ActionEvent event) throws IOException 
     {
+        createScene("AddSPWindow");
+    }
+    
+    @FXML
+    private void handleLog (ActionEvent event) throws IOException
+    {
+       if(user.getSelectedCompany() == 1)
+       {
+           createScene("SLLogWindow");
+       }
+       else
+       {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION,"Feature is only available for ShoreLine users!",ButtonType.OK);
+            alert.setTitle("Not a Shoreline User!");
+            alert.showAndWait();   
+       }
+    }
+    
+    
+    //Handles Task repeat event
+    @FXML
+    private void handleTaskRepeate(ActionEvent event) 
+    {
+        taskPattern = taskTable.getSelectionModel().getSelectedItem().getUsedPattern();
+        taskPath = taskTable.getSelectionModel().getSelectedItem().getPath(); 
         
-        
-        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/AddSPWindow.fxml"));
+        try 
+        {
+            getItemsID();
+            Read(listOfIDs);
+        }
+        catch (InvalidFormatException ex) 
+        {
+            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (Exception ex) 
+        {
+            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void getItemsID()
+    {
+        String selectedPattern = taskPattern;
+        listOfIDs = bll.getExistingPattern(selectedPattern);
+    }
+    
+    private void createScene (String scene) throws IOException
+    {
+
+        if(scene == "AddSPWindow")
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/"+scene+".fxml"));
             Parent root = (Parent) loader.load();
             
-            AddSPWindowController lwController = loader.getController();
-            lwController.setUser(user);
-            System.out.println(user.getName());
-            Stage stage2 = new Stage();
-            stage2.setScene(new Scene(root));
-            stage2.show();
+            AddSPWindowController ctrl = loader.getController();
+            ctrl.setUser(user);
+            
+            Stage stage = new Stage();
+            stage.setTitle("ShoreLine - Data Converter");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show(); 
+        }
+        if(scene == "NewPatternWindow")
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/NewPatternWindow.fxml"));
+            Parent root = (Parent) loader.load();
+            
+            NewPatternWindowController ctrl = loader.getController();
+            ctrl.setUser(user);
+            
+            Stage stage = new Stage();
+            stage.setTitle("ShoreLine - Data Converter");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();   
+        }
+        if(scene == "SLLogWindow")
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/"+scene+".fxml"));
+            Parent root1 = (Parent) loader.load();
+            
+            SLLogWindowController ctrl = loader.getController();
+            ctrl.setUser(user);
+            
+            Stage stage = new Stage();
+            stage.setTitle("ShoreLine - Data Converter");
+            stage.setScene(new Scene(root1));
+            stage.setResizable(true);
+            stage.show(); 
+        }
+        if (scene == "cancel")
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoginWindow.fxml"));
+            Parent root1 = (Parent) loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("ShoreLine - Data Converter");
+            stage.setScene(new Scene(root1));
+            stage.setResizable(true);
+            stage.show();
+        }
     }
     
     public void loadDataFromDB() {
@@ -165,68 +243,24 @@ public class LoggedInWindowController implements Initializable {
         pathClm.setCellValueFactory(new PropertyValueFactory<>("path"));
     }
     
-    @FXML
-    private void handleLog (ActionEvent event) throws IOException
-    {
-       if(user.getSelectedCompany() == 1)
-
-       {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/SLLogWindow.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root1));
-        stage.setTitle("ShoreLine - Data Converter");
-        stage.show();
-       }
-       else
-       {
-        Alert alert = new Alert(Alert.AlertType.NONE,"Feature is only available for ShoreLine users!",ButtonType.OK);
-            alert.setTitle("Not a Shoreline User!");
-            alert.showAndWait();   
-
-       }
-    }
-    
     public void setUser (User user)
     {
         this.user = user;
         loadName = user.getName();
-        loggedInlbl.setText(user.getName());
+        loggedInlbl.setText("Logged-in as: " + user.getName());
                   DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
                     Date date = new Date();
-                    dateLbl.setText(dateFormat.format(date)+"");
+                    dateLbl.setText("Current Date: " + dateFormat.format(date));
         loadDataFromDB();
         setCellTable();
     }
+    
     public void setCompany (int id)
     {
         this.SelectedCompany = id;
     }
 
-    @FXML
-    private void handleTaskRepeate(ActionEvent event) {
-        
-            taskPattern = taskTable.getSelectionModel().getSelectedItem().getUsedPattern();
-            taskPath = taskTable.getSelectionModel().getSelectedItem().getPath();
-            
-        try {
-
-            
-            getItemsID();
-            Read(listOfIDs);
-        } catch (InvalidFormatException ex) {
-            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-        private void getItemsID(){
-    
-        String selectedPattern = taskPattern;
-        listOfIDs = bll.getExistingPattern(selectedPattern);
-    }
-        
+   
     public void Read(List list) throws IOException, InvalidFormatException, Exception{
 
         

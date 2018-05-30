@@ -6,23 +6,21 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.GUI.Controller.LoggedInWindowController">
+<AnchorPane id="AnchorPane" minHeight="250.0" minWidth="442.0" prefHeight="400.0" prefWidth="600.0" styleClass="Login_root" stylesheets="@loginwindow.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shoreline.GUI.Controller.LoggedInWindowController">
    <children>
-      <Button fx:id="LogOutBtn" layoutX="480.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="Buttons_Small" text="Log-Out" />
-      <Button fx:id="SavedPatternBtn" layoutX="14.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleExistingPattern" styleClass="Buttons_Small" text="Convert with existing Pattern" />
-      <Button fx:id="ViewLogBtn" layoutX="14.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleLog" styleClass="Buttons_Small" text="View Log" />
-      <Label layoutX="14.0" layoutY="14.0" styleClass="Labels_big" text="Task Log:" />
-      <TableView fx:id="taskTable" layoutX="14.0" layoutY="49.0" prefHeight="251.0" prefWidth="240.0">
+      <Button fx:id="LogOutBtn" layoutX="500.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleCancel" styleClass="Buttons_Small" text="Log-Out" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="14.0" />
+      <Button fx:id="SavedPatternBtn" layoutX="356.0" layoutY="120.0" mnemonicParsing="false" onAction="#handleExistingPattern" styleClass="Buttons_Small" text="Convert with existing Pattern" AnchorPane.rightAnchor="14.0" />
+      <Button fx:id="ViewLogBtn" layoutX="498.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleLog" styleClass="Buttons_Small" text="View Log" AnchorPane.bottomAnchor="54.0" AnchorPane.rightAnchor="14.0" />
+      <Label layoutX="14.0" layoutY="14.0" styleClass="Labels_big" text="Task Log:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <TableView fx:id="taskTable" layoutX="14.0" layoutY="49.0" prefHeight="249.0" prefWidth="321.0" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="265.0" AnchorPane.topAnchor="49.0">
         <columns>
-          <TableColumn fx:id="patternClm" prefWidth="124.5" text="Used Pattern" />
-          <TableColumn fx:id="pathClm" prefWidth="114.5" text="Path" />
+          <TableColumn fx:id="patternClm" prefWidth="105.0" text="Used Pattern" />
+          <TableColumn fx:id="pathClm" prefWidth="215.0" text="Path" />
         </columns>
       </TableView>
-      <Label layoutX="364.0" layoutY="17.0" styleClass="Labels_small" text="Logged-in as:" textAlignment="RIGHT" />
-      <Label layoutX="363.0" layoutY="35.0" styleClass="Labels_small" text="Current Date:" textAlignment="RIGHT" />
-      <Label fx:id="loggedInlbl" layoutX="480.0" layoutY="17.0" styleClass="Labels_small" text="asd" textAlignment="RIGHT" />
-      <Label fx:id="dateLbl" layoutX="480.0" layoutY="35.0" styleClass="Labels_small" text="asd" textAlignment="RIGHT" />
-      <Button fx:id="NewPatternBtn" layoutX="359.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleNewPattern" styleClass="Buttons_Small" text="Convert with new Pattern" />
-      <Button fx:id="taskRepeate" layoutX="205.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleTaskRepeate" styleClass="Buttons_Small" text="Repeat Selected Pattern" />
+      <Label fx:id="loggedInlbl" layoutX="552.0" layoutY="18.0" styleClass="Labels_small" text="asd" textAlignment="RIGHT" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <Label fx:id="dateLbl" layoutX="563.0" layoutY="39.0" styleClass="Labels_small" text="asd" textAlignment="RIGHT" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="39.0" />
+      <Button fx:id="NewPatternBtn" layoutX="381.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleNewPattern" styleClass="Buttons_Small" text="Convert with new Pattern" AnchorPane.rightAnchor="14.0" />
+      <Button fx:id="taskRepeate" layoutX="14.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleTaskRepeate" prefWidth="196.0" styleClass="Buttons_Small" text="Repeat Selected Pattern" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="14.0" />
    </children>
 </AnchorPane>

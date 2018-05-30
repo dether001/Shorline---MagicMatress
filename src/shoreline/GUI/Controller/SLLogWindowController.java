@@ -11,6 +11,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,6 +34,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import shoreline.BE.Log;
+import shoreline.BE.User;
 
 /**
  * FXML Controller class
@@ -61,6 +65,7 @@ public class SLLogWindowController implements Initializable {
     public int companyCID;
     public String companyName;
     private ObservableList<Log> logList;
+    User user;
 
 
     /**
@@ -78,11 +83,7 @@ public class SLLogWindowController implements Initializable {
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
-        stage.setTitle("ShoreLine - Data Converter");
-        stage.show();
+        stage.close();
     }    
     
     private void setCellTable() {
@@ -106,7 +107,7 @@ public class SLLogWindowController implements Initializable {
         logTable.setItems(logList);
         
     }
-
+    
     @FXML
     private void selectCID(ActionEvent event) {
         logList.clear();
@@ -122,7 +123,14 @@ public class SLLogWindowController implements Initializable {
         setCellTable();
         
     }
-    
+        public void setUser (User user)
+    {
+        this.user = user;
+        loggedInlbl.setText("Logged-in as: " + user.getName());
+                  DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+                    Date date = new Date();
+                    dateLbl.setText("Current Date: " + dateFormat.format(date));
+    }
     
     
 }

@@ -67,9 +67,12 @@ public class LoginWindowController implements Initializable {
     }    
 
     //Event Handlers
+    //Login handler with exception handling. Wrong Login will show message.
     @FXML
-    private void handleLogin(ActionEvent event) throws IOException {
+    private void handleLogin(ActionEvent event) throws IOException 
+    {
         
+        //Checks if Company ID was given. If not alert is shown.
         if(cmp_id.getText() == null || cmp_id.getText().trim().isEmpty()) 
         {
             Alert alert = new Alert(Alert.AlertType.NONE,"Company Code is empty. Please fill to log in !",ButtonType.OK);
@@ -78,37 +81,33 @@ public class LoginWindowController implements Initializable {
         }
 
         SelectedCompany = Integer.valueOf(cmp_id.getText());
-        System.out.println(txt_id.getText());
         user.setName(txt_id.getText());
         user.setPassword(txt_pw.getText());
         user.setId(-1);
         user.setSelectedCompany(SelectedCompany);    
         
-        
-        
         bll.tryLogIn(user);
         
-        
-        if (user.getId()!=-1){
-            System.out.println(user.getSelectedCompany());
+        if (user.getId()!=-1)
+        {
+            
             loginCLog();
          
-      
-        
-         //Add switch for company /Shoreline /other company
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
             Parent root = (Parent) loader.load();
             
             LoggedInWindowController ctrl = loader.getController();
             ctrl.setUser(user);
             ctrl.loadDataFromDB();
-            Stage stage2 = new Stage(); 
             Stage stage = (Stage) btn_Login.getScene().getWindow();
             stage.close();
-            stage2.setScene(new Scene(root));
-            stage2.show();
-        
+            stage.setScene(new Scene(root));
+            stage.setResizable(true);
+            stage.setMinWidth(520);
+            stage.setMinHeight(300);
+            stage.show();
         }
+        
         else {
             loginFLog();
             
@@ -132,25 +131,25 @@ public class LoginWindowController implements Initializable {
            handleLogin(event); 
     }
 
-    public void setCID(User user){
-        this.user = user;
-        
+    public void setCID(User user)
+    {
+        this.user = user;  
     }
     
     public User returnUser()
     {
     return user;
     }
+    
     public void setCompany(int id)
     {
         this.SelectedCompany = id;
     }
 
-    private void loginFLog () {
+    private void loginFLog () 
+    {
         bll.loginFLog(user);
     }
-    
-
     
     private void loginCLog () {
        bll.loginCLog(user);

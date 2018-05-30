@@ -28,16 +28,14 @@
 {
     -fx-background-color: 
         #000000,
-        linear-gradient(#40a8ed, #0a5787),
-        linear-gradient(#40a8ed, #0a5787),
-        linear-gradient(#40a8ed, #0a5787);
+        linear-gradient(rgb(12,138,184),rgb(12,138,184));
     -fx-background-insets: 2,2,2,2;
     -fx-background-radius: 50;
-    -fx-padding: 4 20 4 20;
-    -fx-text-fill: #dbdbdb;
+    -fx-padding: 2 10 2 10;
+    -fx-text-fill: rgb(255,255,255);
     -fx-font-family: 'Neuton';
     -fx-font-size: 16px;
-    -fx-border-color: #494b4d;
+    -fx-border-color: rgb(191, 191, 191);
     -fx-border-width: 3;
     -fx-border-radius: 50;
 }
@@ -52,7 +50,6 @@
     -fx-background-radius: 50;
     -fx-padding: 4 20 4 20;
     -fx-text-fill: #dbdbdb;
-    -fx-text-: 
     -fx-font-family: 'Neuton';
     -fx-font-size: 35px;
     -fx-border-color: #494b4d;
@@ -73,11 +70,14 @@
 .Labels_small
 {
     -fx-font-size: 14px;
+    -fx-text-fill: rgb(255,255,255);
+    -fx-background-radius: 10;
+    -fx-background-insets: -3;
     -fx-font-weight: bolder;
     -fx-font-family: 'Neuton';
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
     -fx-alignment: center ;
-    -fx-background-color: rgba(128,128,128,0.5);
+    -fx-background-color: rgba(3,91,115,0.6);
     -fx-padding: 0 ;
 }
 .Text_Field 
@@ -88,6 +88,7 @@
     -fx-padding: 4 20 4 20;
     -fx-font-family: 'Neuton';
     -fx-text-fill: rgb(106, 112, 122);
+    -fx-font-size: 16px;
 }
 .Login_root
 {
@@ -98,9 +99,9 @@
 }
 .table-view 
 {
-    -fx-base: #4a86e8;
-    -fx-control-inner-background: #16438c;
-    -fx-background-color: #25539e;
+    -fx-base: rgb(3,91,115);
+    -fx-control-inner-background: rgb(3,91,115);
+    -fx-background-color: rgb(7, 139, 188);
     -fx-table-cell-border-color: transparent;
     -fx-table-header-border-color: transparent;
 }

@@ -28,6 +28,7 @@ public class Shoreline extends Application
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("ShoreLine - Data Converter");
+        stage.setResizable(false);
         stage.show();
     }
 

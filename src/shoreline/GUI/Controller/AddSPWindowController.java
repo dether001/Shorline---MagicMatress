@@ -92,11 +92,7 @@ public class AddSPWindowController implements Initializable {
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
-        stage.setTitle("ShoreLine - Data Converter");
-        stage.show();
+        stage.close();
     }
     
     @FXML
