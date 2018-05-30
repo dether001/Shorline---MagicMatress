@@ -73,9 +73,10 @@ public class LoginWindowController implements Initializable {
     
     private void validateCID () {
         
+        try {
         SelectedCompany = Integer.valueOf(cmp_id.getText());
         
-        if(cmp_id.getText() == null || cmp_id.getText().trim().isEmpty()) 
+                if(cmp_id.getText() == null || cmp_id.getText().trim().isEmpty()) 
         {
             Alert alert = new Alert(Alert.AlertType.NONE,"Company Code is empty. Please fill to log in !",ButtonType.OK);
             alert.setTitle("Empty Company Code");
@@ -100,6 +101,14 @@ public class LoginWindowController implements Initializable {
             break;
         
         }
+        
+        }
+        catch (NumberFormatException e) {
+                Alert alert = new Alert(Alert.AlertType.NONE,"Company code has to be a number !",ButtonType.OK);
+                alert.setTitle("Invalid Code");
+                alert.showAndWait();
+        }
+
     }
     
     @FXML
@@ -137,6 +146,7 @@ public class LoginWindowController implements Initializable {
                 Stage stage = (Stage) btn_Login.getScene().getWindow();
                 stage.close();
                 stage2.setScene(new Scene(root));
+                stage2.setResizable(false);
                 stage2.show();
             } catch (IOException ex) {
                 Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
