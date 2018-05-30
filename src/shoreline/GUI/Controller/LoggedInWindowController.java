@@ -21,7 +21,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -41,6 +40,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javax.annotation.PostConstruct;
+import org.apache.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import shoreline.BE.JSonObject;
 import shoreline.BE.Tasks;
@@ -94,6 +94,8 @@ public class LoggedInWindowController implements Initializable {
     private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();    
     ShoreLineBLL bll = new ShoreLineBLL();
     
+    private static Logger loggerErrorSaver = Logger.getLogger(NewPatternWindowController.class);
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -103,19 +105,24 @@ public class LoggedInWindowController implements Initializable {
     
     //Event Handlers.
     @FXML
-    private void handleCancel(ActionEvent event) throws IOException 
+    private void handleCancel(ActionEvent event)
     {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/SelectCompany.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
-        stage.setTitle("ShoreLine - Data Converter");
-        stage.show();
+        try {
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/SelectCompany.fxml"));
+            Scene scene = new Scene (Root);
+            stage.setScene(scene);
+            stage.setTitle("ShoreLine - Data Converter");
+            stage.show();
+        } catch (IOException ex) {
+           loggerErrorSaver.error("error while cancel button LoggedInWindow: " + ex + ex);
+        }
     }
     @FXML
-    private void handleNewPattern (ActionEvent event) throws IOException 
+    private void handleNewPattern (ActionEvent event) 
     {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/NewPatternWindow.fxml"));
             Parent root = (Parent) loader.load();
             
@@ -125,15 +132,19 @@ public class LoggedInWindowController implements Initializable {
             Stage stage2 = new Stage();
             stage2.setScene(new Scene(root));
             stage2.show();
+        } catch (IOException ex) {
+            loggerErrorSaver.error("error while Clicking HandleNewPattern in LoggedInWindow: " + ex + ex);
+        }
     }
 
     @FXML
-    private void handleExistingPattern (ActionEvent event) throws IOException 
+    private void handleExistingPattern (ActionEvent event)
     {
         
         
         
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/AddSPWindow.fxml"));
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/AddSPWindow.fxml"));
             Parent root = (Parent) loader.load();
             
             AddSPWindowController lwController = loader.getController();
@@ -142,6 +153,9 @@ public class LoggedInWindowController implements Initializable {
             Stage stage2 = new Stage();
             stage2.setScene(new Scene(root));
             stage2.show();
+        } catch (IOException ex) {
+            loggerErrorSaver.error("error while clicking ExsistingPattern in LoggedInWindow: " + ex + ex);
+        }
     }
     
     public void loadDataFromDB() {
@@ -155,7 +169,7 @@ public class LoggedInWindowController implements Initializable {
                 taskLists.add(new Tasks(rs.getString(1), rs.getString(2)));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            loggerErrorSaver.error("error while trying loadingUsedPatternsFromDataBase 'Created_by': " + ex + ex);
         }
         taskTable.getItems().addAll(taskLists);
     }
@@ -166,17 +180,21 @@ public class LoggedInWindowController implements Initializable {
     }
     
     @FXML
-    private void handleLog (ActionEvent event) throws IOException
+    private void handleLog (ActionEvent event)
     {
        if(user.getSelectedCompany() == 1)
 
        {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/SLLogWindow.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root1));
-        stage.setTitle("ShoreLine - Data Converter");
-        stage.show();
+           try {
+               FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/SLLogWindow.fxml"));
+               Parent root1 = (Parent) fxmlLoader.load();
+               Stage stage = new Stage();
+               stage.setScene(new Scene(root1));
+               stage.setTitle("ShoreLine - Data Converter");
+               stage.show();
+           } catch (IOException ex) {
+              loggerErrorSaver.error("error while click HangleLog in LoggedInWindow: " + ex + ex);
+           }
        }
        else
        {
@@ -206,18 +224,18 @@ public class LoggedInWindowController implements Initializable {
     @FXML
     private void handleTaskRepeate(ActionEvent event) {
         
+            
+        try {
+            
             taskPattern = taskTable.getSelectionModel().getSelectedItem().getUsedPattern();
             taskPath = taskTable.getSelectionModel().getSelectedItem().getPath();
             
-        try {
 
             
             getItemsID();
             Read(listOfIDs);
-        } catch (InvalidFormatException ex) {
-            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
-            Logger.getLogger(LoggedInWindowController.class.getName()).log(Level.SEVERE, null, ex);
+             loggerErrorSaver.error("error while trying repeat task from Table view with read:': " + ex + ex);
         }
     }
     
@@ -227,13 +245,19 @@ public class LoggedInWindowController implements Initializable {
         listOfIDs = bll.getExistingPattern(selectedPattern);
     }
         
-    public void Read(List list) throws IOException, InvalidFormatException, Exception{
+    public void Read(List list) {
 
         
-        ShoreLineBLL bll = new ShoreLineBLL();
-        
-        listData = bll.read(list, taskPath);
-        model.convert(listData);
+        try {
+            ShoreLineBLL bll = new ShoreLineBLL();
+            
+            listData = bll.read(list, taskPath);
+            model.convert(listData);
+        } catch (IOException ex) {
+             loggerErrorSaver.error("error while trying repeat task from Table view with read: " + ex + ex);
+        } catch (InvalidFormatException ex) {
+             loggerErrorSaver.error("error while trying repeat task from Table view with read: " + ex + ex);
+        }
     }
 
 }

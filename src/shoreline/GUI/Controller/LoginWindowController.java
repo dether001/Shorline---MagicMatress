@@ -14,8 +14,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +27,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.apache.log4j.Logger;
+import static org.apache.log4j.Logger.getLogger;
 import shoreline.BE.User;
 import shoreline.BLL.ShoreLineBLL;
 import shoreline.GUI.Controller.NewPatternWindowController;
@@ -57,6 +57,7 @@ public class LoginWindowController implements Initializable {
     @FXML
     private TextField cmp_id;
             User user = new User();
+private static Logger loggerErrorSaver =Logger.getLogger(AddSPWindowController.class);
 
 
     @Override
@@ -68,7 +69,7 @@ public class LoginWindowController implements Initializable {
 
     //Event Handlers
     @FXML
-    private void handleLogin(ActionEvent event) throws IOException {
+    private void handleLogin(ActionEvent event)  {
         
         if(cmp_id.getText() == null || cmp_id.getText().trim().isEmpty()) 
         {
@@ -90,23 +91,27 @@ public class LoginWindowController implements Initializable {
         
         
         if (user.getId()!=-1){
-            System.out.println(user.getSelectedCompany());
-            loginCLog();
-         
-      
-        
-         //Add switch for company /Shoreline /other company
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
-            Parent root = (Parent) loader.load();
-            
-            LoggedInWindowController ctrl = loader.getController();
-            ctrl.setUser(user);
-            ctrl.loadDataFromDB();
-            Stage stage2 = new Stage(); 
-            Stage stage = (Stage) btn_Login.getScene().getWindow();
-            stage.close();
-            stage2.setScene(new Scene(root));
-            stage2.show();
+            try {
+                System.out.println(user.getSelectedCompany());
+                loginCLog();
+                
+                
+                
+                //Add switch for company /Shoreline /other company
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
+                Parent root = (Parent) loader.load();
+                
+                LoggedInWindowController ctrl = loader.getController();
+                ctrl.setUser(user);
+                ctrl.loadDataFromDB();
+                Stage stage2 = new Stage();
+                Stage stage = (Stage) btn_Login.getScene().getWindow();
+                stage.close();
+                stage2.setScene(new Scene(root));
+                stage2.show();
+            } catch (IOException ex) {
+                 loggerErrorSaver.error("error while trying Logging in: " + ex + ex);
+            }
         
         }
         else {
@@ -127,7 +132,7 @@ public class LoginWindowController implements Initializable {
     }
     
     @FXML
-    public void onEnter(ActionEvent event) throws IOException
+    public void onEnter(ActionEvent event) 
     {
            handleLogin(event); 
     }

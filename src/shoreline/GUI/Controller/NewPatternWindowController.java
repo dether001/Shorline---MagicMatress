@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -30,6 +29,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -100,6 +100,8 @@ public class NewPatternWindowController implements Initializable {
     LoggedInWindowController lgc;
     ShoreLineBLL bll = new ShoreLineBLL();
     Model model = new Model();
+    private static Logger loggerErrorSaver = Logger.getLogger(NewPatternWindowController.class);
+
     
     
     @Override
@@ -111,21 +113,26 @@ public class NewPatternWindowController implements Initializable {
     
     
     @FXML
-    private void handleCancel(ActionEvent event) throws IOException 
+    private void handleCancel(ActionEvent event) 
     {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
-        Scene scene = new Scene (Root);
-        stage.setScene(scene);
-        stage.setTitle("ShoreLine - Data Converter");
-        stage.show();
+        try {
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            Parent Root = FXMLLoader.load(getClass().getResource("/shoreline/GUI/View/LoggedInWindow.fxml"));
+            Scene scene = new Scene (Root);
+            stage.setScene(scene);
+            stage.setTitle("ShoreLine - Data Converter");
+            stage.show();
+        } catch (IOException ex) {
+            loggerErrorSaver.error("error trying to click cancelbutton, NewPatternWindow: " + ex + ex);
+        }
     }
     
     @FXML
-    private void chooseFileClicked(ActionEvent event) throws Exception
+    private void chooseFileClicked(ActionEvent event) 
     {
-        Stage stage = new Stage(); 
+        try {
+            Stage stage = new Stage(); 
         FileChooser fc = new FileChooser();
         
         FileChooser.ExtensionFilter xlsxFilter = new 
@@ -141,11 +148,16 @@ public class NewPatternWindowController implements Initializable {
         PathField.setText(path); 
         System.out.println(path);
         makeComboBox(path);
+            
+        } catch (Exception ex) {
+            loggerErrorSaver.error("error while choosing file: " + ex + ex);
+        }
+        
         
     }
 
     @FXML
-    private void buttonConvertAction(ActionEvent event) throws InvalidFormatException, Exception 
+    private void buttonConvertAction(ActionEvent event) 
     {
         String string = new String();
         string = "convert";
@@ -153,7 +165,7 @@ public class NewPatternWindowController implements Initializable {
     }
     
     @FXML
-    private void buttonActionSaveConvert(ActionEvent event) throws InvalidFormatException, Exception 
+    private void buttonActionSaveConvert(ActionEvent event) 
     {
         String string = new String();
         string = "save";
@@ -161,26 +173,32 @@ public class NewPatternWindowController implements Initializable {
         bll.convertWLog(user);
     }
     
-    private void makeComboBox(String path) throws Exception{
-        clearComboBox();
-
-        ObservableList<String>rowList=FXCollections.observableArrayList(); 
-        rowList.addAll(bll.makeComboboxes(path));
-        
-       
-                boxAssestSerialNum.getItems().addAll(rowList);
-                boxType.getItems().addAll(rowList);
-                boxExternalWorkOrder.getItems().addAll(rowList);
-                BoxSystemStatus.getItems().addAll(rowList);
-                boxUserStatus.getItems().addAll(rowList);
-                boxCreatedBy.getItems().addAll(rowList);
-                boxName.getItems().addAll(rowList);
-                boxPriority.getItems().addAll(rowList);
-                boxStatus.getItems().addAll(rowList);
-                boxLastestFinishDate.getItems().addAll(rowList);
-                boxEarliestStartDate.getItems().addAll(rowList);
-                boxLatestStartDate.getItems().addAll(rowList);
-                boxEstimatedTime.getItems().addAll(rowList);
+    private void makeComboBox(String path) {
+        try {
+            clearComboBox();
+            
+            ObservableList<String>rowList=FXCollections.observableArrayList();
+            rowList.addAll(bll.makeComboboxes(path));
+            
+            
+            boxAssestSerialNum.getItems().addAll(rowList);
+            boxType.getItems().addAll(rowList);
+            boxExternalWorkOrder.getItems().addAll(rowList);
+            BoxSystemStatus.getItems().addAll(rowList);
+            boxUserStatus.getItems().addAll(rowList);
+            boxCreatedBy.getItems().addAll(rowList);
+            boxName.getItems().addAll(rowList);
+            boxPriority.getItems().addAll(rowList);
+            boxStatus.getItems().addAll(rowList);
+            boxLastestFinishDate.getItems().addAll(rowList);
+            boxEarliestStartDate.getItems().addAll(rowList);
+            boxLatestStartDate.getItems().addAll(rowList);
+            boxEstimatedTime.getItems().addAll(rowList);
+        } catch (InvalidFormatException ex) {
+            loggerErrorSaver.error("error trying to read Excell file: " + ex + ex);
+        } catch (IOException ex) {
+            loggerErrorSaver.error("error trying to read Excell file: " + ex + ex);
+        }
     }
     
     //Clears all comboboxes.
@@ -202,17 +220,30 @@ public class NewPatternWindowController implements Initializable {
     
     //Calls to BLL Read method to read the given file with the given list of headers.
     //It will skip collumns not contained in the list regarding index number.
-    public void Read(List list) throws IOException, InvalidFormatException, Exception{
+     public void Read(List list){
         
-        ShoreLineBLL bll = new ShoreLineBLL();
-        
-        listData = bll.read(list, path);
-        
-        model.convert(listData);
+        try {
+            ShoreLineBLL bll = new ShoreLineBLL();
+            
+            try {
+                
+                listData = bll.read(list, path);
+                
+                
+            } catch (InvalidFormatException ex) {
+                loggerErrorSaver.error("error trying to read Excell file: " + ex + ex);
+            }
+            
+            model.convert(listData);
+            
+        } catch (IOException ex) {
+             loggerErrorSaver.error("error while trying converting: " + ex + ex);
+        }
         
        
         
     }
+
      
     
 
@@ -243,7 +274,7 @@ public class NewPatternWindowController implements Initializable {
         bll.convertWLog(user);
         bll.savePatter(patter);
     }
-    public List<Integer> createList() throws Exception
+    public List<Integer> createList()
     {
         List<Integer> list = new ArrayList<Integer>();
         list.add(boxAssestSerialNum.getSelectionModel().getSelectedIndex());
@@ -273,7 +304,7 @@ public class NewPatternWindowController implements Initializable {
                 try {
                     saveTask();
                 } catch (Exception ex) {
-                    Logger.getLogger(NewPatternWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                    loggerErrorSaver.error("error while savingTask: " + ex + ex);
                 }
             }
             
@@ -292,7 +323,7 @@ public class NewPatternWindowController implements Initializable {
                 try {
                     convertTask();
                 } catch (Exception ex) {
-                    Logger.getLogger(NewPatternWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                    loggerErrorSaver.error("error while converting: " + ex + ex);
                 }
             }
             

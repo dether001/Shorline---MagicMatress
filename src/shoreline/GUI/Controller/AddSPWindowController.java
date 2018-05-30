@@ -19,8 +19,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -35,6 +33,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.log4j.Logger;
+import static org.apache.log4j.Logger.getLogger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -74,6 +74,7 @@ public class AddSPWindowController implements Initializable {
 
     List<Integer> listOfIDs = new ArrayList<Integer>();
     Model model = new Model();
+    private static Logger loggerErrorSaver =getLogger(AddSPWindowController.class);
     
 
     private ObservableList <JSonObject> listData =  FXCollections.observableArrayList();
@@ -101,7 +102,8 @@ public class AddSPWindowController implements Initializable {
     
     @FXML
     private void chooseFileClicked(ActionEvent event)
-    {
+    {  try {
+        
         Stage stage = new Stage(); 
         FileChooser fc = new FileChooser();
         
@@ -116,6 +118,11 @@ public class AddSPWindowController implements Initializable {
         File selectedFile = fc.showOpenDialog(stage);
         this.path = selectedFile.getAbsolutePath();
         PathField.setText(path); 
+            
+        } catch (Exception ex) {
+            loggerErrorSaver.error("error while trying converting: " + ex + ex);
+        }
+        
     }
     
     private void loadPatterns() {
@@ -161,9 +168,9 @@ public class AddSPWindowController implements Initializable {
         try {
             Read(getList());
         } catch (InvalidFormatException ex) {
-            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+           loggerErrorSaver.error("error while trying converting: " + ex + ex);
         } catch (Exception ex) {
-            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            loggerErrorSaver.error("error while trying converting: " + ex + ex);
         }
     }
 
@@ -180,11 +187,11 @@ public class AddSPWindowController implements Initializable {
             pst.executeUpdate();
             Read(listOfIDs);
         } catch (SQLException ex) {
-            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+           loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
         }catch (InvalidFormatException ex) {
-            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
         } catch (Exception ex) {
-            Logger.getLogger(AddSPWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
         }
     }
 
