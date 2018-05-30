@@ -50,7 +50,7 @@ public class LoginWindowController implements Initializable {
     private Connection con;
     private PreparedStatement pst;
     private ResultSet rs;
-    User user;
+    User user = new User();
     @FXML
     private TextField txt_id;
     ShoreLineBLL bll = new ShoreLineBLL();
@@ -84,6 +84,20 @@ public class LoginWindowController implements Initializable {
             
         }
 
+        if (SelectedCompany == 1) {
+            con = dba.DBConnection.Shoreline();
+        }
+        else if (SelectedCompany == 2) {
+            con = dba.DBConnection.ECompany();
+        }
+        else {
+            
+            Alert alert = new Alert(Alert.AlertType.NONE,"Invalid Company Code !",ButtonType.OK);
+            alert.setTitle("Invalid Code");
+            alert.showAndWait();
+            
+        }
+        
         System.out.println(txt_id.getText());
         user.setName(txt_id.getText());
         user.setPassword(txt_pw.getText());
