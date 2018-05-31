@@ -145,16 +145,7 @@ public class LoggedInWindowController implements Initializable {
     @FXML
     private void handleLog (ActionEvent event) throws IOException
     {
-       if(user.getSelectedCompany() == 1)
-       {
-           createScene("SLLogWindow");
-       }
-       else
-       {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION,"Feature is only available for ShoreLine users!",ButtonType.OK);
-            alert.setTitle("Not a Shoreline User!");
-            alert.showAndWait();   
-       }
+        createScene("SLLogWindow");
     }
 
     private void getItemsID()

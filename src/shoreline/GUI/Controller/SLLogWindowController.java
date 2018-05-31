@@ -65,6 +65,7 @@ public class SLLogWindowController implements Initializable {
     public String companyName;
     private ObservableList<Log> logList;
     User user;
+    static int cLoad;
     private static Logger loggerErrorSaver =getLogger(SLLogWindowController.class);
 
 
@@ -74,7 +75,7 @@ public class SLLogWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         con = dba.DBConnection.Shoreline();
-        companyCombo.getItems().addAll("Shoreline", "ECompany");
+        System.out.println(cLoad);
         logList = FXCollections.observableArrayList();
     }
     
@@ -126,6 +127,11 @@ public class SLLogWindowController implements Initializable {
         public void setUser (User user)
     {
         this.user = user;
+        System.out.println("setuser: " + user.getSelectedCompany());
+        switch (user.getSelectedCompany()) {
+            case 1: companyCombo.getItems().addAll("Shoreline", "ECompany"); break;
+            case 2: companyCombo.getItems().addAll("ECompany"); break;
+        }
         loggedInlbl.setText("Logged-in as: " + user.getName());
                   DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
                     Date date = new Date();
