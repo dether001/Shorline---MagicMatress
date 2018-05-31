@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/GUI/Controller/SLLogWindowController.java</file>
             <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/GUI/Controller/Model.java</file>
             <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/GUI/View/loginwindow.css</file>
@@ -11,6 +12,24 @@
             <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/GUI/Controller/LoginWindowController.java</file>
             <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/GUI/Controller/AddSPWindowController.java</file>
             <file>file:/C:/Users/atilk/Desktop/Oskola/Github%20Repo's/Shorline---MagicMatress/src/shoreline/Shoreline.java</file>
+=======
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/GUI/Controller/LoggedInWindowController.java</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/GUI/Controller/LoginWindowController.java</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/GUI/Controller/Model.java</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/DAL/ExcellAL.java</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/BE/User.java</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/GUI/Controller/AddSPWindowController.java</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/BE/Tasks.java</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/GUI/Controller/SLLogWindowController.java</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/log4j.properties</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/DAL/DatabaseAL.java</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/Shoreline.java</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/BLL/ShoreLineBLL.java</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/GUI/View/loginwindow.css</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/DAL/UserLogs.java</file>
+            <file>file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/src/shoreline/GUI/Controller/NewPatternWindowController.java</file>
+>>>>>>> 1806d0a6ad13bc5ef86f33c8051384f697a0b0dc
         </group>
     </open-files>
 </project-private>

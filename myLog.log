@@ -1,16 +1,32 @@
-[30.05.2018] [17:11:02] ERROR [Thread-6] shoreline.GUI.Controller.NewPatternWindowController (NewPatternWindowController.java:310) - error while converting: java.lang.NullPointerExceptionjava.lang.NullPointerException
-[30.05.2018] [17:11:04] ERROR [Thread-7] shoreline.DAL.DatabaseAL (DatabaseAL.java:114) - error while  SavingNewPattern(new pattern): com.microsoft.sqlserver.jdbc.SQLServerException: Violation of UNIQUE KEY constraint 'UQ__Patterns__87D0BE9186D751BE'. Cannot insert duplicate key in object 'dbo.Patterns'. The duplicate key value is (Name of New Pattern).com.microsoft.sqlserver.jdbc.SQLServerException: Violation of UNIQUE KEY constraint 'UQ__Patterns__87D0BE9186D751BE'. Cannot insert duplicate key in object 'dbo.Patterns'. The duplicate key value is (Name of New Pattern).
-[30.05.2018] [17:11:04] ERROR [Thread-7] shoreline.GUI.Controller.NewPatternWindowController (NewPatternWindowController.java:291) - error while savingTask: java.lang.NullPointerExceptionjava.lang.NullPointerException
-[30.05.2018] [17:28:57] ERROR [Thread-6] shoreline.GUI.Controller.NewPatternWindowController (NewPatternWindowController.java:320) - error while converting: java.lang.NullPointerExceptionjava.lang.NullPointerException
-[30.05.2018] [17:28:59] ERROR [Thread-7] shoreline.DAL.DatabaseAL (DatabaseAL.java:114) - error while  SavingNewPattern(new pattern): com.microsoft.sqlserver.jdbc.SQLServerException: Violation of UNIQUE KEY constraint 'UQ__Patterns__87D0BE9186D751BE'. Cannot insert duplicate key in object 'dbo.Patterns'. The duplicate key value is (Name of New Pattern).com.microsoft.sqlserver.jdbc.SQLServerException: Violation of UNIQUE KEY constraint 'UQ__Patterns__87D0BE9186D751BE'. Cannot insert duplicate key in object 'dbo.Patterns'. The duplicate key value is (Name of New Pattern).
-[30.05.2018] [17:28:59] ERROR [Thread-7] shoreline.GUI.Controller.NewPatternWindowController (NewPatternWindowController.java:301) - error while savingTask: java.lang.NullPointerExceptionjava.lang.NullPointerException
-[30.05.2018] [17:30:27] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:238) - error while trying repeat task from Table view with read:': java.lang.NullPointerExceptionjava.lang.NullPointerException
-[30.05.2018] [17:30:45] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.AddSPWindowController (AddSPWindowController.java:167) - error while trying converting: java.lang.NullPointerExceptionjava.lang.NullPointerException
-[30.05.2018] [17:30:47] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.AddSPWindowController (AddSPWindowController.java:188) - error while trying convertingWithSave: java.lang.NullPointerExceptionjava.lang.NullPointerException
-[30.05.2018] [17:31:04] ERROR [Thread-6] shoreline.GUI.Controller.NewPatternWindowController (NewPatternWindowController.java:320) - error while converting: java.lang.NullPointerExceptionjava.lang.NullPointerException
-[30.05.2018] [17:40:57] ERROR [Thread-6] shoreline.GUI.Controller.NewPatternWindowController (NewPatternWindowController.java:326) - error while converting: java.lang.NullPointerExceptionjava.lang.NullPointerException
-[30.05.2018] [17:40:58] ERROR [Thread-7] shoreline.DAL.DatabaseAL (DatabaseAL.java:114) - error while  SavingNewPattern(new pattern): com.microsoft.sqlserver.jdbc.SQLServerException: Violation of UNIQUE KEY constraint 'UQ__Patterns__87D0BE9186D751BE'. Cannot insert duplicate key in object 'dbo.Patterns'. The duplicate key value is (Name of New Pattern).com.microsoft.sqlserver.jdbc.SQLServerException: Violation of UNIQUE KEY constraint 'UQ__Patterns__87D0BE9186D751BE'. Cannot insert duplicate key in object 'dbo.Patterns'. The duplicate key value is (Name of New Pattern).
-[30.05.2018] [17:40:58] ERROR [Thread-7] shoreline.GUI.Controller.NewPatternWindowController (NewPatternWindowController.java:307) - error while savingTask: java.lang.NullPointerExceptionjava.lang.NullPointerException
-[30.05.2018] [17:41:00] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (NewPatternWindowController.java:153) - error while choosing file: java.lang.NullPointerExceptionjava.lang.NullPointerException
-[30.05.2018] [17:41:11] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.AddSPWindowController (AddSPWindowController.java:188) - error while trying convertingWithSave: java.lang.NullPointerExceptionjava.lang.NullPointerException
-[30.05.2018] [17:41:13] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.AddSPWindowController (AddSPWindowController.java:167) - error while trying converting: java.lang.NullPointerExceptionjava.lang.NullPointerException
+[31.05.2018] [17:20:25] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:141) - error while Clicking Handle Existing Pattern in LoggedInWindow: javafx.fxml.LoadException: 
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run1897537146/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml
+javafx.fxml.LoadException: 
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run1897537146/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml
+
+[31.05.2018] [17:21:03] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:141) - error while Clicking Handle Existing Pattern in LoggedInWindow: javafx.fxml.LoadException: 
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run1897537146/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml
+javafx.fxml.LoadException: 
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run1897537146/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml
+
+[31.05.2018] [17:22:26] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:141) - error while Clicking Handle Existing Pattern in LoggedInWindow: javafx.fxml.LoadException: 
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run414820716/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml
+javafx.fxml.LoadException: 
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run414820716/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml
+
+[31.05.2018] [17:26:13] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (NewPatternWindowController.java:138) - error while choosing file: java.lang.NullPointerExceptionjava.lang.NullPointerException
+[31.05.2018] [17:26:37] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:141) - error while Clicking Handle Existing Pattern in LoggedInWindow: javafx.fxml.LoadException: 
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run627389861/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml
+javafx.fxml.LoadException: 
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run627389861/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml
+
+[31.05.2018] [17:27:14] ERROR [Thread-6] shoreline.GUI.Controller.NewPatternWindowController (NewPatternWindowController.java:294) - error while savingTask: java.lang.NullPointerExceptionjava.lang.NullPointerException
+[31.05.2018] [17:28:41] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:141) - error while Clicking Handle Existing Pattern in LoggedInWindow: javafx.fxml.LoadException: 
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run1322871162/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml
+javafx.fxml.LoadException: 
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run1322871162/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml
+
+[31.05.2018] [17:39:03] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:141) - error while Clicking Handle Existing Pattern in LoggedInWindow: javafx.fxml.LoadException: 
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run1074254296/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml
+javafx.fxml.LoadException: 
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run1074254296/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml
+
