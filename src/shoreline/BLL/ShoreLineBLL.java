@@ -48,13 +48,13 @@ public class ShoreLineBLL {
         userLogs.loginCLog(user);
     }
 
-    public List<String> makeComboboxes(String path) throws InvalidFormatException, IOException{
+    public List<String> makeComboboxes(String path){
         
         return excell.makeComboboxes(path);
     }
 
     
-    public ObservableList<JSonObject> read(List list, String path) throws IOException, InvalidFormatException {
+    public ObservableList<JSonObject> read(List list, String path){
          return excell.read(list, path);
     }
 
@@ -81,6 +81,12 @@ public class ShoreLineBLL {
 
     public List<String> loadExsistingPatterns() {
        return dbal.loadExsistingPatterns();
+    }
+    
+    public void taskException(User user){
+    
+        userLogs.errorLog(user);
+    
     }
 
    

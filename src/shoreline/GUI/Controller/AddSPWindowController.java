@@ -19,6 +19,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -88,7 +89,7 @@ public class AddSPWindowController implements Initializable {
     }    
 
     @FXML
-    private void handleCancel(ActionEvent event) throws IOException 
+    private void handleCancel(ActionEvent event)
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -116,6 +117,7 @@ public class AddSPWindowController implements Initializable {
             
         } catch (Exception ex) {
             loggerErrorSaver.error("error while trying converting: " + ex + ex);
+            bll.taskException(user);
         }
         
     }
@@ -146,13 +148,19 @@ public class AddSPWindowController implements Initializable {
         return listOfIDs;
     }
     
-    public void Read(List list) throws IOException, InvalidFormatException, Exception{
+    public void Read(List list) {
 
         
-        ShoreLineBLL bll = new ShoreLineBLL();
-        
-        listData = bll.read(list, path);
-        model.convert(listData);
+        try {
+            ShoreLineBLL bll = new ShoreLineBLL();
+            
+            listData = bll.read(list, path);
+            model.convert(listData);
+        } catch (IOException ex) {
+            loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
+            bll.taskException(user);
+            
+        }
         
        
         
@@ -207,19 +215,18 @@ public class AddSPWindowController implements Initializable {
                         catch (SQLException ex) 
                         {
                             loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
-                        }
-                        catch (InvalidFormatException ex) 
-                        {
-                            loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
+                            bll.taskException(user);
                         } 
                         catch (Exception ex) 
                         {
                             loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
+                            bll.taskException(user);
                         }
                     } 
                     catch (Exception ex) 
                     {
                         loggerErrorSaver.error("error while savingTask: " + ex + ex);
+                        bll.taskException(user);
                     }
                 }   
             };
@@ -239,17 +246,16 @@ public class AddSPWindowController implements Initializable {
                         try 
                         {
                             Read(getList());
-                        } catch (InvalidFormatException ex) 
-                        {
-                            loggerErrorSaver.error("error while trying converting: " + ex + ex);
                         } catch (Exception ex) 
                         {
                             loggerErrorSaver.error("error while trying converting: " + ex + ex);
+                            bll.taskException(user);
                         }
                     } 
                     catch (Exception ex) 
                     {
                         loggerErrorSaver.error("error while converting: " + ex + ex);
+                        bll.taskException(user);
                     }
                 }   
             };

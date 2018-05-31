@@ -50,6 +50,7 @@ public class ExcellAL {
             
         } catch (IOException ex) {
             loggerErrorSaver.error("error while MakingComboBoxes: " + ex + ex);
+            
         } catch (InvalidFormatException ex) {
            loggerErrorSaver.error("error while MakingComboBoxes: " + ex + ex);
         } catch (EncryptedDocumentException ex) {
@@ -161,6 +162,7 @@ public class ExcellAL {
             return listData;
         } catch (IOException ex) {
            loggerErrorSaver.error("error while putting values to JsonClass: " + ex + ex);
+           
         } catch (InvalidFormatException ex) {
             loggerErrorSaver.error("error while putting values to JsonClass: " + ex + ex);
         } catch (EncryptedDocumentException ex) {

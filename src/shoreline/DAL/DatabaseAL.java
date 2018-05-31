@@ -18,6 +18,7 @@ import org.apache.log4j.Logger;
 import shoreline.BE.Pattern;
 import shoreline.BE.Tasks;
 import shoreline.BE.User;
+import shoreline.BLL.ShoreLineBLL;
 import shoreline.GUI.Controller.AddSPWindowController;
 import shoreline.GUI.Controller.LoggedInWindowController;
 import shoreline.GUI.Controller.LoginWindowController;
@@ -34,6 +35,8 @@ public class DatabaseAL {
     private User user;
     static int CID;
     private static Logger loggerErrorSaver = Logger.getLogger(DatabaseAL.class);
+    UserLogs userLogs = new UserLogs();
+    
 
     
     public User tryLogIn(User user) {
@@ -68,6 +71,7 @@ public class DatabaseAL {
                     
         } catch (SQLException ex) {
           loggerErrorSaver.error("error while getting password: " + ex + ex);
+          userLogs.errorLog(user);
         }
         return user;
         
@@ -88,6 +92,7 @@ public class DatabaseAL {
                     
         } catch (SQLException ex) {
          loggerErrorSaver.error("error while getting ID(username): " + ex + ex);
+         userLogs.errorLog(user);
         }
        
         return newuser;
@@ -121,6 +126,7 @@ public class DatabaseAL {
             pst.executeUpdate();
         } catch (SQLException ex) {
             loggerErrorSaver.error("error while  SavingNewPattern(new pattern): " + ex + ex);
+            userLogs.errorLog(user);
         }
         }
 
@@ -160,6 +166,7 @@ public class DatabaseAL {
             }
         } catch (SQLException ex) {
              loggerErrorSaver.error("error while gettingExsistingPatternsIDLIST: " + ex + ex);
+            userLogs.errorLog(user);
         }
         
         return listOfIDs;
@@ -183,6 +190,7 @@ public class DatabaseAL {
             }
         } catch (SQLException ex) {
             loggerErrorSaver.error("error while getting UsedPatterns: " + ex + ex);
+            userLogs.errorLog(user);
         }
             return taskList;
     }
@@ -205,6 +213,7 @@ public class DatabaseAL {
                 taskList.add(rs.getString("PatternName"));
             }   } catch (SQLException ex) {
              loggerErrorSaver.error("error while getting ExsistingPatternsLISTofNames: " + ex + ex);
+             userLogs.errorLog(user);
         }
        return taskList;
        

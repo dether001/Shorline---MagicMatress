@@ -34,6 +34,7 @@ import org.apache.log4j.Logger;
 import static org.apache.log4j.Logger.getLogger;
 import shoreline.BE.Log;
 import shoreline.BE.User;
+import shoreline.BLL.ShoreLineBLL;
 
 /**
  * FXML Controller class
@@ -66,6 +67,7 @@ public class SLLogWindowController implements Initializable {
     private ObservableList<Log> logList;
     User user;
     static int cLoad;
+    ShoreLineBLL bll = new ShoreLineBLL();
     private static Logger loggerErrorSaver =getLogger(SLLogWindowController.class);
 
 
@@ -104,6 +106,7 @@ public class SLLogWindowController implements Initializable {
             }
         } catch (SQLException ex) {
             loggerErrorSaver.error("error while loadingDataFromDB. SLLogWindow: " + ex + ex);
+            bll.taskException(user);
         }
         logTable.setItems(logList);
         

@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -113,8 +114,13 @@ public class LoginWindowController implements Initializable {
     }
     
     @FXML
-    private void handleLogin(ActionEvent event) throws IOException {
-        validateCID();
+    private void handleLogin(ActionEvent event) {
+        try {
+            validateCID();
+        } catch (IOException ex) {
+          loggerErrorSaver.error("error while to validateCID LogInWindow: " + ex + ex);
+                 bll.taskException(user);
+        }
 
     }
     
@@ -149,6 +155,7 @@ public class LoginWindowController implements Initializable {
                 stage.show();
             } catch (IOException ex) {
                  loggerErrorSaver.error("error while trying Logging in: " + ex + ex);
+                 bll.taskException(user);
             }
         
         }
@@ -171,9 +178,14 @@ public class LoginWindowController implements Initializable {
     }
     
     @FXML
-    public void onEnter(ActionEvent event) throws IOException
+    public void onEnter(ActionEvent event)
     {    
-        validateCID();
+        try {
+            validateCID();
+        } catch (IOException ex) {
+             loggerErrorSaver.error("error while to validateCID LogInWindow: " + ex + ex);
+                 bll.taskException(user);
+        }
 
     }
 
