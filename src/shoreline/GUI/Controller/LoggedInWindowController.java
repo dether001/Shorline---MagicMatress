@@ -20,6 +20,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.Set;
 import java.util.logging.Level;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -86,7 +87,8 @@ public class LoggedInWindowController implements Initializable {
     private Connection con;
     private String taskPath;
     private String taskPattern;
-    private ObservableList<Tasks> taskList;
+    public ObservableList<Tasks> taskList;
+    
 
     public String loadName;
     
@@ -97,11 +99,12 @@ public class LoggedInWindowController implements Initializable {
     ShoreLineBLL bll = new ShoreLineBLL();
     
     private static Logger loggerErrorSaver = Logger.getLogger(NewPatternWindowController.class);
+    @FXML
+    private Button refresh;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        setCellTable();
+        taskList = FXCollections.observableArrayList();
     }
 
     
@@ -111,6 +114,9 @@ public class LoggedInWindowController implements Initializable {
     {
         try 
         {
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
             createScene("cancel");
         } catch (IOException ex) {
            loggerErrorSaver.error("error while cancel button LoggedInWindow: " + ex + ex);
@@ -128,7 +134,14 @@ public class LoggedInWindowController implements Initializable {
             loggerErrorSaver.error("error while Clicking HandleNewPattern in LoggedInWindow: " + ex + ex);
         }
     }
-
+    @FXML
+    private void refresh (ActionEvent event) {
+        taskList.clear();
+        taskTable.getItems().clear();
+        loadDataFromDB();
+        setCellTable();
+    }
+    
     @FXML
     private void handleExistingPattern (ActionEvent event) throws IOException
     {
@@ -227,18 +240,18 @@ public class LoggedInWindowController implements Initializable {
         else if (user.getSelectedCompany() == 2) {
             con = dba.DBConnection.ECompany();
         }
-        List<Tasks> taskLists = new ArrayList<Tasks>();
+        taskList.clear();
         try {
             pst = con.prepareStatement("Select usedPattern, path FROM tasks WHERE created_by = ?");
             pst.setString(1, user.getName());
             rs = pst.executeQuery();
             while (rs.next()) {
-                taskLists.add(new Tasks(rs.getString(1), rs.getString(2)));
+                taskList.add(new Tasks(rs.getString(1), rs.getString(2)));
             }
         } catch (SQLException ex) {
             loggerErrorSaver.error("error while trying loadingUsedPatternsFromDataBase 'Created_by': " + ex + ex);
         }
-        taskTable.getItems().addAll(taskLists);
+        taskTable.getItems().addAll(taskList);
     }
     
     private void setCellTable() {

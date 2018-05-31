@@ -140,7 +140,6 @@ public class LoginWindowController implements Initializable {
                 
                 LoggedInWindowController ctrl = loader.getController();
                 ctrl.setUser(user);
-                ctrl.loadDataFromDB();
                 Stage stage = (Stage) btn_Login.getScene().getWindow();
                 stage.close();
                 stage.setScene(new Scene(root));

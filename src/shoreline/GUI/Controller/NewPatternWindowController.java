@@ -8,6 +8,9 @@ package shoreline.GUI.Controller;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -86,11 +89,13 @@ public class NewPatternWindowController implements Initializable {
     private TextField newPatternTxt;
     @FXML
     private Button btnSaveConvert;
+    private PreparedStatement pst;
+    private Connection con;
     
-    User user;
+    User user = new User();
     Log log;
     LoginWindowController LWC;
-    LoggedInWindowController lgc;
+    LoggedInWindowController lgc = new LoggedInWindowController();
     ShoreLineBLL bll = new ShoreLineBLL();
     Model model = new Model();
     private static Logger loggerErrorSaver = Logger.getLogger(NewPatternWindowController.class);
@@ -273,7 +278,37 @@ public class NewPatternWindowController implements Initializable {
         list.add(boxEstimatedTime.getSelectionModel().getSelectedIndex());
         return list;
     }
+ public void setConnection()
+ {
+                         switch (user.getSelectedCompany()) 
+                        {
+                            case 1: 
+                                con = dba.DBConnection.Shoreline();
+                            break;
+            
+                            case 2: 
+                                con = dba.DBConnection.ECompany();
+                                System.out.println(newPatternTxt.toString());
+                                System.out.println(user.getName());
+                                System.out.println(path);
+                            break;
+                        }
+ }
+    public void saveTask()
+    {
+        try 
+        {
+                        pst = con.prepareStatement("INSERT INTO tasks VALUES(?, ?, ?)");
+                        pst.setString(1, user.getName());
+                        pst.setString(2, newPatternTxt.getText());
+                        pst.setString(3, path);
+                        pst.executeUpdate();
+                        System.out.println(user.getSelectedCompany());
 
+                    } catch (SQLException ex) {
+                        loggerErrorSaver.error("error while savingTask: " + ex + ex);
+                    }
+    }
     public void startTask(String string)
     { 
         if(string == "save")
@@ -283,18 +318,20 @@ public class NewPatternWindowController implements Initializable {
                 @Override
                 public void run() 
                 {
+
                     try 
                     {
                         createPatternandSave();
                         createList();
+                        setConnection();
+                        saveTask();
                         Read(createList());
-                        Stage stage = (Stage) btnSaveConvert.getScene().getWindow();
-                        stage.close();
                     } 
                     catch (Exception ex) 
                     {
                         loggerErrorSaver.error("error while savingTask: " + ex + ex);
                     }
+      
                 }   
             };
             Thread ConvThread = new Thread(task);
