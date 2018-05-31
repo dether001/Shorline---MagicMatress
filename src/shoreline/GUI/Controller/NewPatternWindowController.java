@@ -136,6 +136,7 @@ public class NewPatternWindowController implements Initializable {
             
         } catch (Exception ex) {
             loggerErrorSaver.error("error while choosing file: " + ex + ex);
+            bll.taskException(user);
         }
         
         
@@ -155,31 +156,22 @@ public class NewPatternWindowController implements Initializable {
     }
 
     private void makeComboBox(String path) {
-        try {
-            clearComboBox();
-            
-            ObservableList<String>rowList=FXCollections.observableArrayList();
-            rowList.addAll(bll.makeComboboxes(path));
-            
-            
-            boxAssestSerialNum.getItems().addAll(rowList);
-            boxType.getItems().addAll(rowList);
-            boxExternalWorkOrder.getItems().addAll(rowList);
-            BoxSystemStatus.getItems().addAll(rowList);
-            boxUserStatus.getItems().addAll(rowList);
-            boxCreatedBy.getItems().addAll(rowList);
-            boxName.getItems().addAll(rowList);
-            boxPriority.getItems().addAll(rowList);
-            boxStatus.getItems().addAll(rowList);
-            boxLastestFinishDate.getItems().addAll(rowList);
-            boxEarliestStartDate.getItems().addAll(rowList);
-            boxLatestStartDate.getItems().addAll(rowList);
-            boxEstimatedTime.getItems().addAll(rowList);
-        } catch (InvalidFormatException ex) {
-            loggerErrorSaver.error("error trying to read Excell file: " + ex + ex);
-        } catch (IOException ex) {
-            loggerErrorSaver.error("error trying to read Excell file: " + ex + ex);
-        }
+        clearComboBox();
+        ObservableList<String>rowList=FXCollections.observableArrayList();
+        rowList.addAll(bll.makeComboboxes(path));
+        boxAssestSerialNum.getItems().addAll(rowList);
+        boxType.getItems().addAll(rowList);
+        boxExternalWorkOrder.getItems().addAll(rowList);
+        BoxSystemStatus.getItems().addAll(rowList);
+        boxUserStatus.getItems().addAll(rowList);
+        boxCreatedBy.getItems().addAll(rowList);
+        boxName.getItems().addAll(rowList);
+        boxPriority.getItems().addAll(rowList);
+        boxStatus.getItems().addAll(rowList);
+        boxLastestFinishDate.getItems().addAll(rowList);
+        boxEarliestStartDate.getItems().addAll(rowList);
+        boxLatestStartDate.getItems().addAll(rowList);
+        boxEstimatedTime.getItems().addAll(rowList);
     }
     
     //Clears all comboboxes.
@@ -208,19 +200,13 @@ public class NewPatternWindowController implements Initializable {
         try {
             ShoreLineBLL bll = new ShoreLineBLL();
             
-            try {
-                
-                listData = bll.read(list, path);
-                
-                
-            } catch (InvalidFormatException ex) {
-                loggerErrorSaver.error("error trying to read Excell file: " + ex + ex);
-            }
+            listData = bll.read(list, path);
             
             model.convert(listData);
             
         } catch (IOException ex) {
              loggerErrorSaver.error("error while trying converting: " + ex + ex);
+             bll.taskException(user);
         }
 
     }
@@ -293,6 +279,7 @@ public class NewPatternWindowController implements Initializable {
                     } 
                     catch (Exception ex) 
                     {
+                        bll.taskException(user);
                         loggerErrorSaver.error("error while savingTask: " + ex + ex);
                     }
                 }   
@@ -318,6 +305,7 @@ public class NewPatternWindowController implements Initializable {
                     } 
                     catch (Exception ex) 
                     {
+                        bll.taskException(user);
                         loggerErrorSaver.error("error while converting: " + ex + ex);
                     }
                 }   

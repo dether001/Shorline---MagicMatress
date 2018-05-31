@@ -109,37 +109,18 @@ public class LoggedInWindowController implements Initializable {
     @FXML
     private void handleCancel(ActionEvent event)
     {
-        try 
-        {
-            createScene("cancel");
-        } catch (IOException ex) {
-           loggerErrorSaver.error("error while cancel button LoggedInWindow: " + ex + ex);
-        }
+        createScene("cancel");
     }
     @FXML
     private void handleNewPattern (ActionEvent event) 
     {
-        try 
-        {
-            createScene("NewPatternWindow");
-        } 
-        catch (IOException ex) 
-        {
-            loggerErrorSaver.error("error while Clicking HandleNewPattern in LoggedInWindow: " + ex + ex);
-        }
+        createScene("NewPatternWindow");
     }
 
     @FXML
     private void handleExistingPattern (ActionEvent event) throws IOException
     {
-        try 
-        {
-            createScene("AddSPWindow");
-        } 
-        catch (IOException ex) 
-        {
-            loggerErrorSaver.error("error while Clicking Handle Existing Pattern in LoggedInWindow: " + ex + ex);
-        }
+        createScene("AddSPWindow");
     }
     
     @FXML
@@ -163,60 +144,80 @@ public class LoggedInWindowController implements Initializable {
         listOfIDs = bll.getExistingPattern(selectedPattern);
     }
     
-    private void createScene (String scene) throws IOException
+    private void createScene (String scene)
     {
 
         if(scene == "AddSPWindow")
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/"+scene+".fxml"));
-            Parent root = (Parent) loader.load();
-            
-            AddSPWindowController ctrl = loader.getController();
-            ctrl.setUser(user);
-            
-            Stage stage = new Stage();
-            stage.setTitle("ShoreLine - Data Converter");
-            stage.setScene(new Scene(root));
-            stage.setResizable(false);
-            stage.show(); 
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/"+scene+".fxml"));
+                Parent root = (Parent) loader.load();
+                
+                AddSPWindowController ctrl = loader.getController();
+                ctrl.setUser(user);
+                
+                Stage stage = new Stage();
+                stage.setTitle("ShoreLine - Data Converter");
+                stage.setScene(new Scene(root));
+                stage.setResizable(false); 
+                stage.show();
+            } catch (IOException ex) {
+               loggerErrorSaver.error("error while Clicking Handle Existing Pattern in LoggedInWindow: " + ex + ex);
+            bll.taskException(user);
+            }
         }
         if(scene == "NewPatternWindow")
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/NewPatternWindow.fxml"));
-            Parent root = (Parent) loader.load();
-            
-            NewPatternWindowController ctrl = loader.getController();
-            ctrl.setUser(user);
-            
-            Stage stage = new Stage();
-            stage.setTitle("ShoreLine - Data Converter");
-            stage.setScene(new Scene(root));
-            stage.setResizable(false);
-            stage.show();   
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/NewPatternWindow.fxml"));
+                Parent root = (Parent) loader.load();
+                
+                NewPatternWindowController ctrl = loader.getController();
+                ctrl.setUser(user);
+                
+                Stage stage = new Stage();
+                stage.setTitle("ShoreLine - Data Converter");
+                stage.setScene(new Scene(root));
+                stage.setResizable(false);   
+                stage.show();
+            } catch (IOException ex) {
+               loggerErrorSaver.error("error while Clicking Handle Existing Pattern in LoggedInWindow: " + ex + ex);
+            bll.taskException(user);
+            }
         }
         if(scene == "SLLogWindow")
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/"+scene+".fxml"));
-            Parent root1 = (Parent) loader.load();
-            
-            SLLogWindowController ctrl = loader.getController();
-            ctrl.setUser(user);
-            
-            Stage stage = new Stage();
-            stage.setTitle("ShoreLine - Data Converter");
-            stage.setScene(new Scene(root1));
-            stage.setResizable(true);
-            stage.show(); 
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/"+scene+".fxml"));
+                Parent root1 = (Parent) loader.load();
+                
+                SLLogWindowController ctrl = loader.getController();
+                ctrl.setUser(user);
+                
+                Stage stage = new Stage();
+                stage.setTitle("ShoreLine - Data Converter");
+                stage.setScene(new Scene(root1));
+                stage.setResizable(true); 
+                stage.show();
+            } catch (IOException ex) {
+                loggerErrorSaver.error("error while Clicking Handle Existing Pattern in LoggedInWindow: " + ex + ex);
+            bll.taskException(user);
+            }
         }
         if (scene == "cancel")
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoginWindow.fxml"));
-            Parent root1 = (Parent) loader.load();
-            Stage stage = new Stage();
-            stage.setTitle("ShoreLine - Data Converter");
-            stage.setScene(new Scene(root1));
-            stage.setResizable(true);
-            stage.show();
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/shoreline/GUI/View/LoginWindow.fxml"));
+                Parent root1 = (Parent) loader.load();
+                Stage stage = new Stage();
+                stage.setTitle("ShoreLine - Data Converter");
+                stage.setScene(new Scene(root1));
+                stage.setResizable(true);
+                stage.show();
+            } catch (IOException ex) {
+               loggerErrorSaver.error("error while Clicking Handle Existing Pattern in LoggedInWindow: " + ex + ex);
+            bll.taskException(user);
+            }
         }
     }
     
@@ -237,6 +238,7 @@ public class LoggedInWindowController implements Initializable {
             }
         } catch (SQLException ex) {
             loggerErrorSaver.error("error while trying loadingUsedPatternsFromDataBase 'Created_by': " + ex + ex);
+            bll.taskException(user);
         }
         taskTable.getItems().addAll(taskLists);
     }
@@ -281,11 +283,9 @@ public class LoggedInWindowController implements Initializable {
         catch (IOException ex) 
         {
              loggerErrorSaver.error("error while trying repeat task from Table view with read: " + ex + ex);
+             
+             bll.taskException(user);
         } 
-        catch (InvalidFormatException ex) 
-        {
-             loggerErrorSaver.error("error while trying repeat task from Table view with read: " + ex + ex);
-        }
     }
     
     public void startTask(String string)
@@ -309,11 +309,13 @@ public class LoggedInWindowController implements Initializable {
                         catch (Exception ex) 
                         {
                             loggerErrorSaver.error("error while trying repeat task from Table view with read:': " + ex + ex);
+                            bll.taskException(user);
                         }
                     } 
                     catch (Exception ex) 
                     {
                         loggerErrorSaver.error("error while converting: " + ex + ex);
+                        bll.taskException(user);
                     }
                 }   
             };

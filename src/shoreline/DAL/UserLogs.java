@@ -24,6 +24,8 @@ public class UserLogs {
     private PreparedStatement pst;
     private static Logger loggerErrorSaver = getLogger(DatabaseAL.class);
     
+  
+    
     
        public void loginFLog (User user) {
         try {
@@ -35,6 +37,7 @@ public class UserLogs {
             pst.executeUpdate();
         } catch (SQLException ex) {
              loggerErrorSaver.error("error while savingFLOg: " + ex + ex);
+             errorLog(user);
         }
     }
 
@@ -50,6 +53,7 @@ public class UserLogs {
             pst.executeUpdate();
         } catch (SQLException ex) {
             loggerErrorSaver.error("error while saving Clog: " + ex + ex);
+            errorLog(user);
         }
     }
     
@@ -64,6 +68,7 @@ public class UserLogs {
             pst.executeUpdate();
         } catch (SQLException ex) {
             loggerErrorSaver.error("error while saving convertLog: " + ex + ex);
+            errorLog(user);
         }
     }
         
@@ -78,6 +83,7 @@ public class UserLogs {
             pst.executeUpdate();
         } catch (SQLException ex) {
              loggerErrorSaver.error("error while saving saveWithSave: " + ex + ex);
+             errorLog(user);
         }
     } 
         
@@ -91,6 +97,7 @@ public class UserLogs {
             pst.executeUpdate();
         } catch (SQLException ex) {
              loggerErrorSaver.error("error while saving errorLog: " + ex + ex);
+             
         }
     } 
 
