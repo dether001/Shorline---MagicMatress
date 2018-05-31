@@ -84,7 +84,6 @@ public class AddSPWindowController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        con = dba.DBConnection.Shoreline();
         loadPatterns();
     }    
 
@@ -172,7 +171,12 @@ public class AddSPWindowController implements Initializable {
 
     @FXML
     private void convertWSave(ActionEvent event) {
-         con = dba.DBConnection.Shoreline();
+        if (user.getSelectedCompany() == 1) {
+            con = dba.DBConnection.Shoreline();
+        }
+        else if (user.getSelectedCompany() == 2) {
+            con = dba.DBConnection.ECompany();
+        }
             sPath = PathField.getText();
             sPattern = patternBox.getSelectionModel().getSelectedItem();
         try {

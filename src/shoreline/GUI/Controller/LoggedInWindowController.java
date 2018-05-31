@@ -221,7 +221,12 @@ public class LoggedInWindowController implements Initializable {
     }
     
     public void loadDataFromDB() {
-        con = dba.DBConnection.Shoreline();
+        if (user.getSelectedCompany() == 1) {
+            con = dba.DBConnection.Shoreline();
+        }
+        else if (user.getSelectedCompany() == 2) {
+            con = dba.DBConnection.ECompany();
+        }
         List<Tasks> taskLists = new ArrayList<Tasks>();
         try {
             pst = con.prepareStatement("Select usedPattern, path FROM tasks WHERE created_by = ?");

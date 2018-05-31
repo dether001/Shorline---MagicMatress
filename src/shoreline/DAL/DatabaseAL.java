@@ -32,15 +32,19 @@ public class DatabaseAL {
     private PreparedStatement pst;
     private ResultSet rs;
     private User user;
+    static int CID;
     private static Logger loggerErrorSaver = Logger.getLogger(DatabaseAL.class);
 
+    
     public User tryLogIn(User user) {
         
         if (user.getSelectedCompany() == 1) {
             con = dba.DBConnection.Shoreline();
+            CID = 1;
         }
         else if (user.getSelectedCompany() == 2) {
             con = dba.DBConnection.ECompany();
+            CID = 2;
         }
         return getID(user);
         
@@ -91,7 +95,12 @@ public class DatabaseAL {
     
        public void newPattern (Pattern pattern) {
         try {
-            con = dba.DBConnection.Shoreline();
+           if (CID == 1) {
+               con = dba.DBConnection.Shoreline();
+           }
+           else if (CID == 2) {
+               con = dba.DBConnection.ECompany();
+           }
             pst = con.prepareStatement("insert into Patterns VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             pst.setString(1, pattern.getCreatedBy_User());
             pst.setInt(2, pattern.getAssestSeriliaNum());
@@ -118,7 +127,12 @@ public class DatabaseAL {
     public List<Integer> getExsistingPattern(String selectedPattern) {
        List<Integer> listOfIDs = new ArrayList<Integer>();
         try {
-            con = dba.DBConnection.Shoreline();
+           if (CID == 1) {
+               con = dba.DBConnection.Shoreline();
+           }
+           else if (CID == 2) {
+               con = dba.DBConnection.ECompany();
+           }
             String sql = "select AssetSerialNum, Type, ExternalWorkOrder, SystemStatus, userStatus, CreatedBy, Name, Priority, Status, LatestFinishDate, EarliestStartDate, LatestStartDate, EstimatedTime FROM Patterns WHERE PatternName = ?;";
             pst=con.prepareStatement(sql);
             System.out.println("selected pattern is her " + selectedPattern);
@@ -152,7 +166,12 @@ public class DatabaseAL {
     }
 
     public List<Tasks> loadusedPatterns() {
-        con = dba.DBConnection.Shoreline();
+           if (CID == 1) {
+               con = dba.DBConnection.Shoreline();
+           }
+           else if (CID == 2) {
+               con = dba.DBConnection.ECompany();
+           }
         ArrayList<Tasks> taskList = new ArrayList<Tasks>();
         con = dba.DBConnection.Shoreline();
             try {
@@ -169,9 +188,15 @@ public class DatabaseAL {
     }
 
     public List<String> loadExsistingPatterns() {
-         con = dba.DBConnection.Shoreline();
+
         ArrayList<String> taskList = new ArrayList<String>();
        try {
+           if (CID == 1) {
+               con = dba.DBConnection.Shoreline();
+           }
+           else if (CID == 2) {
+               con = dba.DBConnection.ECompany();
+           }
             String sql = "select PatternName from Patterns";
             pst=con.prepareStatement(sql);
             rs = pst.executeQuery();
