@@ -260,21 +260,9 @@ public class LoggedInWindowController implements Initializable {
     }
    
     @FXML
-    private void handleTaskRepeate(ActionEvent event) {
-        
-            
-        try {
-            
-            taskPattern = taskTable.getSelectionModel().getSelectedItem().getUsedPattern();
-            taskPath = taskTable.getSelectionModel().getSelectedItem().getPath();
-            
-
-            
-            getItemsID();
-            Read(listOfIDs);
-        } catch (Exception ex) {
-             loggerErrorSaver.error("error while trying repeat task from Table view with read:': " + ex + ex);
-        }
+    private void handleTaskRepeate(ActionEvent event) 
+    {
+        startTask("convert");
     }
         
     public void Read(List list) 
@@ -292,6 +280,41 @@ public class LoggedInWindowController implements Initializable {
         catch (InvalidFormatException ex) 
         {
              loggerErrorSaver.error("error while trying repeat task from Table view with read: " + ex + ex);
+        }
+    }
+    
+    public void startTask(String string)
+    {
+    if(string=="convert")
+        {
+            Runnable task = new Runnable()
+            {
+                @Override
+                public void run() 
+                {
+                    try 
+                    {
+                        try 
+                        {
+                            taskPattern = taskTable.getSelectionModel().getSelectedItem().getUsedPattern();
+                            taskPath = taskTable.getSelectionModel().getSelectedItem().getPath();
+                            getItemsID();
+                            Read(listOfIDs);
+                        } 
+                        catch (Exception ex) 
+                        {
+                            loggerErrorSaver.error("error while trying repeat task from Table view with read:': " + ex + ex);
+                        }
+                    } 
+                    catch (Exception ex) 
+                    {
+                        loggerErrorSaver.error("error while converting: " + ex + ex);
+                    }
+                }   
+            };
+            Thread ConvThread = new Thread(task);
+            ConvThread.setDaemon(true);
+            ConvThread.start();
         }
     }
 

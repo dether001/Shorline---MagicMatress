@@ -288,6 +288,8 @@ public class NewPatternWindowController implements Initializable {
                         createPatternandSave();
                         createList();
                         Read(createList());
+                        Stage stage = (Stage) btnSaveConvert.getScene().getWindow();
+                        stage.close();
                     } 
                     catch (Exception ex) 
                     {
@@ -308,9 +310,11 @@ public class NewPatternWindowController implements Initializable {
                 {
                     try 
                     {
-                        createPatternandSave();
                         createList();
                         Read(createList());
+                        Stage stage = (Stage) buttonConvert.getScene().getWindow();
+                        stage.close();
+                        
                     } 
                     catch (Exception ex) 
                     {

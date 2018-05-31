@@ -160,38 +160,96 @@ public class AddSPWindowController implements Initializable {
     }
 
     @FXML
-    private void fuckingConvertpls(ActionEvent event) {
-        try {
-            Read(getList());
-        } catch (InvalidFormatException ex) {
-           loggerErrorSaver.error("error while trying converting: " + ex + ex);
-        } catch (Exception ex) {
-            loggerErrorSaver.error("error while trying converting: " + ex + ex);
-        }
+    private void fuckingConvertpls(ActionEvent event) 
+    {
+        startTask("convert");
     }
 
     @FXML
-    private void convertWSave(ActionEvent event) {
-         con = dba.DBConnection.Shoreline();
-            sPath = PathField.getText();
-            sPattern = patternBox.getSelectionModel().getSelectedItem();
-        try {
-            pst = con.prepareStatement("INSERT INTO tasks VALUES(?, ?, ?)");
-            pst.setString(1, user.getName());
-            pst.setString(2, sPattern);
-            pst.setString(3, sPath);
-            pst.executeUpdate();
-            Read(listOfIDs);
-        } catch (SQLException ex) {
-           loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
-        }catch (InvalidFormatException ex) {
-            loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
-        } catch (Exception ex) {
-            loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
-        }
+    private void convertWSave(ActionEvent event) 
+    {
+        startTask("save");
     }
 
     void setUser(User user) {
       this.user = user;
     }
+    
+    public void startTask(String string)
+    { 
+        if(string == "save")
+        {
+            Runnable task = new Runnable()
+            {
+                @Override
+                public void run() 
+                {
+                    try 
+                    {
+                        con = dba.DBConnection.Shoreline();
+                        sPath = PathField.getText();
+                        sPattern = patternBox.getSelectionModel().getSelectedItem();
+                        try 
+                        {
+                            pst = con.prepareStatement("INSERT INTO tasks VALUES(?, ?, ?)");
+                            pst.setString(1, user.getName());
+                            pst.setString(2, sPattern);
+                            pst.setString(3, sPath);
+                            pst.executeUpdate();
+                            Read(listOfIDs);
+                        } 
+                        catch (SQLException ex) 
+                        {
+                            loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
+                        }
+                        catch (InvalidFormatException ex) 
+                        {
+                            loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
+                        } 
+                        catch (Exception ex) 
+                        {
+                            loggerErrorSaver.error("error while trying convertingWithSave: " + ex + ex);
+                        }
+                    } 
+                    catch (Exception ex) 
+                    {
+                        loggerErrorSaver.error("error while savingTask: " + ex + ex);
+                    }
+                }   
+            };
+            Thread ConvThread = new Thread(task);
+            ConvThread.setDaemon(true);
+            ConvThread.start();
+        }
+        if(string=="convert")
+        {
+            Runnable task = new Runnable()
+            {
+                @Override
+                public void run() 
+                {
+                    try 
+                    {
+                        try 
+                        {
+                            Read(getList());
+                        } catch (InvalidFormatException ex) 
+                        {
+                            loggerErrorSaver.error("error while trying converting: " + ex + ex);
+                        } catch (Exception ex) 
+                        {
+                            loggerErrorSaver.error("error while trying converting: " + ex + ex);
+                        }
+                    } 
+                    catch (Exception ex) 
+                    {
+                        loggerErrorSaver.error("error while converting: " + ex + ex);
+                    }
+                }   
+            };
+            Thread ConvThread = new Thread(task);
+            ConvThread.setDaemon(true);
+            ConvThread.start();
+        }
+    }  
 }

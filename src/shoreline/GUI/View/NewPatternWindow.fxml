@@ -38,7 +38,7 @@
       <Label layoutX="250.0" layoutY="109.0" styleClass="Labels_small" text="Earliest Start Date" />
       <Label layoutX="250.0" layoutY="161.0" styleClass="Labels_small" text="Latest Start Date" />
       <Label layoutX="250.0" layoutY="213.0" styleClass="Labels_small" text="Estimated Time" />
-      <Label layoutX="531.0" layoutY="350.0" prefHeight="35.0" prefWidth="136.0" styleClass="Labels_small" text="Choose a File:" />
+      <Label layoutX="531.0" layoutY="350.0" prefHeight="35.0" prefWidth="136.0" styleClass="Labels_big" text="Choose a File:" />
       <Button fx:id="buttonConvert" layoutX="412.0" layoutY="553.0" mnemonicParsing="false" onAction="#buttonConvertAction" styleClass="Buttons_Small" text="Convert" />
       <TextField fx:id="newPatternTxt" layoutX="494.0" layoutY="497.0" promptText="Name of New Pattern" styleClass="Text_Field" />
       <Button fx:id="btnSaveConvert" layoutX="524.0" layoutY="553.0" mnemonicParsing="false" onAction="#buttonActionSaveConvert" styleClass="Buttons_Small" text="Save and Convert" />

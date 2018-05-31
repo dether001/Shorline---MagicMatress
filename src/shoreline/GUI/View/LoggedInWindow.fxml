@@ -21,6 +21,6 @@
       <Label fx:id="loggedInlbl" layoutX="552.0" layoutY="18.0" styleClass="Labels_small" text="asd" textAlignment="RIGHT" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
       <Label fx:id="dateLbl" layoutX="563.0" layoutY="39.0" styleClass="Labels_small" text="asd" textAlignment="RIGHT" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="39.0" />
       <Button fx:id="NewPatternBtn" layoutX="381.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleNewPattern" styleClass="Buttons_Small" text="Convert with new Pattern" AnchorPane.rightAnchor="14.0" />
-      <Button fx:id="taskRepeate" layoutX="14.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleTaskRepeate" prefWidth="196.0" styleClass="Buttons_Small" text="Repeat Selected Pattern" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="14.0" />
+      <Button fx:id="taskRepeate" layoutX="14.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleTaskRepeate" prefHeight="35.0" prefWidth="205.0" styleClass="Buttons_Small" text="Repeat Selected Task" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="14.0" />
    </children>
 </AnchorPane>
