@@ -39,3 +39,24 @@ file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run1
 [31.05.2018] [18:34:16] ERROR [Thread-11] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:311) - error while trying repeat task from Table view with read:': java.lang.NullPointerExceptionjava.lang.NullPointerException
 [31.05.2018] [18:34:17] ERROR [Thread-12] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:311) - error while trying repeat task from Table view with read:': java.lang.NullPointerExceptionjava.lang.NullPointerException
 [31.05.2018] [18:36:08] ERROR [Thread-6] shoreline.GUI.Controller.AddSPWindowController (AddSPWindowController.java:222) - error while trying convertingWithSave: java.lang.NullPointerExceptionjava.lang.NullPointerException
+[01.06.2018] [11:02:01] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:169) - error while Clicking Handle Existing Pattern in LoggedInWindow: javafx.fxml.LoadException: Error resolving onAction='#fuckingConvertpls', either the event handler is not in the Namespace or there is an error in the script.
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run845583055/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml:13
+javafx.fxml.LoadException: Error resolving onAction='#fuckingConvertpls', either the event handler is not in the Namespace or there is an error in the script.
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run845583055/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml:13
+
+[01.06.2018] [11:02:05] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:169) - error while Clicking Handle Existing Pattern in LoggedInWindow: javafx.fxml.LoadException: Error resolving onAction='#fuckingConvertpls', either the event handler is not in the Namespace or there is an error in the script.
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run845583055/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml:13
+javafx.fxml.LoadException: Error resolving onAction='#fuckingConvertpls', either the event handler is not in the Namespace or there is an error in the script.
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run845583055/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml:13
+
+[01.06.2018] [11:02:09] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:169) - error while Clicking Handle Existing Pattern in LoggedInWindow: javafx.fxml.LoadException: Error resolving onAction='#fuckingConvertpls', either the event handler is not in the Namespace or there is an error in the script.
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run845583055/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml:13
+javafx.fxml.LoadException: Error resolving onAction='#fuckingConvertpls', either the event handler is not in the Namespace or there is an error in the script.
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run845583055/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml:13
+
+[01.06.2018] [11:02:11] ERROR [JavaFX Application Thread] shoreline.GUI.Controller.NewPatternWindowController (LoggedInWindowController.java:169) - error while Clicking Handle Existing Pattern in LoggedInWindow: javafx.fxml.LoadException: Error resolving onAction='#fuckingConvertpls', either the event handler is not in the Namespace or there is an error in the script.
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run845583055/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml:13
+javafx.fxml.LoadException: Error resolving onAction='#fuckingConvertpls', either the event handler is not in the Namespace or there is an error in the script.
+file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run845583055/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml:13
+
+[01.06.2018] [11:17:08] ERROR [Thread-6] shoreline.GUI.Controller.NewPatternWindowController (NewPatternWindowController.java:346) - error while converting: java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-6java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-6

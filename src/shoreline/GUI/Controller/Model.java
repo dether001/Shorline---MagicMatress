@@ -17,6 +17,8 @@ import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import shoreline.BE.JSonObject;
@@ -54,10 +56,12 @@ public class Model {
                         } 
                         catch (FileNotFoundException ex) 
                         {
-                            
                             Logger.getLogger(Model.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
+                    Alert alert = new Alert(Alert.AlertType.NONE,"Conversion complete !",ButtonType.OK);
+                    alert.setTitle("Complete !");
+                    alert.showAndWait();
                 }
             }
             );

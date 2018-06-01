@@ -29,7 +29,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
@@ -104,9 +106,9 @@ public class AddSPWindowController implements Initializable {
         FileChooser fc = new FileChooser();
         
         FileChooser.ExtensionFilter xlsFilter = new 
-        FileChooser.ExtensionFilter("XLS files (*.xls)", "*.xls");
+        FileChooser.ExtensionFilter("XLS files (*.xlsx)", "*.xlsx");
         FileChooser.ExtensionFilter xlsxFilter = new 
-        FileChooser.ExtensionFilter("XLSX files (*.xlsx)", "*.xlsx");
+        FileChooser.ExtensionFilter("XLSX files (*.xls)", "*.xls");
 
         fc.getExtensionFilters().add(xlsFilter);
         fc.getExtensionFilters().add(xlsxFilter);
@@ -170,6 +172,7 @@ public class AddSPWindowController implements Initializable {
     private void simpleConversion(ActionEvent event) 
     {
         startTask("convert");
+
     }
 
     @FXML
