@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author dell
+ * @author Viktor
  */
 public class Shoreline extends Application 
 {

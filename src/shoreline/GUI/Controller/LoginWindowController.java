@@ -37,7 +37,7 @@ import shoreline.GUI.Controller.NewPatternWindowController;
 /**
  * FXML Controller class
  *
- * @author dell
+ * @author Viktor
  */
 public class LoginWindowController implements Initializable {
 
@@ -71,6 +71,10 @@ public class LoginWindowController implements Initializable {
 
     //Event Handlers
 
+    //Checks if the given company code is:
+    // a: filled out;
+    // b: is a text;
+    // c: is existing;
     private void validateCID () throws IOException {
 
         

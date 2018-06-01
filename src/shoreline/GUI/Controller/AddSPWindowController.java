@@ -167,7 +167,7 @@ public class AddSPWindowController implements Initializable {
     }
 
     @FXML
-    private void fuckingConvertpls(ActionEvent event) 
+    private void simpleConversion(ActionEvent event) 
     {
         startTask("convert");
     }
@@ -178,6 +178,7 @@ public class AddSPWindowController implements Initializable {
         startTask("save");
     }
 
+    // setUser method is used all around our program as a "pre-initalization" method
     void setUser(User user) {
       this.user = user;
     }

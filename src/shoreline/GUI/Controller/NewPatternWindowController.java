@@ -218,7 +218,7 @@ public class NewPatternWindowController implements Initializable {
 
      
     
-
+    // setUser method is used all around our program as a "pre-initalization" method
     public void setUser (User user)
     {
         this.user = user;

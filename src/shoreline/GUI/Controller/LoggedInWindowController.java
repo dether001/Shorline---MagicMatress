@@ -225,6 +225,7 @@ public class LoggedInWindowController implements Initializable {
         }
     }
     
+    //Quieries the DB for all tasks that was created by the logged in user, then loads it into an Observable list, then the list to the TableView
     public void loadDataFromDB() {
         if (user.getSelectedCompany() == 1) {
             con = dba.DBConnection.Shoreline();
@@ -247,12 +248,13 @@ public class LoggedInWindowController implements Initializable {
         taskTable.getItems().addAll(taskList);
     }
     
+    //Sets the cells for the tablieview
     private void setCellTable() {
         patternClm.setCellValueFactory(new PropertyValueFactory<>("usedPattern"));
         pathClm.setCellValueFactory(new PropertyValueFactory<>("path"));
     }
     
-
+    // setUser method is used all around our program as a "pre-initalization" method
     public void setUser (User user)
     {
         this.user = user;

@@ -97,7 +97,8 @@ public class DatabaseAL {
        
         return newuser;
     }
-    
+        
+        // Gets values out of Pattern BE, and then loads it into the DB
        public void newPattern (Pattern pattern) {
         try {
            if (CID == 1) {
@@ -130,6 +131,7 @@ public class DatabaseAL {
         }
         }
 
+    // Quieries the DB for all patern info with a given name, and loads it into a list
     public List<Integer> getExsistingPattern(String selectedPattern) {
        List<Integer> listOfIDs = new ArrayList<Integer>();
         try {
@@ -172,7 +174,8 @@ public class DatabaseAL {
         return listOfIDs;
     }
 
-    public List<Tasks> loadusedPatterns() {
+    //Queries the DB for information about all tasks, and loads it into a List
+    public List<Tasks> loadTasks() {
            if (CID == 1) {
                con = dba.DBConnection.Shoreline();
            }
@@ -194,7 +197,8 @@ public class DatabaseAL {
         }
             return taskList;
     }
-
+    
+    //Queries the DB for all patterns, and loads it into an Observable List
     public List<String> loadExsistingPatterns() {
 
         ArrayList<String> taskList = new ArrayList<String>();

@@ -76,7 +76,7 @@ public class ShoreLineBLL {
     }
 
     public List<Tasks> loadusedPatterns() {
-        return dbal.loadusedPatterns();
+        return dbal.loadTasks();
     }
 
     public List<String> loadExsistingPatterns() {

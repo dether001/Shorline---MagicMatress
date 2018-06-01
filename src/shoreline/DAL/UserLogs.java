@@ -16,7 +16,7 @@ import shoreline.BLL.ShoreLineBLL;
 
 /**
  *
- * @author dell
+ * @author Viktor
  */
 public class UserLogs {
     
@@ -26,7 +26,7 @@ public class UserLogs {
     
   
     
-    
+        //Log method, used for logging failed log ins, with a preset message
        public void loginFLog (User user) {
         try {
             con = dba.DBConnection.Shoreline();
@@ -42,7 +42,7 @@ public class UserLogs {
     }
 
     
-
+    //Log method, used for logging succesful log ins, with a preset message
     public void loginCLog (User user) {
         try {
             con = dba.DBConnection.Shoreline();
@@ -57,7 +57,7 @@ public class UserLogs {
         }
     }
     
-    
+        //Log method, used for logging conversions without a task, with a preset message
         public void convertLog (User user) {
         try {
             con = dba.DBConnection.Shoreline();
@@ -72,7 +72,7 @@ public class UserLogs {
         }
     }
         
-        
+        //Log method, used for logging conversions with a task, with a preset message
         public void convertWsave (User user) {
         try {
             con = dba.DBConnection.Shoreline();
@@ -87,6 +87,7 @@ public class UserLogs {
         }
     } 
         
+        //Log method, used for logging exceptions, with a preset message
         public void errorLog (User user) {
         try {
             con = dba.DBConnection.Shoreline();
