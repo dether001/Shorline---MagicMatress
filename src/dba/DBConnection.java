@@ -20,8 +20,8 @@ public class DBConnection {
     private static Logger loggerErrorSaver = Logger.getLogger(DBConnection.class);
     
     //Method for Shoreline DB connection
-    
-    private static DBConnection instance;
+
+    //private static DBConnection instance;
     public static Connection Shoreline() {
         Connection con = null;
         try {

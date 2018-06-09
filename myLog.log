@@ -60,3 +60,4 @@ javafx.fxml.LoadException: Error resolving onAction='#fuckingConvertpls', either
 file:/C:/Users/dell/Documents/NetBeansProjects/Shorline---MagicMatress/dist/run845583055/Shoreline.jar!/shoreline/GUI/View/AddSPWindow.fxml:13
 
 [01.06.2018] [11:17:08] ERROR [Thread-6] shoreline.GUI.Controller.NewPatternWindowController (NewPatternWindowController.java:346) - error while converting: java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-6java.lang.IllegalStateException: Not on FX application thread; currentThread = Thread-6
+[05.06.2018] [10:20:30] ERROR [Thread-6] shoreline.DAL.DatabaseAL (ExcellAL.java:164) - error while putting values to JsonClass: java.io.FileNotFoundException: D:\Import_data.xlsxjava.io.FileNotFoundException: D:\Import_data.xlsx

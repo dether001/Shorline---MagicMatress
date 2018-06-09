@@ -135,7 +135,7 @@ public class AddSPWindowController implements Initializable {
 
         getItemsID();
     }
-    
+    // we should've moved it to the top
     ShoreLineBLL bll = new ShoreLineBLL();
     
     private void getItemsID(){
@@ -154,6 +154,7 @@ public class AddSPWindowController implements Initializable {
 
         
         try {
+            // it should've been removed
             ShoreLineBLL bll = new ShoreLineBLL();
             
             listData = bll.read(list, path);

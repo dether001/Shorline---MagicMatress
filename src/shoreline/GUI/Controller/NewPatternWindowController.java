@@ -151,6 +151,7 @@ public class NewPatternWindowController implements Initializable {
     private void buttonConvertAction(ActionEvent event) 
     {
         startTask("convert");
+        // we forgot to add the log method here
     }
     
     @FXML
@@ -226,6 +227,7 @@ public class NewPatternWindowController implements Initializable {
 
     public void createPatternandSave()
     {
+        // a little naming error here
         Pattern patter = new Pattern();
         patter.setAssestSeriliaNum(boxAssestSerialNum.getSelectionModel().getSelectedIndex());
         patter.setType((boxType.getSelectionModel().getSelectedIndex()));
@@ -308,6 +310,7 @@ public class NewPatternWindowController implements Initializable {
                     try 
                     {
                         createPatternandSave();
+                        // it's called twice by mistake
                         createList();
                         setConnection();
                         saveTask();
@@ -334,6 +337,7 @@ public class NewPatternWindowController implements Initializable {
                 {
                     try 
                     {
+                        // it's called twice by mistake
                         createList();
                         Read(createList());
                         Stage stage = (Stage) buttonConvert.getScene().getWindow();

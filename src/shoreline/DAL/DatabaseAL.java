@@ -62,7 +62,9 @@ public class DatabaseAL {
             ResultSet rs = pst.executeQuery();
             if(rs.next()) {
                 String pass = rs.getString(1);
+            //We had an error with case sensitivity, and we left it there, but now it works with 'equals' as intentded
             if(user.getPassword().equalsIgnoreCase(pass)){
+            // setId is used instead of boolean by mistake
             user.setId(1);}
             rs.close();
             }
@@ -183,7 +185,6 @@ public class DatabaseAL {
                con = dba.DBConnection.ECompany();
            }
         ArrayList<Tasks> taskList = new ArrayList<Tasks>();
-        con = dba.DBConnection.Shoreline();
             try {
             pst = con.prepareStatement("Select usedPattern, path FROM tasks");
             rs = pst.executeQuery();
@@ -200,7 +201,7 @@ public class DatabaseAL {
     
     //Queries the DB for all patterns, and loads it into an Observable List
     public List<String> loadExsistingPatterns() {
-
+        // we should've renamed the task
         ArrayList<String> taskList = new ArrayList<String>();
        try {
            if (CID == 1) {

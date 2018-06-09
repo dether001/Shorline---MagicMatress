@@ -48,6 +48,7 @@ public class Model {
                     FileChooser.ExtensionFilter("Json files (*.json)", "*.json");
                     fc.getExtensionFilters().add(jsonFilter);
                     File savepath = fc.showSaveDialog(stage2);
+                    // we should've make an exception if a file was not chosen
                     if (file != null) 
                     {
                         try 

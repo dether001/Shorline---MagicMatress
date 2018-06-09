@@ -207,7 +207,7 @@ public class LoginWindowController implements Initializable {
     {
         this.SelectedCompany = id;
     }
-
+    // these 2 methods are probably not necesarry
     private void loginFLog () 
     {
         bll.loginFLog(user);
